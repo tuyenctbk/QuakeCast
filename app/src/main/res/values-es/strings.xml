@@ -158,7 +158,7 @@
 
     <!-- Rate App Dialog -->
     <string name="rate_dialog_title">¿Te resulta útil QuakeCast?</string>
-    <string name="rate_dialog_subtitle">Telemetría sísmica 100% libre de anuncios</string>
+    <string name="rate_dialog_subtitle">Telemetría sísmica 100%% libre de anuncios</string>
     <string name="rate_dialog_description">Si QuakeCast te mantiene seguro e informado durante sismos, una reseña de 5 estrellas en Google Play ayuda a otros a descubrirla.</string>
     <string name="rate_dialog_confirm_button">Calificar en Google Play ⭐️</string>
     <string name="rate_dialog_feedback_button">Puede mejorar 💬</string>
@@ -172,14 +172,14 @@
     <string name="share_dialog_title">Protege a tus seres queridos</string>
     <string name="share_dialog_subtitle">Alerta sísmica en tiempo real</string>
     <string name="share_dialog_description">La seguridad sísmica es comunitaria. Comparte QuakeCast para que reciban avisos instantáneos, estimaciones de ondas de choque y guías de emergencia.</string>
-    <string name="share_dialog_bullet_points">• 100% Libre de anuncios\n• Cero rastreo\n• Telemetría USGS directa</string>
+    <string name="share_dialog_bullet_points">• 100%% Libre de anuncios\n• Cero rastreo\n• Telemetría USGS directa</string>
     <string name="share_dialog_confirm_button">Compartir enlace QuakeCast</string>
-    <string name="share_app_message">🚨 ¡Mantente alerta y seguro ante terremotos con QuakeCast!\n\nTelemetría USGS en vivo, simulador 3D de ondas y alertas de proximidad. 100% Libre de anuncios y ciencia abierta:\nhttps://play.google.com/store/apps/details?id=%1$s</string>
+    <string name="share_app_message">🚨 ¡Mantente alerta y seguro ante terremotos con QuakeCast!\n\nTelemetría USGS en vivo, simulador 3D de ondas y alertas de proximidad. 100%% Libre de anuncios y ciencia abierta:\nhttps://play.google.com/store/apps/details?id=%1$s</string>
     <string name="share_quake_message">🚨 Alerta Sísmica: M %1$.1f — %2$s\nHora: %3$s\nProfundidad: %4$.1f km\nDetalles USGS: %5$s\n\nRegistrado vía QuakeCast</string>
 
     <!-- Toast & Feedback Messages -->
     <string name="toast_shake_detected">¡Temblor detectado! Actualizando sismos de USGS\u2026</string>
-    <string name="toast_milestone_reached">🎉 ¡Logro: %1$d.ª consulta sísmica! QuakeCast es 100% independiente y sin publicidad.</string>
+    <string name="toast_milestone_reached">🎉 ¡Logro: %1$d.ª consulta sísmica! QuakeCast es 100%% independiente y sin publicidad.</string>
     <string name="btn_support_dev">Apoyar dev</string>
 
     <!-- Donation Bottom Sheet -->

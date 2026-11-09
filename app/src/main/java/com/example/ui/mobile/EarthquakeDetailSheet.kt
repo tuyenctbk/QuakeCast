@@ -77,7 +77,11 @@ fun EarthquakeDetailSheet(
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Column {
+            Column(
+                modifier = Modifier
+                    .weight(1f)
+                    .padding(end = 12.dp)
+            ) {
                 Text(
                     text = "EVENT TELEMETRY",
                     style = MaterialTheme.typography.labelSmall.copy(
@@ -105,10 +109,10 @@ fun EarthquakeDetailSheet(
             ) {
                 Text(
                     text = "M ${String.format("%.1f", quake.magnitude)}",
-                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
+                    modifier = Modifier.padding(horizontal = 14.dp, vertical = 8.dp),
                     style = MaterialTheme.typography.titleLarge.copy(
                         fontWeight = FontWeight.Black,
-                        color = Color.White
+                        color = if (quake.magnitude >= 4.5) Color.White else Color.Black
                     )
                 )
             }
@@ -228,7 +232,7 @@ fun EarthquakeDetailSheet(
         ) {
             MetricCard(
                 title = "Focal Depth",
-                value = "${quake.depth} km",
+                value = "${String.format("%.1f", quake.depth)} km",
                 subtitle = quake.depthCategory.label,
                 modifier = Modifier.weight(1f)
             )

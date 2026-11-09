@@ -125,7 +125,11 @@ fun SeismicAnalyticsDashboard(
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Column {
+            Column(
+                modifier = Modifier
+                    .weight(1f)
+                    .padding(end = 8.dp)
+            ) {
                 Text(
                     text = "30-DAY SEISMIC ANALYTICS",
                     style = MaterialTheme.typography.labelSmall.copy(

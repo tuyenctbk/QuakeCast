@@ -128,7 +128,7 @@ fun EarthquakeListItem(
                         shape = RoundedCornerShape(4.dp)
                     ) {
                         Text(
-                            text = "${quake.depth} km (${quake.depthCategory.label})",
+                            text = "${String.format("%.1f", quake.depth)} km (${quake.depthCategory.label})",
                             modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp),
                             style = MaterialTheme.typography.labelSmall.copy(
                                 color = depthColor,

@@ -7,9 +7,11 @@ import android.os.Vibrator
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
@@ -392,15 +394,24 @@ fun MobileMainScreen(
                     }
 
                     // TV Mode Button
-                    Button(
+                    IconButton(
                         onClick = onToggleTvMode,
-                        modifier = Modifier.padding(end = 8.dp),
-                        colors = ButtonDefaults.buttonColors(containerColor = PulseCyan),
-                        shape = RoundedCornerShape(8.dp)
+                        modifier = Modifier
+                            .testTag("action_tv_mode")
+                            .padding(end = 4.dp)
                     ) {
-                        Icon(Icons.Default.Tv, contentDescription = null, tint = Color.Black, modifier = Modifier.size(18.dp))
-                        Spacer(modifier = Modifier.width(4.dp))
-                        Text(stringResource(R.string.btn_tv_mode), color = Color.Black, fontWeight = FontWeight.Bold)
+                        Surface(
+                            color = PulseCyan.copy(alpha = 0.25f),
+                            shape = RoundedCornerShape(8.dp),
+                            border = androidx.compose.foundation.BorderStroke(1.dp, PulseCyan)
+                        ) {
+                            Icon(
+                                Icons.Default.Tv,
+                                contentDescription = stringResource(R.string.btn_tv_mode),
+                                tint = PulseCyan,
+                                modifier = Modifier.padding(6.dp)
+                            )
+                        }
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(containerColor = DarkBackground)
@@ -764,40 +775,77 @@ fun MobileMainScreen(
                         }
                     }
                     MobileTab.LIST -> {
-                        Column(modifier = Modifier.fillMaxSize()) {
-                            FilterChipsRow(
-                                selectedFilter = uiState.magFilter,
-                                onSelectFilter = { viewModel.setMagFilter(it) },
-                                tsunamiOnly = uiState.tsunamiOnly,
-                                onToggleTsunami = { viewModel.setTsunamiOnly(it) }
-                            )
+                        var isAnalyticsView by remember { mutableStateOf(false) }
 
-                            // Subtle Value Realization Banner
-                            if (donationState.canShowValuePrompt) {
-                                ValueRealizationCard(
-                                    onOpenDonationDialog = { showDonationSheet = true },
-                                    onDismiss = { donationManager.dismissPrompt() }
-                                )
+                        Column(modifier = Modifier.fillMaxSize()) {
+                            Row(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(horizontal = 16.dp, vertical = 4.dp),
+                                horizontalArrangement = Arrangement.SpaceBetween,
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Box(modifier = Modifier.weight(1f)) {
+                                    FilterChipsRow(
+                                        selectedFilter = uiState.magFilter,
+                                        onSelectFilter = { viewModel.setMagFilter(it) },
+                                        tsunamiOnly = uiState.tsunamiOnly,
+                                        onToggleTsunami = { viewModel.setTsunamiOnly(it) }
+                                    )
+                                }
+
+                                IconButton(
+                                    onClick = { isAnalyticsView = !isAnalyticsView },
+                                    modifier = Modifier.testTag("toggle_analytics_view")
+                                ) {
+                                    Surface(
+                                        color = if (isAnalyticsView) PulseCyan.copy(alpha = 0.25f) else DarkSurface,
+                                        shape = RoundedCornerShape(8.dp),
+                                        border = androidx.compose.foundation.BorderStroke(1.dp, PulseCyan)
+                                    ) {
+                                        Icon(
+                                            imageVector = if (isAnalyticsView) Icons.Default.List else Icons.Default.BarChart,
+                                            contentDescription = "Toggle Analytics",
+                                            tint = PulseCyan,
+                                            modifier = Modifier.padding(6.dp)
+                                        )
+                                    }
+                                }
                             }
 
-                            if (uiState.filteredQuakes.isEmpty()) {
-                                EmptyQuakesView(onResetFilters = {
-                                    viewModel.setMagFilter(MagFilter.ALL)
-                                    viewModel.setTsunamiOnly(false)
-                                    viewModel.setSearchQuery("")
-                                })
+                            if (isAnalyticsView) {
+                                SeismicAnalyticsDashboard(
+                                    earthquakes = uiState.quakes,
+                                    modifier = Modifier.fillMaxSize()
+                                )
                             } else {
-                                LazyColumn(modifier = Modifier.fillMaxSize()) {
-                                    items(uiState.filteredQuakes, key = { it.id }) { quake ->
-                                        EarthquakeListItem(
-                                            quake = quake,
-                                            userLocation = uiState.userLocation,
-                                            isSelected = uiState.selectedQuake?.id == quake.id,
-                                            onClick = {
-                                                viewModel.selectQuake(quake)
-                                                showDetailBottomSheet = true
-                                            }
-                                        )
+                                // Subtle Value Realization Banner
+                                if (donationState.canShowValuePrompt) {
+                                    ValueRealizationCard(
+                                        onOpenDonationDialog = { showDonationSheet = true },
+                                        onDismiss = { donationManager.dismissPrompt() }
+                                    )
+                                }
+
+                                if (uiState.filteredQuakes.isEmpty()) {
+                                    EmptyQuakesView(onResetFilters = {
+                                        viewModel.setMagFilter(MagFilter.ALL)
+                                        viewModel.setTsunamiOnly(false)
+                                        viewModel.setSearchQuery("")
+                                    })
+                                } else {
+                                    LazyColumn(modifier = Modifier.fillMaxSize()) {
+                                        items(uiState.filteredQuakes, key = { it.id }) { quake ->
+                                            EarthquakeListItem(
+                                                quake = quake,
+                                                userLocation = uiState.userLocation,
+                                                isSelected = uiState.selectedQuake?.id == quake.id,
+                                                onClick = {
+                                                    viewModel.selectQuake(quake)
+                                                    showDetailBottomSheet = true
+                                                }
+                                            )
+                                        }
                                     }
                                 }
                             }
@@ -840,10 +888,10 @@ fun MobileMainScreen(
                     EarthquakeDetailSheet(
                         quake = uiState.selectedQuake,
                         userLocation = uiState.userLocation,
-                        modifier = Modifier.heightIn(max = 550.dp)
+                        modifier = Modifier.fillMaxWidth().heightIn(max = 680.dp)
                     )
+                }
             }
-        }
     }
 }
 }
@@ -915,10 +963,12 @@ private fun FilterChipsRow(
     tsunamiOnly: Boolean,
     onToggleTsunami: (Boolean) -> Unit
 ) {
+    val scrollState = rememberScrollState()
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(horizontal = 16.dp, vertical = 6.dp),
+            .horizontalScroll(scrollState)
+            .padding(vertical = 4.dp),
         horizontalArrangement = Arrangement.spacedBy(8.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {

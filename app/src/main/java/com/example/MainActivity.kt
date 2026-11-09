@@ -1,13 +1,19 @@
 package com.example
 
+import android.app.UiModeManager
+import android.content.Context
+import android.content.pm.PackageManager
+import android.content.res.Configuration
 import android.os.Bundle
 import android.view.KeyEvent
 import androidx.activity.ComponentActivity
+import androidx.activity.compose.BackHandler
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -30,10 +36,27 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
+        val uiModeManager = getSystemService(Context.UI_MODE_SERVICE) as? UiModeManager
+        val isTelevision = uiModeManager?.currentModeType == Configuration.UI_MODE_TYPE_TELEVISION
+            || packageManager.hasSystemFeature(PackageManager.FEATURE_LEANBACK)
+            || packageManager.hasSystemFeature("android.hardware.type.television")
+
         setContent {
             val viewModel: QuakeCastViewModel = viewModel()
             viewModelRef = viewModel
             val uiState by viewModel.uiState.collectAsStateWithLifecycle()
+
+            // Auto-switch to TV mode if running on an Android TV / Leanback device
+            LaunchedEffect(isTelevision) {
+                if (isTelevision && !uiState.isTvMode) {
+                    viewModel.setTvMode(true)
+                }
+            }
+
+            // If on mobile and in TV mode, hardware back button exits TV mode
+            BackHandler(enabled = uiState.isTvMode && !isTelevision) {
+                viewModel.setTvMode(false)
+            }
 
             var appThemeMode by remember {
                 mutableStateOf(ThemeManager.getSavedThemeMode(this@MainActivity))
@@ -52,7 +75,13 @@ class MainActivity : ComponentActivity() {
                             onNext = { viewModel.navigateTvNext() },
                             onPrevious = { viewModel.navigateTvPrevious() },
                             onSelectQuake = { viewModel.selectQuake(it) },
-                            onExitTvMode = { viewModel.setTvMode(false) }
+                            onExitTvMode = {
+                                if (isTelevision) {
+                                    finish()
+                                } else {
+                                    viewModel.setTvMode(false)
+                                }
+                            }
                         )
                     } else {
                         MobileMainScreen(

@@ -108,7 +108,7 @@
 
     <!-- Support & Tip Jars -->
     <string name="settings_support_header">SOUTENIR LE DÉVELOPPEMENT INDÉPENDANT</string>
-    <string name="settings_support_desc">QuakeCast est 100% sans publicité, respectueux de la vie privée et axé sur la science ouverte. Si l\'application vous est utile, soutenez-nous.</string>
+    <string name="settings_support_desc">QuakeCast est 100%% sans publicité, respectueux de la vie privée et axé sur la science ouverte. Si l\'application vous est utile, soutenez-nous.</string>
     <string name="settings_tip_jars_header">CANAUX DE DON EN LIGNE</string>
     <string name="settings_paypal_desc">Transfert direct via l\'application PayPal ou navigateur</string>
     <string name="settings_paypal_button">Ouvrir PayPal (5 $)</string>
@@ -158,7 +158,7 @@
 
     <!-- Rate App Dialog -->
     <string name="rate_dialog_title">Trouvez-vous QuakeCast utile ?</string>
-    <string name="rate_dialog_subtitle">Télémétrie sismique indépendante 100% sans pub</string>
+    <string name="rate_dialog_subtitle">Télémétrie sismique indépendante 100%% sans pub</string>
     <string name="rate_dialog_description">Si QuakeCast vous aide à rester en sécurité et informé pendant les séismes, un avis 5 étoiles sur Google Play permettra à d\'autres de découvrir cet outil vital.</string>
     <string name="rate_dialog_confirm_button">Donner son avis sur Google Play ⭐️</string>
     <string name="rate_dialog_feedback_button">À améliorer 💬</string>
@@ -172,14 +172,14 @@
     <string name="share_dialog_title">Protégez vos proches et vos amis</string>
     <string name="share_dialog_subtitle">Vigilance sismique en temps réel</string>
     <string name="share_dialog_description">La sécurité face aux séismes concerne tout le monde. Partagez QuakeCast pour que vos proches reçoivent les alertes en direct et les conseils de survie.</string>
-    <string name="share_dialog_bullet_points">• 100% Sans publicité\n• Zéro traçage privé\n• Données USGS officielles</string>
+    <string name="share_dialog_bullet_points">• 100%% Sans publicité\n• Zéro traçage privé\n• Données USGS officielles</string>
     <string name="share_dialog_confirm_button">Partager le lien QuakeCast</string>
-    <string name="share_app_message">🚨 Restez en sécurité pendant les séismes grâce à QuakeCast !\n\nTélémétrie USGS en temps réel, simulateur d\'ondes 3D et alertes de proximité. 100% Sans pub et science ouverte :\nhttps://play.google.com/store/apps/details?id=%1$s</string>
+    <string name="share_app_message">🚨 Restez en sécurité pendant les séismes grâce à QuakeCast !\n\nTélémétrie USGS en temps réel, simulateur d\'ondes 3D et alertes de proximité. 100%% Sans pub et science ouverte :\nhttps://play.google.com/store/apps/details?id=%1$s</string>
     <string name="share_quake_message">🚨 Alerte Séisme : M %1$.1f — %2$s\nHeure : %3$s\nProfondeur : %4$.1f km\nDétails USGS : %5$s\n\nSuivi via l\'application QuakeCast</string>
 
     <!-- Toast & Feedback Messages -->
     <string name="toast_shake_detected">Secousse détectée ! Actualisation des séismes USGS en cours\u2026</string>
-    <string name="toast_milestone_reached">🎉 Étape franchie : %1$dᵉ consultation de données ! QuakeCast est 100% sans publicité.</string>
+    <string name="toast_milestone_reached">🎉 Étape franchie : %1$dᵉ consultation de données ! QuakeCast est 100%% sans publicité.</string>
     <string name="btn_support_dev">Soutenir dev</string>
 
     <!-- Donation Bottom Sheet -->

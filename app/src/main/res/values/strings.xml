@@ -108,7 +108,7 @@
 
     <!-- Support & Tip Jars -->
     <string name="settings_support_header">SUPPORT INDEPENDENT DEVELOPMENT</string>
-    <string name="settings_support_desc">QuakeCast is 100% ad-free, open science, and telemetry-private. If this app keeps you informed and safe, consider a voluntary contribution.</string>
+    <string name="settings_support_desc">QuakeCast is 100%% ad-free, open science, and telemetry-private. If this app keeps you informed and safe, consider a voluntary contribution.</string>
     <string name="settings_tip_jars_header">DIRECT WEB TIP JARS</string>
     <string name="settings_paypal_desc">Direct transfer via PayPal app or browser</string>
     <string name="settings_paypal_button">Open PayPal ($5)</string>
@@ -158,7 +158,7 @@
 
     <!-- Rate App Dialog -->
     <string name="rate_dialog_title">Finding QuakeCast Helpful?</string>
-    <string name="rate_dialog_subtitle">100% Ad-Free Independent Seismic Telemetry</string>
+    <string name="rate_dialog_subtitle">100%% Ad-Free Independent Seismic Telemetry</string>
     <string name="rate_dialog_description">If QuakeCast keeps you informed and safe during seismic events, a 5-star rating on Google Play helps others discover this life-safety tool.</string>
     <string name="rate_dialog_confirm_button">Rate on Google Play ⭐️</string>
     <string name="rate_dialog_feedback_button">Needs Work 💬</string>
@@ -172,14 +172,14 @@
     <string name="share_dialog_title">Protect Friends &amp; Family</string>
     <string name="share_dialog_subtitle">Real-Time Earthquake Awareness</string>
     <string name="share_dialog_description">Earthquake safety is a community effort. Share QuakeCast with your loved ones so they receive instant tremor notifications, 3D shockwave arrival estimates, and emergency checklists.</string>
-    <string name="share_dialog_bullet_points">• 100% Ad-Free\n• Zero Tracking\n• Direct USGS Real-Time Telemetry</string>
+    <string name="share_dialog_bullet_points">• 100%% Ad-Free\n• Zero Tracking\n• Direct USGS Real-Time Telemetry</string>
     <string name="share_dialog_confirm_button">Share QuakeCast Link</string>
-    <string name="share_app_message">🚨 Stay safe and alerted during earthquakes with QuakeCast!\n\nLive USGS seismic telemetry, 3D shockwave simulators, and proximity tremor notifications. 100% Ad-Free &amp; Open Science:\nhttps://play.google.com/store/apps/details?id=%1$s</string>
+    <string name="share_app_message">🚨 Stay safe and alerted during earthquakes with QuakeCast!\n\nLive USGS seismic telemetry, 3D shockwave simulators, and proximity tremor notifications. 100%% Ad-Free &amp; Open Science:\nhttps://play.google.com/store/apps/details?id=%1$s</string>
     <string name="share_quake_message">🚨 Earthquake Alert: M %1$.1f — %2$s\nTime: %3$s\nDepth: %4$.1f km\nUSGS Details: %5$s\n\nTracked via QuakeCast App</string>
 
     <!-- Toast & Feedback Messages -->
     <string name="toast_shake_detected">Device Tremor / Shake Detected! Refreshing USGS feeds\u2026</string>
-    <string name="toast_milestone_reached">🎉 Milestone Reached: %1$dth Seismic Feed Lookup! QuakeCast is 100% ad-free &amp; independent.</string>
+    <string name="toast_milestone_reached">🎉 Milestone Reached: %1$dth Seismic Feed Lookup! QuakeCast is 100%% ad-free &amp; independent.</string>
     <string name="btn_support_dev">Support Dev</string>
 
     <!-- Donation Bottom Sheet -->

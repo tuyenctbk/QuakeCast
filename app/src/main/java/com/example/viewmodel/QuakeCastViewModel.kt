@@ -65,14 +65,17 @@ class QuakeCastViewModel(
             _uiState.update { state ->
                 val filtered = applyFilters(quakes, state.magFilter, state.searchQuery, state.tsunamiOnly)
                 val sigs = quakes.filter { it.magnitude >= 4.5 }.take(10)
-                val selected = state.selectedQuake ?: quakes.firstOrNull()
+                val significantList = if (sigs.isNotEmpty()) sigs else quakes.take(10)
+                val selected = state.selectedQuake ?: significantList.firstOrNull() ?: quakes.firstOrNull()
+                val tvIdx = if (selected != null) significantList.indexOfFirst { it.id == selected.id }.coerceAtLeast(0) else 0
                 val alerts = calculateProximityAlerts(quakes, state.userLocation)
 
                 state.copy(
                     quakes = quakes,
                     filteredQuakes = filtered,
-                    significantQuakes = if (sigs.isNotEmpty()) sigs else quakes.take(10),
+                    significantQuakes = significantList,
                     selectedQuake = selected,
+                    tvIndex = tvIdx,
                     proximityAlerts = alerts,
                     isLoading = false,
                     isOfflineMode = result.isFromCache,

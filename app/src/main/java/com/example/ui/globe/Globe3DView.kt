@@ -177,33 +177,37 @@ fun Globe3DView(
             )
         }
 
-        // Depth Color Legend Overlay (Bottom Left)
-        Surface(
-            modifier = Modifier
-                .align(Alignment.BottomStart)
-                .padding(16.dp),
-            color = DarkSurface.copy(alpha = 0.85f),
-            shape = RoundedCornerShape(10.dp),
-            border = androidx.compose.foundation.BorderStroke(1.dp, Color.White.copy(alpha = 0.12f))
-        ) {
-            Column(modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp)) {
-                Text(
-                    text = "SEISMIC DEPTH",
-                    style = MaterialTheme.typography.labelSmall.copy(
-                        color = PulseCyan,
-                        fontSize = 9.sp,
-                        fontWeight = FontWeight.Bold,
-                        letterSpacing = 1.sp
+        val bottomSpacing = if (selectedQuake != null && !isTvMode) 105.dp else 16.dp
+
+        // Depth Color Legend Overlay (Bottom Left, Mobile only)
+        if (!isTvMode) {
+            Surface(
+                modifier = Modifier
+                    .align(Alignment.BottomStart)
+                    .padding(start = 16.dp, end = 16.dp, bottom = bottomSpacing),
+                color = DarkSurface.copy(alpha = 0.90f),
+                shape = RoundedCornerShape(10.dp),
+                border = androidx.compose.foundation.BorderStroke(1.dp, Color.White.copy(alpha = 0.15f))
+            ) {
+                Column(modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp)) {
+                    Text(
+                        text = "SEISMIC DEPTH",
+                        style = MaterialTheme.typography.labelSmall.copy(
+                            color = PulseCyan,
+                            fontSize = 9.sp,
+                            fontWeight = FontWeight.Bold,
+                            letterSpacing = 1.sp
+                        )
                     )
-                )
-                Spacer(modifier = Modifier.height(4.dp))
-                Row(
-                    horizontalArrangement = Arrangement.spacedBy(10.dp),
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    LegendItem(color = ShallowDepthColor, label = "< 30 km (Shallow)")
-                    LegendItem(color = MidDepthColor, label = "30-70 km (Mid)")
-                    LegendItem(color = DeepDepthColor, label = "> 70 km (Deep)")
+                    Spacer(modifier = Modifier.height(4.dp))
+                    Row(
+                        horizontalArrangement = Arrangement.spacedBy(10.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        LegendItem(color = ShallowDepthColor, label = "< 30 km (Shallow)")
+                        LegendItem(color = MidDepthColor, label = "30-70 km (Mid)")
+                        LegendItem(color = DeepDepthColor, label = "> 70 km (Deep)")
+                    }
                 }
             }
         }
@@ -213,7 +217,7 @@ fun Globe3DView(
             Column(
                 modifier = Modifier
                     .align(Alignment.BottomEnd)
-                    .padding(16.dp),
+                    .padding(end = 16.dp, bottom = bottomSpacing),
                 verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
                 if (onToggleAutoRotate != null) {

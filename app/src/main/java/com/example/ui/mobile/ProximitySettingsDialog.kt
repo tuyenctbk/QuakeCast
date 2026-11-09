@@ -2,6 +2,7 @@ package com.example.ui.mobile
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
@@ -156,14 +157,16 @@ fun ProximitySettingsDialog(
 
                     // Quick Step Chips
                     Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.SpaceBetween
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .horizontalScroll(rememberScrollState()),
+                        horizontalArrangement = Arrangement.spacedBy(8.dp)
                     ) {
                         listOf(100f, 250f, 500f, 1000f, 1500f).forEach { presetKm ->
                             FilterChip(
                                 selected = radiusKm.toInt() == presetKm.toInt(),
                                 onClick = { radiusKm = presetKm },
-                                label = { Text("${presetKm.toInt()} km", fontSize = 11.sp) },
+                                label = { Text("${presetKm.toInt()} km", fontSize = 11.sp, maxLines = 1) },
                                 colors = FilterChipDefaults.filterChipColors(
                                     selectedContainerColor = PulseCyan,
                                     selectedLabelColor = Color.Black

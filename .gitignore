@@ -1,18 +1,39 @@
-*.iml
-.gradle
-.kotlin
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+# Gradle and build files
+.gradle/
+build/
+*/build/
+
+# Local configuration and environment
 local.properties
 .env
-debug.keystore
+.env.local
+
+# Keystores and certificates
+*.jks
+*.keystore
+*.key
+*.p12
+*.pem
+
+# Android Studio and IDEs
+.idea/
+*.iml
+.vscode/
+.kotlin/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Output artifacts
+*.apk
+*.apks
+*.aab

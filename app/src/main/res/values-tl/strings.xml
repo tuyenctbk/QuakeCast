@@ -108,7 +108,7 @@
 
     <!-- Support & Tip Jars -->
     <string name="settings_support_header">SUPORTAHAN ANG INDEPENDENT DEV</string>
-    <string name="settings_support_desc">Ang QuakeCast ay 100% walang ad, bukas na agham, at protektado ang iyong privacy. Kung nakatutulong ito sa iyong kaligtasan, mag-donate nang kusa.</string>
+    <string name="settings_support_desc">Ang QuakeCast ay 100%% walang ad, bukas na agham, at protektado ang iyong privacy. Kung nakatutulong ito sa iyong kaligtasan, mag-donate nang kusa.</string>
     <string name="settings_tip_jars_header">DIREKTANG TIP SA WEB</string>
     <string name="settings_paypal_desc">Direktang donasyon sa pamamagitan ng PayPal app o browser</string>
     <string name="settings_paypal_button">Buksan ang PayPal ($5)</string>
@@ -158,7 +158,7 @@
 
     <!-- Rate App Dialog -->
     <string name="rate_dialog_title">Nakatutulong ba ang QuakeCast?</string>
-    <string name="rate_dialog_subtitle">100% Walang Ad na Independent Earthquake Tracker</string>
+    <string name="rate_dialog_subtitle">100%% Walang Ad na Independent Earthquake Tracker</string>
     <string name="rate_dialog_description">Kung pinapanatili ka ng QuakeCast na ligtas at handa sa panahon ng lindol, ang 5-star rating sa Google Play ay makatutulong upang matuklasan ito ng iba.</string>
     <string name="rate_dialog_confirm_button">Markahan sa Google Play ⭐️</string>
     <string name="rate_dialog_feedback_button">Kailangang Ayusin 💬</string>
@@ -172,14 +172,14 @@
     <string name="share_dialog_title">Protektahan ang Pamilya at Kaibigan</string>
     <string name="share_dialog_subtitle">Kaalaman sa Lindol sa Bawat Sandali</string>
     <string name="share_dialog_description">Ang kaligtasan sa lindol ay sama-samang pagtutulungan. Ibahagi ang QuakeCast sa iyong mga mahal sa buhay upang makatanggap sila ng maagang babala at mga gabay sa paglikas.</string>
-    <string name="share_dialog_bullet_points">• 100% Walang Ads\n• Walang Data Tracking\n• Opisyal na Datos mula sa USGS</string>
+    <string name="share_dialog_bullet_points">• 100%% Walang Ads\n• Walang Data Tracking\n• Opisyal na Datos mula sa USGS</string>
     <string name="share_dialog_confirm_button">Ibahagi ang Link ng QuakeCast</string>
-    <string name="share_app_message">🚨 Maging ligtas at laging handa kapag lumilindol gamit ang QuakeCast!\n\nLive USGS seismic telemetry, 3D shockwave simulator, at proximity warnings. 100% Walang Ads at Libre:\nhttps://play.google.com/store/apps/details?id=%1$s</string>
+    <string name="share_app_message">🚨 Maging ligtas at laging handa kapag lumilindol gamit ang QuakeCast!\n\nLive USGS seismic telemetry, 3D shockwave simulator, at proximity warnings. 100%% Walang Ads at Libre:\nhttps://play.google.com/store/apps/details?id=%1$s</string>
     <string name="share_quake_message">🚨 Babala sa Lindol: M %1$.1f — %2$s\nOras: %3$s\nLalim: %4$.1f km\nDetalye sa USGS: %5$s\n\nSinubaybayan gamit ang QuakeCast App</string>
 
     <!-- Toast & Feedback Messages -->
     <string name="toast_shake_detected">May naramdamang pag-alog! Kinukuha ang pinakabagong datos mula sa USGS\u2026</string>
-    <string name="toast_milestone_reached">🎉 Tagumpay: Ika-%1$d na pagsusuri ng lindol! Ang QuakeCast ay 100% independyente at walang ad.</string>
+    <string name="toast_milestone_reached">🎉 Tagumpay: Ika-%1$d na pagsusuri ng lindol! Ang QuakeCast ay 100%% independyente at walang ad.</string>
     <string name="btn_support_dev">Suportahan ang Dev</string>
 
     <!-- Donation Bottom Sheet -->

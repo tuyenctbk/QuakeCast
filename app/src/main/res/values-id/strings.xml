@@ -108,7 +108,7 @@
 
     <!-- Support & Tip Jars -->
     <string name="settings_support_header">DUKUNG PENGEMBANGAN MANDIRI</string>
-    <string name="settings_support_desc">QuakeCast 100% bebas iklan, mengutamakan sains terbuka dan privasi. Dukung kami jika aplikasi ini bermanfaat bagi keselamatan Anda.</string>
+    <string name="settings_support_desc">QuakeCast 100%% bebas iklan, mengutamakan sains terbuka dan privasi. Dukung kami jika aplikasi ini bermanfaat bagi keselamatan Anda.</string>
     <string name="settings_tip_jars_header">KOTAK TIP WEB LANGSUNG</string>
     <string name="settings_paypal_desc">Transfer langsung via aplikasi atau browser PayPal</string>
     <string name="settings_paypal_button">Buka PayPal ($5)</string>
@@ -158,7 +158,7 @@
 
     <!-- Rate App Dialog -->
     <string name="rate_dialog_title">Apakah QuakeCast Bermanfaat?</string>
-    <string name="rate_dialog_subtitle">Telemetri Gempa Mandiri 100% Bebas Iklan</string>
+    <string name="rate_dialog_subtitle">Telemetri Gempa Mandiri 100%% Bebas Iklan</string>
     <string name="rate_dialog_description">Jika QuakeCast membantu Anda tetap waspada dan aman saat gempa, ulasan bintang 5 di Google Play sangat membantu orang lain menemukan aplikasi penyelamat ini.</string>
     <string name="rate_dialog_confirm_button">Beri Nilai di Google Play ⭐️</string>
     <string name="rate_dialog_feedback_button">Perlu Perbaikan 💬</string>
@@ -172,14 +172,14 @@
     <string name="share_dialog_title">Lindungi Keluarga &amp; Teman</string>
     <string name="share_dialog_subtitle">Kesadaran Gempa Bumi Waktu Nyata</string>
     <string name="share_dialog_description">Keselamatan bencana adalah upaya bersama. Bagikan QuakeCast kepada orang tercinta agar mereka menerima peringatan dini getaran dan panduan darurat.</string>
-    <string name="share_dialog_bullet_points">• 100% Bebas Iklan\n• Nol Pelacakan Privasi\n• Data Langsung dari USGS</string>
+    <string name="share_dialog_bullet_points">• 100%% Bebas Iklan\n• Nol Pelacakan Privasi\n• Data Langsung dari USGS</string>
     <string name="share_dialog_confirm_button">Bagikan Tautan QuakeCast</string>
-    <string name="share_app_message">🚨 Tetap aman dan waspada saat gempa bumi dengan QuakeCast!\n\nData gempa USGS langsung, simulasi gelombang 3D, dan notifikasi radius gempa. 100% Bebas Iklan &amp; Sains Terbuka:\nhttps://play.google.com/store/apps/details?id=%1$s</string>
+    <string name="share_app_message">🚨 Tetap aman dan waspada saat gempa bumi dengan QuakeCast!\n\nData gempa USGS langsung, simulasi gelombang 3D, dan notifikasi radius gempa. 100%% Bebas Iklan &amp; Sains Terbuka:\nhttps://play.google.com/store/apps/details?id=%1$s</string>
     <string name="share_quake_message">🚨 Peringatan Gempa: M %1$.1f — %2$s\nWaktu: %3$s\nKedalaman: %4$.1f km\nRincian USGS: %5$s\n\nDipantau melalui QuakeCast</string>
 
     <!-- Toast & Feedback Messages -->
     <string name="toast_shake_detected">Goyangan Terdeteksi! Memperbarui data gempa USGS\u2026</string>
-    <string name="toast_milestone_reached">🎉 Pencapaian: Pencarian data gempa ke-%1$d! QuakeCast 100% mandiri dan bebas iklan.</string>
+    <string name="toast_milestone_reached">🎉 Pencapaian: Pencarian data gempa ke-%1$d! QuakeCast 100%% mandiri dan bebas iklan.</string>
     <string name="btn_support_dev">Dukung Dev</string>
 
     <!-- Donation Bottom Sheet -->

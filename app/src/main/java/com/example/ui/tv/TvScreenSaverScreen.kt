@@ -312,7 +312,7 @@ fun TvScreenSaverScreen(
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         Text(
-                            text = "Depth: ${currentQuake.depth} km (${currentQuake.depthCategory.label})",
+                            text = "Depth: ${String.format("%.1f", currentQuake.depth)} km (${currentQuake.depthCategory.label})",
                             style = MaterialTheme.typography.bodyMedium.copy(color = Color.LightGray)
                         )
                         Text(
@@ -418,7 +418,7 @@ fun TvScreenSaverScreen(
                                 maxLines = 1
                             )
                             Text(
-                                text = "${quake.depth} km",
+                                text = "${String.format("%.1f", quake.depth)} km",
                                 style = MaterialTheme.typography.labelSmall.copy(color = Color.Gray, fontSize = 9.sp)
                             )
                         }
@@ -440,7 +440,7 @@ fun TvScreenSaverScreen(
                 text = {
                     Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
                         Text("Magnitude: M ${currentQuake.magnitude} (${currentQuake.magType.uppercase()})", color = Color.White)
-                        Text("Depth: ${currentQuake.depth} km (${currentQuake.depthCategory.label})", color = Color.White)
+                        Text("Depth: ${String.format("%.1f", currentQuake.depth)} km (${currentQuake.depthCategory.label})", color = Color.White)
                         Text("Coordinates: ${currentQuake.latitude}°, ${currentQuake.longitude}°", color = Color.White)
                         Text("Recorded Time: ${TimeUtils.formatDateTime(currentQuake.time)}", color = Color.White)
                         if (currentQuake.felt != null) {
