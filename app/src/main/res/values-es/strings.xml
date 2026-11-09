@@ -1,0 +1,193 @@
+<resources>
+    <!-- App Identity -->
+    <string name="app_name">QuakeCast</string>
+    <string name="app_tagline">Impulsado por transmisiones USGS GeoJSON en tiempo real y renderizador 3D Jetpack Compose.</string>
+    <string name="app_version_name">QuakeCast v1.0.0</string>
+
+    <!-- Navigation Tabs -->
+    <string name="tab_globe">Globo 3D</string>
+    <string name="tab_list">Sismos</string>
+    <string name="tab_alerts">Alertas</string>
+    <string name="tab_safety">Seguridad</string>
+    <string name="tab_chart_30_days">Gráfico 30 Días</string>
+
+    <!-- App Bar & Actions -->
+    <string name="badge_room_cache">CACHÉ ROOM</string>
+    <string name="badge_usgs_live">USGS EN VIVO</string>
+    <string name="badge_supporter">Colaborador</string>
+    <string name="btn_tv_mode">Modo TV</string>
+    <string name="search_placeholder">Buscar ubicación o región\u2026</string>
+    <string name="search_content_description">Buscar</string>
+    <string name="clear_search">Borrar</string>
+    <string name="proximity_settings_cd">Ajustes de proximidad</string>
+    <string name="toggle_audio_alerts_cd">Alternar alertas de audio</string>
+    <string name="timeframe_cd">Período de tiempo</string>
+    <string name="refresh_feed_cd">Actualizar lista</string>
+    <string name="settings_cd">Configuración y apoyo</string>
+    <string name="support_dev_tip_cd">Apoyar desarrollo de QuakeCast</string>
+
+    <!-- Filter Bar -->
+    <string name="filter_tsunami">Tsunami</string>
+    <string name="feed_count_format">EVENTOS EN VIVO (%1$d)</string>
+    <string name="feed_radius_format">Radio: %1$d km</string>
+
+    <!-- Empty State -->
+    <string name="empty_quakes_title">No se hallaron terremotos</string>
+    <string name="empty_quakes_desc">Ningún temblor coincide con los filtros de magnitud o búsqueda actuales.</string>
+    <string name="btn_reset_filters">Restablecer filtros</string>
+
+    <!-- Event Item & Details -->
+    <string name="tap_to_view_details">Toca para ver ondas de choque y energía</string>
+    <string name="quake_details_header">Inspector sísmico</string>
+    <string name="magnitude_prefix">M %1$.1f</string>
+    <string name="depth_format">Profundidad: %1$.1f km</string>
+    <string name="distance_format">A %1$.1f km</string>
+    <string name="estimated_arrival">Llegada estimada</string>
+    <string name="primary_p_wave">Onda P (Primaria)</string>
+    <string name="secondary_s_wave">Onda S (Secundaria)</string>
+    <string name="energy_equivalent">Energía estimada</string>
+    <string name="btn_view_usgs">Ver en USGS</string>
+    <string name="btn_share_quake">Compartir evento</string>
+
+    <!-- Proximity Warning Banner -->
+    <string name="proximity_banner_title">ALERTA SÍSMICA DE PROXIMIDAD</string>
+    <string name="proximity_alert_distance_format">%1$.1f km de %2$s</string>
+    <string name="btn_speak">Pronunciar</string>
+
+    <!-- Proximity Settings Dialog -->
+    <string name="proximity_dialog_title">Ubicación de alerta sísmica</string>
+    <string name="proximity_dialog_desc">Establece tus coordenadas y radio para recibir alertas inmediatas de proximidad y anuncios de voz TTS.</string>
+    <string name="label_location_name">Nombre de ubicación</string>
+    <string name="label_latitude">Latitud (°)</string>
+    <string name="label_longitude">Longitud (°)</string>
+    <string name="label_alert_radius">Radio de alerta (%1$d km)</string>
+    <string name="enable_audio_narration">Voz de alerta automática</string>
+    <string name="enable_audio_narration_desc">Vocaliza temblores cercanos al actualizar el feed</string>
+    <string name="btn_save_location">Guardar coordenadas</string>
+    <string name="btn_cancel">Cancelar</string>
+
+    <!-- Safety Guide Screen -->
+    <string name="safety_guide_title">Guía de seguridad ante sismos</string>
+    <string name="safety_subtitle">Pautas de supervivencia avaladas por USGS y FEMA</string>
+    <string name="safety_drop_title">1. Agáchate, Cúbrete y Agárrate</string>
+    <string name="safety_drop_desc">AGÁCHATE de manos y rodillas. CÚBRETE la cabeza y cuello bajo una mesa firme. AGÁRRATE hasta que cese el temblor.</string>
+    <string name="safety_indoor_title">2. Quédate adentro</string>
+    <string name="safety_indoor_desc">NO salgas corriendo durante el temblor. La mayoría de lesiones ocurren por escombros y vidrios caídos de fachadas.</string>
+    <string name="safety_hazard_title">3. Revisa suministros tras el sismo</string>
+    <string name="safety_hazard_desc">Revisa fugas de gas y cierra la llave principal si hueles a gas. No enciendas cerillas ni interruptores eléctricos.</string>
+    <string name="safety_kit_title">4. Mochila de emergencia lista</string>
+    <string name="safety_kit_desc">Mantén 3 días de agua (4L por persona/día), comida no perecedera, linterna, botiquín, silbato y batería portátil.</string>
+
+    <!-- Settings & Support Screen -->
+    <string name="settings_title">Ajustes y Colaboración</string>
+    <string name="action_back">Volver</string>
+    <string name="supporter_active_title">Estado de Colaborador Activo</string>
+    <string name="supporter_active_desc">¡Gracias por apoyar \'%1$s\'! Los avisos voluntarios quedan permanentemente desactivados.</string>
+    <string name="settings_shake_header">SENSIBILIDAD DE AGITACIÓN PARA ACTUALIZAR</string>
+    <string name="settings_shake_desc">Ajusta el umbral de fuerza g al agitar el dispositivo para forzar una actualización inmediata de USGS ante un temblor.</string>
+    <string name="shake_to_refresh_title">Agitar para actualizar</string>
+    <string name="shake_active_status">Activo mediante SensorManager</string>
+    <string name="disabled_status">Desactivado</string>
+    <string name="shake_required_force">Fuerza requerida</string>
+    <string name="shake_sens_high_desc">Alta sensibilidad — Se activa con un leve giro de muñeca</string>
+    <string name="shake_sens_med_desc">Sensibilidad estándar — Movimiento deliberado</string>
+    <string name="shake_sens_low_desc">Baja sensibilidad — Agitación vigorosa (anti-bolsillo)</string>
+    <string name="shake_preset_gentle">Suave (1.8g)</string>
+    <string name="shake_preset_standard">Estándar (2.5g)</string>
+    <string name="shake_preset_firm">Firme (3.5g)</string>
+    <string name="settings_theme_header">TEMA Y APARIENCIA GLOBAL</string>
+    <string name="settings_theme_desc">Cambia la paleta de colores de la app o adáptala a la preferencia del sistema.</string>
+    <string name="settings_theme_mode_title">Modo de tema</string>
+    <string name="settings_current_theme">Actual: %1$s</string>
+    <string name="theme_system_title">Seguir el sistema</string>
+    <string name="theme_system_desc">Se adapta automáticamente al modo claro u oscuro de Android</string>
+    <string name="theme_dark_title">Tema oscuro</string>
+    <string name="theme_dark_desc">Paleta azul cósmica profunda para OLED y vigilancia nocturna</string>
+    <string name="theme_light_title">Tema claro</string>
+    <string name="theme_light_desc">Modo claro de alto contraste para lectura de día</string>
+
+    <!-- Support & Tip Jars -->
+    <string name="settings_support_header">APOYAR DESARROLLO INDEPENDIENTE</string>
+    <string name="settings_support_desc">QuakeCast no tiene publicidad, es ciencia abierta y privada. Si te ayuda a mantenerte a salvo, considera contribuir.</string>
+    <string name="settings_tip_jars_header">PROPINAS DIRECTAS EN LA WEB</string>
+    <string name="settings_paypal_desc">Transferencia directa con la app de PayPal o navegador</string>
+    <string name="settings_paypal_button">Abrir PayPal ($5)</string>
+    <string name="settings_kofi_desc">0% de comisiones para la ciencia abierta</string>
+    <string name="settings_kofi_button">Abrir Ko-fi</string>
+
+    <!-- Community & Engagement Telemetry -->
+    <string name="settings_engagement_header">COMUNIDAD Y AVISOS AUTOMÁTICOS</string>
+    <string name="settings_engagement_desc">QuakeCast emplea heurísticas con intervalo mínimo de 30 días y bloqueo durante emergencias para no molestar al usuario.</string>
+    <string name="settings_telemetry_title">Telemetría de interacción</string>
+    <string name="telemetry_install_duration">Tiempo instalado:</string>
+    <string name="telemetry_days_format">%1$d días</string>
+    <string name="telemetry_manual_refreshes">Actualizaciones manuales:</string>
+    <string name="telemetry_refreshes_needed_format">%1$d / 5 necesarias</string>
+    <string name="telemetry_operations">Acciones verificadas:</string>
+    <string name="telemetry_actions_format">%1$d acciones</string>
+    <string name="telemetry_prompt_cooldown">Intervalo de aviso:</string>
+    <string name="telemetry_cooldown_val">Mínimo 30 días</string>
+    <string name="telemetry_play_rating">Valoración en Google Play:</string>
+    <string name="telemetry_rated">Valorado ⭐️</string>
+    <string name="telemetry_not_rated">Aún no valorado</string>
+    <string name="telemetry_shared">Compartido con comunidad:</string>
+    <string name="telemetry_already_shared">Compartido 📢</string>
+    <string name="telemetry_not_shared">Aún no compartido</string>
+    <string name="settings_preview_title">Vista previa instantánea y QA</string>
+    <string name="btn_preview_update">Actualizar 🚀</string>
+    <string name="btn_preview_rate">Valorar ⭐️</string>
+    <string name="btn_preview_share">Compartir 📢</string>
+
+    <!-- Thank you Dialog -->
+    <string name="thank_you_title">¡Gracias por tu apoyo!</string>
+    <string name="thank_you_desc">¡Has desbloqueado el estado de Colaborador \'%1$s\'! Los avisos voluntarios de donación han quedado ocultos.</string>
+    <string name="btn_awesome">¡Genial!</string>
+
+    <!-- Update App Dialog -->
+    <string name="update_dialog_title">Actualización disponible</string>
+    <string name="update_dialog_version_ready">QuakeCast v1.1.0 lista</string>
+    <string name="update_dialog_description">Nueva actualización con mejoras de telemetría y rendimiento visual:</string>
+    <string name="update_feature_feed_title">Aceleración de datos en vivo</string>
+    <string name="update_feature_feed_desc">Sondeo USGS GeoJSON más rápido y menor consumo de datos.</string>
+    <string name="update_feature_globe_title">Visuales del globo 3D mejorados</string>
+    <string name="update_feature_globe_desc">Fallas tectónicas en mayor resolución y rotación suave.</string>
+    <string name="update_feature_proximity_title">Sensibilidad de proximidad</string>
+    <string name="update_feature_proximity_desc">Cálculos subkilométricos de hipocentro sísmico.</string>
+    <string name="update_button_now">Actualizar ahora</string>
+    <string name="remind_me_later">Recordármelo más tarde</string>
+
+    <!-- Rate App Dialog -->
+    <string name="rate_dialog_title">¿Te resulta útil QuakeCast?</string>
+    <string name="rate_dialog_subtitle">Telemetría sísmica 100% libre de anuncios</string>
+    <string name="rate_dialog_description">Si QuakeCast te mantiene seguro e informado durante sismos, una reseña de 5 estrellas en Google Play ayuda a otros a descubrirla.</string>
+    <string name="rate_dialog_confirm_button">Calificar en Google Play ⭐️</string>
+    <string name="rate_dialog_feedback_button">Puede mejorar 💬</string>
+    <string name="maybe_later">Quizás luego</string>
+    <string name="feedback_dialog_title">Ayúdanos a mejorar QuakeCast</string>
+    <string name="feedback_dialog_description">¡Tu opinión nos importa! ¿Te gustaría enviar una sugerencia directa a nuestro equipo de ingenieros?</string>
+    <string name="feedback_dialog_send_button">Enviar comentarios</string>
+    <string name="no_thanks">No, gracias</string>
+
+    <!-- Share App Dialog -->
+    <string name="share_dialog_title">Protege a tus seres queridos</string>
+    <string name="share_dialog_subtitle">Alerta sísmica en tiempo real</string>
+    <string name="share_dialog_description">La seguridad sísmica es comunitaria. Comparte QuakeCast para que reciban avisos instantáneos, estimaciones de ondas de choque y guías de emergencia.</string>
+    <string name="share_dialog_bullet_points">• 100% Libre de anuncios\n• Cero rastreo\n• Telemetría USGS directa</string>
+    <string name="share_dialog_confirm_button">Compartir enlace QuakeCast</string>
+    <string name="share_app_message">🚨 ¡Mantente alerta y seguro ante terremotos con QuakeCast!\n\nTelemetría USGS en vivo, simulador 3D de ondas y alertas de proximidad. 100% Libre de anuncios y ciencia abierta:\nhttps://play.google.com/store/apps/details?id=%1$s</string>
+    <string name="share_quake_message">🚨 Alerta Sísmica: M %1$.1f — %2$s\nHora: %3$s\nProfundidad: %4$.1f km\nDetalles USGS: %5$s\n\nRegistrado vía QuakeCast</string>
+
+    <!-- Toast & Feedback Messages -->
+    <string name="toast_shake_detected">¡Temblor detectado! Actualizando sismos de USGS\u2026</string>
+    <string name="toast_milestone_reached">🎉 ¡Logro: %1$d.ª consulta sísmica! QuakeCast es 100% independiente y sin publicidad.</string>
+    <string name="btn_support_dev">Apoyar dev</string>
+
+    <!-- Donation Bottom Sheet -->
+    <string name="donation_sheet_title">Apoyar el desarrollo de QuakeCast</string>
+    <string name="donation_sheet_desc">Ayuda a mantener los servidores mundiales de telemetría rápidos, sin anuncios y accesibles para todos.</string>
+    <string name="donation_btn_active">Activo 💛</string>
+    <string name="donation_value_card_title">Cuidando de tu seguridad</string>
+    <string name="donation_value_card_desc">Has monitoreado eventos sísmicos con cero anuncios y cero rastreo. Si valoras esta labor científica, considera una pequeña contribución.</string>
+    <string name="donation_value_card_btn">Apoyar desarrollo</string>
+    <string name="donation_value_card_dismiss">Descartar</string>
+</resources>

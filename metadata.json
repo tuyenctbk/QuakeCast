@@ -1,0 +1,6 @@
+{
+  "name": "QuakeCast",
+  "description": "USGS Live Seismic Monitor & TV Screen Saver with 3D Globe, Real-time Proximity Warnings & Dual-Pane Interface",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

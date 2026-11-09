@@ -1,0 +1,193 @@
+<resources>
+    <!-- App Identity -->
+    <string name="app_name">QuakeCast</string>
+    <string name="app_tagline">リアルタイムUSGS GeoJSON配信＆Android Jetpack Compose 3Dレンダラー搭載。</string>
+    <string name="app_version_name">QuakeCast v1.0.0</string>
+
+    <!-- Navigation Tabs -->
+    <string name="tab_globe">3D地球儀</string>
+    <string name="tab_list">地震一覧</string>
+    <string name="tab_alerts">緊急警報</string>
+    <string name="tab_safety">防災ガイド</string>
+    <string name="tab_chart_30_days">30日分析</string>
+
+    <!-- App Bar & Actions -->
+    <string name="badge_room_cache">ROOMキャッシュ</string>
+    <string name="badge_usgs_live">USGSライブ</string>
+    <string name="badge_supporter">サポーター</string>
+    <string name="btn_tv_mode">テレビ表示</string>
+    <string name="search_placeholder">地域や国名を検索\u2026</string>
+    <string name="search_content_description">検索</string>
+    <string name="clear_search">消去</string>
+    <string name="proximity_settings_cd">接近警報設定</string>
+    <string name="toggle_audio_alerts_cd">音声警報の切替</string>
+    <string name="timeframe_cd">期間</string>
+    <string name="refresh_feed_cd">最新情報に更新</string>
+    <string name="settings_cd">設定と開発支援</string>
+    <string name="support_dev_tip_cd">QuakeCastの開発を支援</string>
+
+    <!-- Filter Bar -->
+    <string name="filter_tsunami">津波</string>
+    <string name="feed_count_format">地震速報 (%1$d件)</string>
+    <string name="feed_radius_format">半径: %1$d km</string>
+
+    <!-- Empty State -->
+    <string name="empty_quakes_title">地震データがありません</string>
+    <string name="empty_quakes_desc">選択された規模フィルターや検索条件に一致する揺れはありません。</string>
+    <string name="btn_reset_filters">フィルターをリセット</string>
+
+    <!-- Event Item & Details -->
+    <string name="tap_to_view_details">タップして衝撃波とエネルギーを表示</string>
+    <string name="quake_details_header">地震詳細インスペクター</string>
+    <string name="magnitude_prefix">M %1$.1f</string>
+    <string name="depth_format">震源の深さ: %1$.1f km</string>
+    <string name="distance_format">現在地から %1$.1f km</string>
+    <string name="estimated_arrival">推定到達時刻</string>
+    <string name="primary_p_wave">P波（初期微動）</string>
+    <string name="secondary_s_wave">S波（主要動）</string>
+    <string name="energy_equivalent">推定放出エネルギー</string>
+    <string name="btn_view_usgs">USGS公式ページを開く</string>
+    <string name="btn_share_quake">地震情報を共有</string>
+
+    <!-- Proximity Warning Banner -->
+    <string name="proximity_banner_title">緊急地震接近警報</string>
+    <string name="proximity_alert_distance_format">%2$sから %1$.1f km</string>
+    <string name="btn_speak">音声読み上げ</string>
+
+    <!-- Proximity Settings Dialog -->
+    <string name="proximity_dialog_title">接近警報の拠点設定</string>
+    <string name="proximity_dialog_desc">現在地の座標と警報半径を設定すると、近隣で発生した地震をリアルタイムに音声で通知します。</string>
+    <string name="label_location_name">拠点名</string>
+    <string name="label_latitude">緯度 (°)</string>
+    <string name="label_longitude">経度 (°)</string>
+    <string name="label_alert_radius">警報半径 (%1$d km)</string>
+    <string name="enable_audio_narration">音声読み上げ通知</string>
+    <string name="enable_audio_narration_desc">新着データ取得時に直近の地震を自動で音声読み上げ</string>
+    <string name="btn_save_location">座標を保存</string>
+    <string name="btn_cancel">キャンセル</string>
+
+    <!-- Safety Guide Screen -->
+    <string name="safety_guide_title">地震防災サバイバルガイド</string>
+    <string name="safety_subtitle">気象庁およびUSGS推奨の生命保護アクション</string>
+    <string name="safety_drop_title">1. まず低く、頭を守り、動かない</string>
+    <string name="safety_drop_desc">体勢を低くし、頑丈な机の下に潜り込みます。揺れが完全に収まるまで頭を抱えて待ちます。</string>
+    <string name="safety_indoor_title">2. 慌てて外へ飛び出さない</string>
+    <string name="safety_indoor_desc">落下物やガラス片の直撃を防ぐため、揺れが収まるまで屋内の安全な場所に留まります。</string>
+    <string name="safety_hazard_title">3. 揺れが収まったら火の元を確認</string>
+    <string name="safety_hazard_desc">ガスの臭いがする場合は直ちに元栓を閉め、換気します。ライターやスイッチには触れないでください。</string>
+    <string name="safety_kit_title">4. 非常用持ち出し袋の準備</string>
+    <string name="safety_kit_desc">最低3日分の飲料水（1人1日3L）、保存食、懐中電灯、救急セット、ホイッスル、モバイルバッテリーを用意します。</string>
+
+    <!-- Settings & Support Screen -->
+    <string name="settings_title">設定と開発支援</string>
+    <string name="action_back">戻る</string>
+    <string name="supporter_active_title">認定サポーター</string>
+    <string name="supporter_active_desc">「%1$s」のご支援ありがとうございます！すべての支援案内は非表示になります。</string>
+    <string name="settings_shake_header">本体シェイク更新の感度設定</string>
+    <string name="settings_shake_desc">揺れを感じた際に端末を振って即座にUSGS最新データを再取得する加速度しきい値を調整します。</string>
+    <string name="shake_to_refresh_title">端末シェイクで即時更新</string>
+    <string name="shake_active_status">センサー稼働中</string>
+    <string name="disabled_status">無効</string>
+    <string name="shake_required_force">必要加速度しきい値</string>
+    <string name="shake_sens_high_desc">高感度 — 軽い手首の振りで即座に反応</string>
+    <string name="shake_sens_med_desc">標準感度 — 意識的なしっかりしたシェイク</string>
+    <string name="shake_sens_low_desc">低感度 — 強い揺れのみ検知（誤作動防止）</string>
+    <string name="shake_preset_gentle">やさしめ (1.8g)</string>
+    <string name="shake_preset_standard">標準 (2.5g)</string>
+    <string name="shake_preset_firm">しっかり (3.5g)</string>
+    <string name="settings_theme_header">テーマと表示</string>
+    <string name="settings_theme_desc">画面全体のカラーパレットを変更、またはシステムのダーク／ライトモードに連動します。</string>
+    <string name="settings_theme_mode_title">テーマ選択</string>
+    <string name="settings_current_theme">現在: %1$s</string>
+    <string name="theme_system_title">システム設定に従う</string>
+    <string name="theme_system_desc">Android端末のダーク／ライト設定に自動適応</string>
+    <string name="theme_dark_title">ダークテーマ</string>
+    <string name="theme_dark_desc">OLED省電力と夜間監視に最適な深海コズミックネイビー</string>
+    <string name="theme_light_title">ライトテーマ</string>
+    <string name="theme_light_desc">昼間の屋外でも視認性の高いハイコントラスト白基調</string>
+
+    <!-- Support & Tip Jars -->
+    <string name="settings_support_header">独立開発へのご支援</string>
+    <string name="settings_support_desc">QuakeCastは完全広告ゼロ・追跡ゼロのオープンサイエンス防災アプリです。役立った際のご支援をお待ちしています。</string>
+    <string name="settings_tip_jars_header">Web送金チップ</string>
+    <string name="settings_paypal_desc">PayPalアプリまたはブラウザから直接送金</string>
+    <string name="settings_paypal_button">PayPalを開く ($5)</string>
+    <string name="settings_kofi_desc">手数料0%のオープンサイエンス支援プラットフォーム</string>
+    <string name="settings_kofi_button">Ko-fiを開く</string>
+
+    <!-- Community & Engagement Telemetry -->
+    <string name="settings_engagement_header">コミュニティと自動案内</string>
+    <string name="settings_engagement_desc">災害時の邪魔をしないよう、緊急時停止および最低30日間のクールダウンを厳格に順守しています。</string>
+    <string name="settings_telemetry_title">利用テレメトリ状況</string>
+    <string name="telemetry_install_duration">インストール経過:</string>
+    <string name="telemetry_days_format">%1$d 日間</string>
+    <string name="telemetry_manual_refreshes">手動更新回数:</string>
+    <string name="telemetry_refreshes_needed_format">%1$d / 5回 必要</string>
+    <string name="telemetry_operations">操作回数:</string>
+    <string name="telemetry_actions_format">%1$d 回</string>
+    <string name="telemetry_prompt_cooldown">案内クールダウン:</string>
+    <string name="telemetry_cooldown_val">最低30日間隔</string>
+    <string name="telemetry_play_rating">Google Play評価:</string>
+    <string name="telemetry_rated">評価済み ⭐️</string>
+    <string name="telemetry_not_rated">未評価</string>
+    <string name="telemetry_shared">家族・友人への共有:</string>
+    <string name="telemetry_already_shared">共有済み 📢</string>
+    <string name="telemetry_not_shared">未共有</string>
+    <string name="settings_preview_title">即時プレビューテスト（開発・検証用）</string>
+    <string name="btn_preview_update">更新 🚀</string>
+    <string name="btn_preview_rate">評価 ⭐️</string>
+    <string name="btn_preview_share">共有 📢</string>
+
+    <!-- Thank you Dialog -->
+    <string name="thank_you_title">温かいご支援をありがとうございます！</string>
+    <string name="thank_you_desc">「%1$s」サポーター資格を獲得しました！支援案内ダイアログは永久に非表示となります。</string>
+    <string name="btn_awesome">確認</string>
+
+    <!-- Update App Dialog -->
+    <string name="update_dialog_title">アップデートがあります</string>
+    <string name="update_dialog_version_ready">QuakeCast v1.1.0 準備完了</string>
+    <string name="update_dialog_description">新バージョンでは計測精度と描画パフォーマンスが向上しました：</string>
+    <string name="update_feature_feed_title">リアルタイムデータ取得の高速化</string>
+    <string name="update_feature_feed_desc">USGS GeoJSONポーリングの高速化と通信量削減。</string>
+    <string name="update_feature_globe_title">3D地球儀の描画向上</string>
+    <string name="update_feature_globe_desc">断層プレート境界の高解像度化と回転の滑らかさ向上。</string>
+    <string name="update_feature_proximity_title">近接感知の精度向上</string>
+    <string name="update_feature_proximity_desc">震源深さと現在地距離のサブキロメートル高精度算出。</string>
+    <string name="update_button_now">今すぐ更新</string>
+    <string name="remind_me_later">後で通知</string>
+
+    <!-- Rate App Dialog -->
+    <string name="rate_dialog_title">QuakeCastはお役に立っていますか？</string>
+    <string name="rate_dialog_subtitle">完全広告ゼロ・独立した地震速報システム</string>
+    <string name="rate_dialog_description">地震時の安全確保に役立っている場合、Google Playで星5つのご評価をいただけると、多くの方にこの命を守るツールが届きます。</string>
+    <string name="rate_dialog_confirm_button">Google Playで評価する ⭐️</string>
+    <string name="rate_dialog_feedback_button">改善要望を送る 💬</string>
+    <string name="maybe_later">後で</string>
+    <string name="feedback_dialog_title">QuakeCastの改善にご協力ください</string>
+    <string name="feedback_dialog_description">開発チームへ直接のご意見・不具合報告をお寄せいただけますか？</string>
+    <string name="feedback_dialog_send_button">フィードバック送信</string>
+    <string name="no_thanks">いいえ</string>
+
+    <!-- Share App Dialog -->
+    <string name="share_dialog_title">大切な家族や友人を守るために</string>
+    <string name="share_dialog_subtitle">リアルタイム地震速報の輪</string>
+    <string name="share_dialog_description">防災は身近な人との連携から始まります。QuakeCastを共有して、揺れの早期通知や3D波形予測、チェックリストをご活用ください。</string>
+    <string name="share_dialog_bullet_points">• 完全広告ゼロ\n• 個人情報追跡ゼロ\n• USGS公式データをリアルタイム表示</string>
+    <string name="share_dialog_confirm_button">QuakeCastのリンクを共有</string>
+    <string name="share_app_message">🚨 地震発生時に素早く身を守るQuakeCastアプリ！\n\nUSGSリアルタイム地震速報、3D衝撃波シミュレーター、接近警報通知。完全広告ゼロ・オープンサイエンス：\nhttps://play.google.com/store/apps/details?id=%1$s</string>
+    <string name="share_quake_message">🚨 地震速報: M %1$.1f — %2$s\n発生日時: %3$s\n深さ: %4$.1f km\nUSGS詳細: %5$s\n\nQuakeCastより共有</string>
+
+    <!-- Toast & Feedback Messages -->
+    <string name="toast_shake_detected">揺れを感知！USGS地震速報を再取得中\u2026</string>
+    <string name="toast_milestone_reached">🎉 %1$d回目の地震データ照会を達成！QuakeCastは完全広告ゼロ・独立開発です。</string>
+    <string name="btn_support_dev">開発を支援</string>
+
+    <!-- Donation Bottom Sheet -->
+    <string name="donation_sheet_title">QuakeCastの開発支援</string>
+    <string name="donation_sheet_desc">世界中の地震データを高速かつ無広告で誰でも閲覧できるようサーバー運営を支援してください。</string>
+    <string name="donation_btn_active">サポーター中 💛</string>
+    <string name="donation_value_card_title">あなたの安全をリアルタイムに見守り</string>
+    <string name="donation_value_card_desc">広告も追跡も一切なく地震情報を監視しています。科学と防災のためのオープンな取り組みに、温かいご支援をお願いします。</string>
+    <string name="donation_value_card_btn">開発を支援する</string>
+    <string name="donation_value_card_dismiss">閉じる</string>
+</resources>

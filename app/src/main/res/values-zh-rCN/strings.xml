@@ -1,0 +1,193 @@
+<resources>
+    <!-- App Identity -->
+    <string name="app_name">QuakeCast</string>
+    <string name="app_tagline">由实时USGS GeoJSON数据流与Android Jetpack Compose 3D引擎强力驱动。</string>
+    <string name="app_version_name">QuakeCast v1.0.0</string>
+
+    <!-- Navigation Tabs -->
+    <string name="tab_globe">3D地球</string>
+    <string name="tab_list">地震列表</string>
+    <string name="tab_alerts">近期预警</string>
+    <string name="tab_safety">防灾指南</string>
+    <string name="tab_chart_30_days">30天统计</string>
+
+    <!-- App Bar & Actions -->
+    <string name="badge_room_cache">ROOM离线缓存</string>
+    <string name="badge_usgs_live">USGS实时</string>
+    <string name="badge_supporter">支持者</string>
+    <string name="btn_tv_mode">电视大屏模式</string>
+    <string name="search_placeholder">搜索地点或国家\u2026</string>
+    <string name="search_content_description">搜索</string>
+    <string name="clear_search">清除</string>
+    <string name="proximity_settings_cd">接近预警设置</string>
+    <string name="toggle_audio_alerts_cd">切换语音预警</string>
+    <string name="timeframe_cd">时间范围</string>
+    <string name="refresh_feed_cd">刷新数据</string>
+    <string name="settings_cd">设置与开发支持</string>
+    <string name="support_dev_tip_cd">支持QuakeCast独立开发</string>
+
+    <!-- Filter Bar -->
+    <string name="filter_tsunami">海啸</string>
+    <string name="feed_count_format">实时地震 (%1$d)</string>
+    <string name="feed_radius_format">监测半径: %1$d km</string>
+
+    <!-- Empty State -->
+    <string name="empty_quakes_title">未发现地震记录</string>
+    <string name="empty_quakes_desc">当前震级筛选或搜索条件下没有符合条件的地震活动。</string>
+    <string name="btn_reset_filters">重置筛选</string>
+
+    <!-- Event Item & Details -->
+    <string name="tap_to_view_details">点击查看地震波传导与能量释放数据</string>
+    <string name="quake_details_header">地震监测详情</string>
+    <string name="magnitude_prefix">M %1$.1f</string>
+    <string name="depth_format">震源深度: %1$.1f km</string>
+    <string name="distance_format">距离 %1$.1f km</string>
+    <string name="estimated_arrival">预估波及时间</string>
+    <string name="primary_p_wave">P波（纵波）</string>
+    <string name="secondary_s_wave">S波（横波）</string>
+    <string name="energy_equivalent">预估释放能量</string>
+    <string name="btn_view_usgs">查看USGS官网详情</string>
+    <string name="btn_share_quake">分享地震信息</string>
+
+    <!-- Proximity Warning Banner -->
+    <string name="proximity_banner_title">周边地震紧急接近警报</string>
+    <string name="proximity_alert_distance_format">距离%2$s仅 %1$.1f km</string>
+    <string name="btn_speak">语音播报</string>
+
+    <!-- Proximity Settings Dialog -->
+    <string name="proximity_dialog_title">接近警报基准位置</string>
+    <string name="proximity_dialog_desc">设定您的坐标基准与预警半径，当周边发生地震时将第一时间获得语音TTS播报与推送。</string>
+    <string name="label_location_name">位置名称</string>
+    <string name="label_latitude">纬度 (°)</string>
+    <string name="label_longitude">经度 (°)</string>
+    <string name="label_alert_radius">预警半径 (%1$d km)</string>
+    <string name="enable_audio_narration">自动语音播报</string>
+    <string name="enable_audio_narration_desc">获取最新地震数据时自动语音播报最近的地震</string>
+    <string name="btn_save_location">保存坐标</string>
+    <string name="btn_cancel">取消</string>
+
+    <!-- Safety Guide Screen -->
+    <string name="safety_guide_title">地震防灾避险指南</string>
+    <string name="safety_subtitle">由USGS与应急管理部门权威推荐的求生要领</string>
+    <string name="safety_drop_title">1. 伏地、遮挡、握紧</string>
+    <string name="safety_drop_desc">迅速双膝跪地。寻找结实的桌子护住头部与颈部。握紧桌腿，直到剧烈晃动完全停止。</string>
+    <string name="safety_indoor_title">2. 留在室内安全角落</string>
+    <string name="safety_indoor_desc">晃动期间切勿惊慌冲向室外。绝大多数伤害来自高空坠物、外墙脱落与碎裂玻璃。</string>
+    <string name="safety_hazard_title">3. 震后排查次生隐患</string>
+    <string name="safety_hazard_desc">检查天然气管道，闻到异味立即关闭总阀。严禁使用明火、打火机或触动电灯开关。</string>
+    <string name="safety_kit_title">4. 常备应急急救包</string>
+    <string name="safety_kit_desc">常备3天饮用水（每人每天4升）、压缩干粮、强光手电、急救药箱、求救口哨及移动电源。</string>
+
+    <!-- Settings & Support Screen -->
+    <string name="settings_title">设置与开发支持</string>
+    <string name="action_back">返回</string>
+    <string name="supporter_active_title">尊贵支持者状态</string>
+    <string name="supporter_active_desc">感谢您对「%1$s」的支持！所有自愿捐助提示已被永久静默。</string>
+    <string name="settings_shake_header">晃动手机刷新灵敏度</string>
+    <string name="settings_shake_desc">调整感应到震动时通过晃动手机手动触发USGS实时刷新所需的重力加速度G值。</string>
+    <string name="shake_to_refresh_title">摇一摇立即刷新地震</string>
+    <string name="shake_active_status">SensorManager传感器运行中</string>
+    <string name="disabled_status">已停用</string>
+    <string name="shake_required_force">所需加速度阈值</string>
+    <string name="shake_sens_high_desc">高灵敏度 — 轻微翻动手腕即可触发刷新</string>
+    <string name="shake_sens_med_desc">标准灵敏度 — 正常手摇动作触发</string>
+    <string name="shake_sens_low_desc">低灵敏度 — 需用力摇动（防止放在口袋中误触）</string>
+    <string name="shake_preset_gentle">轻柔 (1.8g)</string>
+    <string name="shake_preset_standard">标准 (2.5g)</string>
+    <string name="shake_preset_firm">强劲 (3.5g)</string>
+    <string name="settings_theme_header">全局主题与视觉风格</string>
+    <string name="settings_theme_desc">切换应用配色方案，或跟随Android系统深色/浅色偏好自动适配。</string>
+    <string name="settings_theme_mode_title">主题模式</string>
+    <string name="settings_current_theme">当前: %1$s</string>
+    <string name="theme_system_title">跟随系统</string>
+    <string name="theme_system_desc">根据系统深色/浅色模式自动适配</string>
+    <string name="theme_dark_title">深色主题</string>
+    <string name="theme_dark_desc">深邃宇宙深蓝配色，针对OLED屏幕省电与夜间监测深度优化</string>
+    <string name="theme_light_title">浅色主题</string>
+    <string name="theme_light_desc">高对比度清爽浅色，白天户外阳光下清晰易读</string>
+
+    <!-- Support & Tip Jars -->
+    <string name="settings_support_header">支持独立科学开发</string>
+    <string name="settings_support_desc">QuakeCast 100%无任何广告，严格保护隐私，践行开放科学。如果本软件守护了您的平安，欢迎支持我们。</string>
+    <string name="settings_tip_jars_header">网页直接赞助渠道</string>
+    <string name="settings_paypal_desc">通过PayPal应用或网页直接转账赞助</string>
+    <string name="settings_paypal_button">打开PayPal ($5)</string>
+    <string name="settings_kofi_desc">0%平台抽成，全额投入开放地震科学</string>
+    <string name="settings_kofi_button">打开Ko-fi页面</string>
+
+    <!-- Community & Engagement Telemetry -->
+    <string name="settings_engagement_header">社区与自动提示策略</string>
+    <string name="settings_engagement_desc">QuakeCast严格遵守最少30天冷却时间及紧急避险锁止机制，绝不在紧急时刻打扰用户。</string>
+    <string name="settings_telemetry_title">用户参与度遥测信息</string>
+    <string name="telemetry_install_duration">安装时长:</string>
+    <string name="telemetry_days_format">%1$d 天</string>
+    <string name="telemetry_manual_refreshes">手动刷新次数:</string>
+    <string name="telemetry_refreshes_needed_format">%1$d / 5次 达标</string>
+    <string name="telemetry_operations">有效操作数:</string>
+    <string name="telemetry_actions_format">%1$d 次</string>
+    <string name="telemetry_prompt_cooldown">提示冷却周期:</string>
+    <string name="telemetry_cooldown_val">至少间隔30天</string>
+    <string name="telemetry_play_rating">Google Play评分:</string>
+    <string name="telemetry_rated">已评价 ⭐️</string>
+    <string name="telemetry_not_rated">尚未评价</string>
+    <string name="telemetry_shared">向亲友分享:</string>
+    <string name="telemetry_already_shared">已分享 📢</string>
+    <string name="telemetry_not_shared">尚未分享</string>
+    <string name="settings_preview_title">即时预览与QA测试</string>
+    <string name="btn_preview_update">更新 🚀</string>
+    <string name="btn_preview_rate">评价 ⭐️</string>
+    <string name="btn_preview_share">分享 📢</string>
+
+    <!-- Thank you Dialog -->
+    <string name="thank_you_title">感谢您的热心支持！</string>
+    <string name="thank_you_desc">您已成功解锁「%1$s」支持者特权！所有赞助提醒已被永久隐藏。</string>
+    <string name="btn_awesome">太棒了！</string>
+
+    <!-- Update App Dialog -->
+    <string name="update_dialog_title">发现新版本更新</string>
+    <string name="update_dialog_version_ready">QuakeCast v1.1.0 现已就绪</string>
+    <string name="update_dialog_description">本次更新针对遥测数据处理与3D地球渲染进行了深度优化：</string>
+    <string name="update_feature_feed_title">数据流极速响应</string>
+    <string name="update_feature_feed_desc">更迅速的USGS GeoJSON轮询速度与更低的移动数据流量消耗。</string>
+    <string name="update_feature_globe_title">3D地球视效升级</string>
+    <string name="update_feature_globe_desc">更高清的板块断层边界绘制与丝滑旋转手感。</string>
+    <string name="update_feature_proximity_title">高灵敏度接近计算</string>
+    <string name="update_feature_proximity_desc">精准到千米以内的震中距与震源深度推算。</string>
+    <string name="update_button_now">立即更新</string>
+    <string name="remind_me_later">稍后提醒</string>
+
+    <!-- Rate App Dialog -->
+    <string name="rate_dialog_title">觉得QuakeCast好用吗？</string>
+    <string name="rate_dialog_subtitle">100%纯净无广告的独立地震预警工具</string>
+    <string name="rate_dialog_description">如果QuakeCast在地震发生时保护了您与家人的平安，在Google Play上的五星好评将帮助更多人发现这个生命救援工具。</string>
+    <string name="rate_dialog_confirm_button">在Google Play评价 ⭐️</string>
+    <string name="rate_dialog_feedback_button">提改进建议 💬</string>
+    <string name="maybe_later">以后再说</string>
+    <string name="feedback_dialog_title">帮助我们改进QuakeCast</string>
+    <string name="feedback_dialog_description">您的反馈对我们至关重要！您是否愿意直接向开发团队提交改进意见或问题反馈？</string>
+    <string name="feedback_dialog_send_button">发送反馈</string>
+    <string name="no_thanks">不用了</string>
+
+    <!-- Share App Dialog -->
+    <string name="share_dialog_title">守护亲朋好友的安全</string>
+    <string name="share_dialog_subtitle">实时地震防灾预警网络</string>
+    <string name="share_dialog_description">防震减灾离不开互帮互助。将QuakeCast分享给您最关心的人，让他们第一时间接收震动告警、3D冲击波预估和紧急避难要点。</string>
+    <string name="share_dialog_bullet_points">• 100%零广告扰民\n• 零隐私数据追踪\n• 直接同步USGS权威监测流</string>
+    <string name="share_dialog_confirm_button">分享QuakeCast链接</string>
+    <string name="share_app_message">🚨 遭遇地震时借助QuakeCast保持警觉与平安！\n\n实时USGS地震遥测、3D冲击波模拟器和距离接近警报。100%无广告·开放科学公益项目：\nhttps://play.google.com/store/apps/details?id=%1$s</string>
+    <string name="share_quake_message">🚨 地震警报: M %1$.1f — %2$s\n时间: %3$s\n深度: %4$.1f km\nUSGS详情: %5$s\n\n通过QuakeCast实时监测</string>
+
+    <!-- Toast & Feedback Messages -->
+    <string name="toast_shake_detected">检测到晃动！正在拉取最新USGS地震数据\u2026</string>
+    <string name="toast_milestone_reached">🎉 达成里程碑：第 %1$d 次地震数据查询！QuakeCast 100%独立无广告。</string>
+    <string name="btn_support_dev">支持开发</string>
+
+    <!-- Donation Bottom Sheet -->
+    <string name="donation_sheet_title">支持QuakeCast独立开发</string>
+    <string name="donation_sheet_desc">协助保障我们的全球地震数据服务器持续高速运行，坚守零广告，让全世界所有人都能免费使用。</string>
+    <string name="donation_btn_active">支持者 💛</string>
+    <string name="donation_value_card_title">为您的每一次生命安全护航</string>
+    <string name="donation_value_card_desc">您已体验纯粹无广告、无隐私追踪的专业地震监测。如果您认同这项开放科学事业，欢迎随意赞助一份心意。</string>
+    <string name="donation_value_card_btn">支持开发</string>
+    <string name="donation_value_card_dismiss">关闭</string>
+</resources>

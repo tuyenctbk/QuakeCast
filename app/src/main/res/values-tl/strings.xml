@@ -1,0 +1,193 @@
+<resources>
+    <!-- App Identity -->
+    <string name="app_name">QuakeCast</string>
+    <string name="app_tagline">Pinapagana ng real-time USGS GeoJSON streams at Android Jetpack Compose 3D renderer.</string>
+    <string name="app_version_name">QuakeCast v1.0.0</string>
+
+    <!-- Navigation Tabs -->
+    <string name="tab_globe">3D Globo</string>
+    <string name="tab_list">Talaan ng Lindol</string>
+    <string name="tab_alerts">Mga Alerto</string>
+    <string name="tab_safety">Gabay sa Kaligtasan</string>
+    <string name="tab_chart_30_days">30-Araw na Tsart</string>
+
+    <!-- App Bar & Actions -->
+    <string name="badge_room_cache">ROOM CACHE</string>
+    <string name="badge_usgs_live">LIVE USGS</string>
+    <string name="badge_supporter">Taga-suporta</string>
+    <string name="btn_tv_mode">TV Mode</string>
+    <string name="search_placeholder">Maghanap ng lugar o bansa\u2026</string>
+    <string name="search_content_description">Maghanap</string>
+    <string name="clear_search">Burahin</string>
+    <string name="proximity_settings_cd">Mga Setting ng Lapit</string>
+    <string name="toggle_audio_alerts_cd">I-toggle ang Audio Alerts</string>
+    <string name="timeframe_cd">Sakop ng Oras</string>
+    <string name="refresh_feed_cd">I-refresh ang Feed</string>
+    <string name="settings_cd">Mga Setting at Suporta</string>
+    <string name="support_dev_tip_cd">Suportahan ang Pag-develop ng QuakeCast</string>
+
+    <!-- Filter Bar -->
+    <string name="filter_tsunami">Tsunami</string>
+    <string name="feed_count_format">MGA LIVE NA LINDOL (%1$d)</string>
+    <string name="feed_radius_format">Radius: %1$d km</string>
+
+    <!-- Empty State -->
+    <string name="empty_quakes_title">Walang Nahanap na Lindol</string>
+    <string name="empty_quakes_desc">Walang pagyanig na tumugma sa kasalukuyang magnitude filter o pamantayan sa paghahanap.</string>
+    <string name="btn_reset_filters">I-reset ang mga Filter</string>
+
+    <!-- Event Item & Details -->
+    <string name="tap_to_view_details">Pindutin para makita ang shockwave at enerhiya</string>
+    <string name="quake_details_header">Detalyadong Pagsusuri ng Lindol</string>
+    <string name="magnitude_prefix">M %1$.1f</string>
+    <string name="depth_format">Lalim: %1$.1f km</string>
+    <string name="distance_format">%1$.1f km ang layo</string>
+    <string name="estimated_arrival">Tinatayang Pagdating ng Alon</string>
+    <string name="primary_p_wave">P-Wave (Pangunahin)</string>
+    <string name="secondary_s_wave">S-Wave (Pangalawa)</string>
+    <string name="energy_equivalent">Tinatayang Enerhiya</string>
+    <string name="btn_view_usgs">Tingnan sa USGS</string>
+    <string name="btn_share_quake">Ibahagi ang Lindol</string>
+
+    <!-- Proximity Warning Banner -->
+    <string name="proximity_banner_title">AGARANG BABALA SA KALAPIT NA LINDOL</string>
+    <string name="proximity_alert_distance_format">%1$.1f km mula sa %2$s</string>
+    <string name="btn_speak">Ibigkas</string>
+
+    <!-- Proximity Settings Dialog -->
+    <string name="proximity_dialog_title">Lokasyon para sa Babala</string>
+    <string name="proximity_dialog_desc">Itakda ang iyong reference coordinates at alert radius upang makatanggap ng agarang babala at boses na pagbasa ng TTS.</string>
+    <string name="label_location_name">Pangalan ng Lokasyon</string>
+    <string name="label_latitude">Latitude (°)</string>
+    <string name="label_longitude">Longitude (°)</string>
+    <string name="label_alert_radius">Alert Radius (%1$d km)</string>
+    <string name="enable_audio_narration">Boses na Pagsasalaysay</string>
+    <string name="enable_audio_narration_desc">Awtomatikong bigkasin ang pinakamalapit na lindol kapag nag-refresh</string>
+    <string name="btn_save_location">I-save ang Coordinates</string>
+    <string name="btn_cancel">Kanselahin</string>
+
+    <!-- Safety Guide Screen -->
+    <string name="safety_guide_title">Gabay sa Kaligtasan sa Lindol</string>
+    <string name="safety_subtitle">Mahalagang hakbang para sa kaligtasan na inendorso ng USGS at NDRRMC</string>
+    <string name="safety_drop_title">1. Dapa, Takip, at Kapit</string>
+    <string name="safety_drop_desc">DUMAPA sa sahig. TAKPAN ang ulo at leeg sa ilalim ng matibay na mesa. KUMAPIT nang mabuti hanggang matapos ang pagyanig.</string>
+    <string name="safety_indoor_title">2. Manatili sa Loob ng Gusali</string>
+    <string name="safety_indoor_desc">HUWAG tumakbo palabas habang lumilindol. Karamihan sa pinsala ay nagmumula sa mga bumabagsak na bubog at debris.</string>
+    <string name="safety_hazard_title">3. Suriin ang mga Panganib Pagkatapos</string>
+    <string name="safety_hazard_desc">Suriin kung may tumatagas na gas at isara ang main valve kung may amoy. Iwasan ang paggamit ng posporo o pagsindi ng kuryente.</string>
+    <string name="safety_kit_title">4. Ihanda ang Emergency Go-Bag</string>
+    <string name="safety_kit_desc">Maghanda ng inuming tubig para sa 3 araw (4 litro bawat tao/araw), de-latang pagkain, flashlight, first aid kit, pito, at power bank.</string>
+
+    <!-- Settings & Support Screen -->
+    <string name="settings_title">Mga Setting at Suporta</string>
+    <string name="action_back">Bumalik</string>
+    <string name="supporter_active_title">Katayuan ng Aktibong Taga-suporta</string>
+    <string name="supporter_active_desc">Salamat sa pagsuporta sa \'%1$s\'! Ang lahat ng kusang-loob na paalala ay permanenteng nakatago.</string>
+    <string name="settings_shake_header">SENSITIBO SA PAG-ALOG PARA MAG-REFRESH</string>
+    <string name="settings_shake_desc">I-adjust ang kinakailangang g-force threshold sa pag-alog ng cellphone upang agad i-refresh ang datos ng USGS kapag nakaramdam ng lindol.</string>
+    <string name="shake_to_refresh_title">I-alog ang Telepono para Mag-refresh</string>
+    <string name="shake_active_status">Aktibo sa pamamagitan ng SensorManager</string>
+    <string name="disabled_status">Naka-disable</string>
+    <string name="shake_required_force">Kinakailangang Lakas ng Alog</string>
+    <string name="shake_sens_high_desc">Mataas na Sensitibo — Madaling tumugon sa bahagyang galaw ng kamay</string>
+    <string name="shake_sens_med_desc">Pamantayang Sensitibo — Sadyang pag-alog ng telepono</string>
+    <string name="shake_sens_low_desc">Mababang Sensitibo — Malakas na alog (iwas-trigger sa bulsa)</string>
+    <string name="shake_preset_gentle">Magaan (1.8g)</string>
+    <string name="shake_preset_standard">Pamantayan (2.5g)</string>
+    <string name="shake_preset_firm">Matatag (3.5g)</string>
+    <string name="settings_theme_header">TEMA AT ITSURA NG APP</string>
+    <string name="settings_theme_desc">Palitan ang kulay ng app o sumunod sa dark/light mode ng Android system.</string>
+    <string name="settings_theme_mode_title">Mode ng Tema</string>
+    <string name="settings_current_theme">Kasalukuyan: %1$s</string>
+    <string name="theme_system_title">Sundin ang Sistema</string>
+    <string name="theme_system_desc">Awtomatikong umaangkop sa dark o light setting ng telepono</string>
+    <string name="theme_dark_title">Dark Theme</string>
+    <string name="theme_dark_desc">Madilim na kulay navy para sa OLED screens at pagbabantay sa gabi</string>
+    <string name="theme_light_title">Light Theme</string>
+    <string name="theme_light_desc">Mataas na contrast para sa maliwanag na pagbabasa sa araw</string>
+
+    <!-- Support & Tip Jars -->
+    <string name="settings_support_header">SUPORTAHAN ANG INDEPENDENT DEV</string>
+    <string name="settings_support_desc">Ang QuakeCast ay 100% walang ad, bukas na agham, at protektado ang iyong privacy. Kung nakatutulong ito sa iyong kaligtasan, mag-donate nang kusa.</string>
+    <string name="settings_tip_jars_header">DIREKTANG TIP SA WEB</string>
+    <string name="settings_paypal_desc">Direktang donasyon sa pamamagitan ng PayPal app o browser</string>
+    <string name="settings_paypal_button">Buksan ang PayPal ($5)</string>
+    <string name="settings_kofi_desc">0% kaltas ng platform para sa bukas na agham</string>
+    <string name="settings_kofi_button">Buksan ang Ko-fi</string>
+
+    <!-- Community & Engagement Telemetry -->
+    <string name="settings_engagement_header">KOMUNIDAD AT DIALOG RULES</string>
+    <string name="settings_engagement_desc">Ipinapatupad ng QuakeCast ang 30-araw na cooldown at lockout sa oras ng emergency upang hindi kailanman makaabala sa gumagamit.</string>
+    <string name="settings_telemetry_title">Datos ng Paggamit ng App</string>
+    <string name="telemetry_install_duration">Tagal ng Pag-install:</string>
+    <string name="telemetry_days_format">%1$d araw</string>
+    <string name="telemetry_manual_refreshes">Manwal na Refresh:</string>
+    <string name="telemetry_refreshes_needed_format">%1$d / 5 kailangan</string>
+    <string name="telemetry_operations">Matagumpay na Aksyon:</string>
+    <string name="telemetry_actions_format">%1$d aksyon</string>
+    <string name="telemetry_prompt_cooldown">Pahinga ng Paalala:</string>
+    <string name="telemetry_cooldown_val">Hindi bababa sa 30 Araw</string>
+    <string name="telemetry_play_rating">Marka sa Google Play:</string>
+    <string name="telemetry_rated">Namarkahan na ⭐️</string>
+    <string name="telemetry_not_rated">Hindi pa namarkahan</string>
+    <string name="telemetry_shared">Ibinahagi sa Komunidad:</string>
+    <string name="telemetry_already_shared">Naibahagi na 📢</string>
+    <string name="telemetry_not_shared">Hindi pa naibahagi</string>
+    <string name="settings_preview_title">Pagsusuri at QA Preview</string>
+    <string name="btn_preview_update">Update 🚀</string>
+    <string name="btn_preview_rate">Marka ⭐️</string>
+    <string name="btn_preview_share">Ibahagi 📢</string>
+
+    <!-- Thank you Dialog -->
+    <string name="thank_you_title">Maraming Salamat sa Iyong Suporta!</string>
+    <string name="thank_you_desc">Nakamit mo ang antas ng Taga-suporta \'%1$s\'! Lahat ng paalala sa donasyon ay permanenteng itinago.</string>
+    <string name="btn_awesome">Ayos!</string>
+
+    <!-- Update App Dialog -->
+    <string name="update_dialog_title">May Bagong Update</string>
+    <string name="update_dialog_version_ready">Handa na ang QuakeCast v1.1.0</string>
+    <string name="update_dialog_description">Naglalaman ang bagong update ng mas mabilis na datos at pinahusay na 3D globe:</string>
+    <string name="update_feature_feed_title">Mas Mabilis na Pagtanggap ng Datos</string>
+    <string name="update_feature_feed_desc">Mas mabilis na pag-load ng USGS GeoJSON at mas matipid sa data.</string>
+    <string name="update_feature_globe_title">Pinagandang 3D Globo</string>
+    <string name="update_feature_globe_desc">Mas malinaw na tectonic fault lines at mas makinis na pag-ikot.</string>
+    <string name="update_feature_proximity_title">Katumpakan ng Kalapitan</string>
+    <string name="update_feature_proximity_desc">Tumpak na pagkalkula ng lalim ng lindol at distansya sa iyong lokasyon.</string>
+    <string name="update_button_now">I-update Ngayon</string>
+    <string name="remind_me_later">Ipaalala Mamaya</string>
+
+    <!-- Rate App Dialog -->
+    <string name="rate_dialog_title">Nakatutulong ba ang QuakeCast?</string>
+    <string name="rate_dialog_subtitle">100% Walang Ad na Independent Earthquake Tracker</string>
+    <string name="rate_dialog_description">Kung pinapanatili ka ng QuakeCast na ligtas at handa sa panahon ng lindol, ang 5-star rating sa Google Play ay makatutulong upang matuklasan ito ng iba.</string>
+    <string name="rate_dialog_confirm_button">Markahan sa Google Play ⭐️</string>
+    <string name="rate_dialog_feedback_button">Kailangang Ayusin 💬</string>
+    <string name="maybe_later">Mamaya na</string>
+    <string name="feedback_dialog_title">Tulungan Kaming Pagbutihin ang QuakeCast</string>
+    <string name="feedback_dialog_description">Mahalaga sa amin ang iyong opinyon! Nais mo bang magpadala ng direktang mungkahi sa aming engineering team?</string>
+    <string name="feedback_dialog_send_button">Magpadala ng Mensahe</string>
+    <string name="no_thanks">Huwag na, Salamat</string>
+
+    <!-- Share App Dialog -->
+    <string name="share_dialog_title">Protektahan ang Pamilya at Kaibigan</string>
+    <string name="share_dialog_subtitle">Kaalaman sa Lindol sa Bawat Sandali</string>
+    <string name="share_dialog_description">Ang kaligtasan sa lindol ay sama-samang pagtutulungan. Ibahagi ang QuakeCast sa iyong mga mahal sa buhay upang makatanggap sila ng maagang babala at mga gabay sa paglikas.</string>
+    <string name="share_dialog_bullet_points">• 100% Walang Ads\n• Walang Data Tracking\n• Opisyal na Datos mula sa USGS</string>
+    <string name="share_dialog_confirm_button">Ibahagi ang Link ng QuakeCast</string>
+    <string name="share_app_message">🚨 Maging ligtas at laging handa kapag lumilindol gamit ang QuakeCast!\n\nLive USGS seismic telemetry, 3D shockwave simulator, at proximity warnings. 100% Walang Ads at Libre:\nhttps://play.google.com/store/apps/details?id=%1$s</string>
+    <string name="share_quake_message">🚨 Babala sa Lindol: M %1$.1f — %2$s\nOras: %3$s\nLalim: %4$.1f km\nDetalye sa USGS: %5$s\n\nSinubaybayan gamit ang QuakeCast App</string>
+
+    <!-- Toast & Feedback Messages -->
+    <string name="toast_shake_detected">May naramdamang pag-alog! Kinukuha ang pinakabagong datos mula sa USGS\u2026</string>
+    <string name="toast_milestone_reached">🎉 Tagumpay: Ika-%1$d na pagsusuri ng lindol! Ang QuakeCast ay 100% independyente at walang ad.</string>
+    <string name="btn_support_dev">Suportahan ang Dev</string>
+
+    <!-- Donation Bottom Sheet -->
+    <string name="donation_sheet_title">Suportahan ang Pag-develop ng QuakeCast</string>
+    <string name="donation_sheet_desc">Tumulong upang manatiling mabilis, walang ad, at bukas para sa buong mundo ang aming mga server.</string>
+    <string name="donation_btn_active">Taga-suporta 💛</string>
+    <string name="donation_value_card_title">Binabantayan ang Iyong Kaligtasan</string>
+    <string name="donation_value_card_desc">Nagsubaybay ka ng mga lindol nang walang abalang ad o pagsubaybay sa pribadong impormasyon. Kung pinapahalagahan mo ito, mag-abuloy nang kusa.</string>
+    <string name="donation_value_card_btn">Suportahan ang Pag-develop</string>
+    <string name="donation_value_card_dismiss">Isara</string>
+</resources>

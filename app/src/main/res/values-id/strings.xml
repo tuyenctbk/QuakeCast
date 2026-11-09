@@ -1,0 +1,193 @@
+<resources>
+    <!-- App Identity -->
+    <string name="app_name">QuakeCast</string>
+    <string name="app_tagline">Didukung aliran data USGS GeoJSON waktu nyata &amp; perender 3D Android Jetpack Compose.</string>
+    <string name="app_version_name">QuakeCast v1.0.0</string>
+
+    <!-- Navigation Tabs -->
+    <string name="tab_globe">Bola 3D</string>
+    <string name="tab_list">Daftar Gempa</string>
+    <string name="tab_alerts">Peringatan</string>
+    <string name="tab_safety">Panduan</string>
+    <string name="tab_chart_30_days">Grafik 30 Hari</string>
+
+    <!-- App Bar & Actions -->
+    <string name="badge_room_cache">CACHE ROOM</string>
+    <string name="badge_usgs_live">USGS LANGSUNG</string>
+    <string name="badge_supporter">Pendukung</string>
+    <string name="btn_tv_mode">Mode TV</string>
+    <string name="search_placeholder">Cari lokasi atau negara\u2026</string>
+    <string name="search_content_description">Cari</string>
+    <string name="clear_search">Hapus</string>
+    <string name="proximity_settings_cd">Pengaturan Radius Gempa</string>
+    <string name="toggle_audio_alerts_cd">Nyalakan/matikan Peringatan Audio</string>
+    <string name="timeframe_cd">Rentang Waktu</string>
+    <string name="refresh_feed_cd">Perbarui Data</string>
+    <string name="settings_cd">Pengaturan &amp; Dukungan</string>
+    <string name="support_dev_tip_cd">Dukung Pengembangan QuakeCast</string>
+
+    <!-- Filter Bar -->
+    <string name="filter_tsunami">Tsunami</string>
+    <string name="feed_count_format">GEMPA TERKINI (%1$d)</string>
+    <string name="feed_radius_format">Radius: %1$d km</string>
+
+    <!-- Empty State -->
+    <string name="empty_quakes_title">Tidak Ada Gempa Ditemukan</string>
+    <string name="empty_quakes_desc">Tidak ada gempa yang cocok dengan filter magnitudo atau kriteria pencarian saat ini.</string>
+    <string name="btn_reset_filters">Atur Ulang Filter</string>
+
+    <!-- Event Item & Details -->
+    <string name="tap_to_view_details">Ketuk untuk melihat gelombang kejut &amp; energi gempa</string>
+    <string name="quake_details_header">Inspektur Gempa</string>
+    <string name="magnitude_prefix">M %1$.1f</string>
+    <string name="depth_format">Kedalaman: %1$.1f km</string>
+    <string name="distance_format">Jarak %1$.1f km</string>
+    <string name="estimated_arrival">Perkiraan Waktu Tiba</string>
+    <string name="primary_p_wave">Gelombang P (Primer)</string>
+    <string name="secondary_s_wave">Gelombang S (Sekunder)</string>
+    <string name="energy_equivalent">Estimasi Pelepasan Energi</string>
+    <string name="btn_view_usgs">Buka Halaman USGS</string>
+    <string name="btn_share_quake">Bagikan Informasi Gempa</string>
+
+    <!-- Proximity Warning Banner -->
+    <string name="proximity_banner_title">PERINGATAN DINI GEMPA BUMI SEKITAR ANDA</string>
+    <string name="proximity_alert_distance_format">%1$.1f km dari %2$s</string>
+    <string name="btn_speak">Suarakan</string>
+
+    <!-- Proximity Settings Dialog -->
+    <string name="proximity_dialog_title">Lokasi Pantauan Gempa</string>
+    <string name="proximity_dialog_desc">Atur koordinat acuan dan radius peringatan untuk mendapatkan notifikasi getaran terdekat secara instan dan suara TTS.</string>
+    <string name="label_location_name">Nama Lokasi</string>
+    <string name="label_latitude">Lintang (°)</string>
+    <string name="label_longitude">Bujur (°)</string>
+    <string name="label_alert_radius">Radius Peringatan (%1$d km)</string>
+    <string name="enable_audio_narration">Suara Peringatan Otomatis</string>
+    <string name="enable_audio_narration_desc">Ucapkan gempa terdekat secara otomatis saat pembaruan data</string>
+    <string name="btn_save_location">Simpan Koordinat</string>
+    <string name="btn_cancel">Batal</string>
+
+    <!-- Safety Guide Screen -->
+    <string name="safety_guide_title">Panduan Keselamatan Gempa Bumi</string>
+    <string name="safety_subtitle">Tindakan penyelamatan penting yang didukung USGS &amp; BNPB</string>
+    <string name="safety_drop_title">1. Tunduk, Lindungi Kepala, Bertahan</string>
+    <string name="safety_drop_desc">MERUNDUK ke lantai. LINDUNGI kepala dan leher di bawah meja kokoh. BERTAHAN sampai guncangan berhenti total.</string>
+    <string name="safety_indoor_title">2. Tetap di Dalam Ruangan</string>
+    <string name="safety_indoor_desc">JANGAN berlari keluar saat guncangan berlangsung. Sebagian besar cedera disebabkan oleh reruntuhan kaca dan puing fasad luar.</string>
+    <string name="safety_hazard_title">3. Periksa Bahaya Instalasi Pascagempa</string>
+    <string name="safety_hazard_desc">Periksa kebocoran gas dan tutup katup utama jika tercium bau gas. Hindari menyalakan korek api atau sakelar listrik.</string>
+    <string name="safety_kit_title">4. Siapkan Tas Siaga Bencana</string>
+    <string name="safety_kit_desc">Sediakan air minum untuk 3 hari (4 liter/orang/hari), makanan tahan lama, senter, kotak P3K, peluit, dan power bank.</string>
+
+    <!-- Settings & Support Screen -->
+    <string name="settings_title">Pengaturan &amp; Dukungan</string>
+    <string name="action_back">Kembali</string>
+    <string name="supporter_active_title">Status Pendukung Aktif</string>
+    <string name="supporter_active_desc">Terima kasih telah mendukung \'%1$s\'! Semua dialog sukarela disembunyikan permanen.</string>
+    <string name="settings_shake_header">SENSITIVITAS GOYANGAN UNTUK MEMPERBARUI</string>
+    <string name="settings_shake_desc">Sesuaikan ambang batas akselerasi g-force saat menggoyangkan perangkat untuk memicu pembaruan data USGS saat gempa dirasakan.</string>
+    <string name="shake_to_refresh_title">Goyangkan HP untuk Perbarui</string>
+    <string name="shake_active_status">Aktif melalui SensorManager</string>
+    <string name="disabled_status">Nonaktif</string>
+    <string name="shake_required_force">Ambang Batas G-Force</string>
+    <string name="shake_sens_high_desc">Sensitivitas Tinggi — Cukup sentakan ringan pergelangan tangan</string>
+    <string name="shake_sens_med_desc">Sensitivitas Standar — Goyangan mantap dan terarah</string>
+    <string name="shake_sens_low_desc">Sensitivitas Rendah — Goyangan kuat (mencegah pemicu di saku)</string>
+    <string name="shake_preset_gentle">Ringan (1.8g)</string>
+    <string name="shake_preset_standard">Standar (2.5g)</string>
+    <string name="shake_preset_firm">Kuat (3.5g)</string>
+    <string name="settings_theme_header">TEMA DAN TAMPILAN APLIKASI</string>
+    <string name="settings_theme_desc">Ganti palet warna tema atau sesuaikan dengan preferensi gelap/terang sistem Android.</string>
+    <string name="settings_theme_mode_title">Mode Tema</string>
+    <string name="settings_current_theme">Saat ini: %1$s</string>
+    <string name="theme_system_title">Ikuti Sistem</string>
+    <string name="theme_system_desc">Menyesuaikan otomatis dengan mode gelap atau terang di perangkat</string>
+    <string name="theme_dark_title">Tema Gelap</string>
+    <string name="theme_dark_desc">Warna biru kosmik pekat, nyaman untuk layar OLED dan pemantauan malam</string>
+    <string name="theme_light_title">Tema Terang</string>
+    <string name="theme_light_desc">Kontras tinggi dan nyaman dilihat di bawah cahaya terang siang hari</string>
+
+    <!-- Support & Tip Jars -->
+    <string name="settings_support_header">DUKUNG PENGEMBANGAN MANDIRI</string>
+    <string name="settings_support_desc">QuakeCast 100% bebas iklan, mengutamakan sains terbuka dan privasi. Dukung kami jika aplikasi ini bermanfaat bagi keselamatan Anda.</string>
+    <string name="settings_tip_jars_header">KOTAK TIP WEB LANGSUNG</string>
+    <string name="settings_paypal_desc">Transfer langsung via aplikasi atau browser PayPal</string>
+    <string name="settings_paypal_button">Buka PayPal ($5)</string>
+    <string name="settings_kofi_desc">0% potongan platform untuk proyek sains terbuka</string>
+    <string name="settings_kofi_button">Buka Ko-fi</string>
+
+    <!-- Community & Engagement Telemetry -->
+    <string name="settings_engagement_header">KOMUNITAS &amp; DIALOG OTOMATIS</string>
+    <string name="settings_engagement_desc">QuakeCast menerapkan jeda minimal 30 hari dan penguncian saat gempa darurat agar tidak pernah mengganggu pengguna.</string>
+    <string name="settings_telemetry_title">Telemetri Interaksi Pengguna</string>
+    <string name="telemetry_install_duration">Durasi Pemasangan:</string>
+    <string name="telemetry_days_format">%1$d hari</string>
+    <string name="telemetry_manual_refreshes">Pembaruan Manual:</string>
+    <string name="telemetry_refreshes_needed_format">%1$d / 5 dibutuhkan</string>
+    <string name="telemetry_operations">Operasi Berhasil:</string>
+    <string name="telemetry_actions_format">%1$d aksi</string>
+    <string name="telemetry_prompt_cooldown">Jeda Pengingat:</string>
+    <string name="telemetry_cooldown_val">Minimal Interval 30 Hari</string>
+    <string name="telemetry_play_rating">Penilaian Google Play:</string>
+    <string name="telemetry_rated">Sudah Dinilai ⭐️</string>
+    <string name="telemetry_not_rated">Belum dinilai</string>
+    <string name="telemetry_shared">Berbagi ke Komunitas:</string>
+    <string name="telemetry_already_shared">Sudah Dibagikan 📢</string>
+    <string name="telemetry_not_shared">Belum dibagikan</string>
+    <string name="settings_preview_title">Pratinjau Instan &amp; Pengujian QA</string>
+    <string name="btn_preview_update">Pembaruan 🚀</string>
+    <string name="btn_preview_rate">Nilai ⭐️</string>
+    <string name="btn_preview_share">Bagikan 📢</string>
+
+    <!-- Thank you Dialog -->
+    <string name="thank_you_title">Terima Kasih atas Dukungan Anda!</string>
+    <string name="thank_you_desc">Anda telah membuka status Pendukung \'%1$s\'! Semua dialog sukarela disembunyikan permanen.</string>
+    <string name="btn_awesome">Luar Biasa!</string>
+
+    <!-- Update App Dialog -->
+    <string name="update_dialog_title">Pembaruan Tersedia</string>
+    <string name="update_dialog_version_ready">QuakeCast v1.1.0 Siap Diunduh</string>
+    <string name="update_dialog_description">Versi baru membawa peningkatan performa visual dan perhitungan jarak hiposenter:</string>
+    <string name="update_feature_feed_title">Akselerasi Pengambilan Data</string>
+    <string name="update_feature_feed_desc">Pengambilan USGS GeoJSON lebih cepat dan konsumsi kuota lebih hemat.</string>
+    <string name="update_feature_globe_title">Peningkatan Visual Bola 3D</string>
+    <string name="update_feature_globe_desc">Garis lempeng tektonik lebih tajam dan putaran bola lebih halus.</string>
+    <string name="update_feature_proximity_title">Sensitivitas Jarak Gempa</string>
+    <string name="update_feature_proximity_desc">Perhitungan jarak hiposenter gempa hingga ketelitian subkilometer.</string>
+    <string name="update_button_now">Perbarui Sekarang</string>
+    <string name="remind_me_later">Ingatkan Nanti</string>
+
+    <!-- Rate App Dialog -->
+    <string name="rate_dialog_title">Apakah QuakeCast Bermanfaat?</string>
+    <string name="rate_dialog_subtitle">Telemetri Gempa Mandiri 100% Bebas Iklan</string>
+    <string name="rate_dialog_description">Jika QuakeCast membantu Anda tetap waspada dan aman saat gempa, ulasan bintang 5 di Google Play sangat membantu orang lain menemukan aplikasi penyelamat ini.</string>
+    <string name="rate_dialog_confirm_button">Beri Nilai di Google Play ⭐️</string>
+    <string name="rate_dialog_feedback_button">Perlu Perbaikan 💬</string>
+    <string name="maybe_later">Mungkin Nanti</string>
+    <string name="feedback_dialog_title">Bantu Kami Tingkatkan QuakeCast</string>
+    <string name="feedback_dialog_description">Kami menghargai masukan Anda! Apakah Anda ingin mengirim saran langsung ke tim teknis kami?</string>
+    <string name="feedback_dialog_send_button">Kirim Masukan</string>
+    <string name="no_thanks">Tidak, Terima Kasih</string>
+
+    <!-- Share App Dialog -->
+    <string name="share_dialog_title">Lindungi Keluarga &amp; Teman</string>
+    <string name="share_dialog_subtitle">Kesadaran Gempa Bumi Waktu Nyata</string>
+    <string name="share_dialog_description">Keselamatan bencana adalah upaya bersama. Bagikan QuakeCast kepada orang tercinta agar mereka menerima peringatan dini getaran dan panduan darurat.</string>
+    <string name="share_dialog_bullet_points">• 100% Bebas Iklan\n• Nol Pelacakan Privasi\n• Data Langsung dari USGS</string>
+    <string name="share_dialog_confirm_button">Bagikan Tautan QuakeCast</string>
+    <string name="share_app_message">🚨 Tetap aman dan waspada saat gempa bumi dengan QuakeCast!\n\nData gempa USGS langsung, simulasi gelombang 3D, dan notifikasi radius gempa. 100% Bebas Iklan &amp; Sains Terbuka:\nhttps://play.google.com/store/apps/details?id=%1$s</string>
+    <string name="share_quake_message">🚨 Peringatan Gempa: M %1$.1f — %2$s\nWaktu: %3$s\nKedalaman: %4$.1f km\nRincian USGS: %5$s\n\nDipantau melalui QuakeCast</string>
+
+    <!-- Toast & Feedback Messages -->
+    <string name="toast_shake_detected">Goyangan Terdeteksi! Memperbarui data gempa USGS\u2026</string>
+    <string name="toast_milestone_reached">🎉 Pencapaian: Pencarian data gempa ke-%1$d! QuakeCast 100% mandiri dan bebas iklan.</string>
+    <string name="btn_support_dev">Dukung Dev</string>
+
+    <!-- Donation Bottom Sheet -->
+    <string name="donation_sheet_title">Dukung Pengembangan QuakeCast</string>
+    <string name="donation_sheet_desc">Bantu menjaga server telemetri gempa bumi global tetap cepat, tanpa iklan, dan dapat diakses semua orang.</string>
+    <string name="donation_btn_active">Pendukung 💛</string>
+    <string name="donation_value_card_title">Menjaga Anda Tetap Waspada</string>
+    <string name="donation_value_card_desc">Anda telah memantau gempa tanpa gangguan iklan atau pelacakan privasi. Dukung misi sains terbuka kami dengan kontribusi sukarela.</string>
+    <string name="donation_value_card_btn">Dukung Pengembangan</string>
+    <string name="donation_value_card_dismiss">Tutup</string>
+</resources>

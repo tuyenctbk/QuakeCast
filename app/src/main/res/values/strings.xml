@@ -1,0 +1,193 @@
+<resources>
+    <!-- App Identity -->
+    <string name="app_name">QuakeCast</string>
+    <string name="app_tagline">Powered by real-time USGS GeoJSON streams &amp; Android Jetpack Compose Canvas 3D renderer.</string>
+    <string name="app_version_name">QuakeCast v1.0.0</string>
+
+    <!-- Navigation Tabs -->
+    <string name="tab_globe">3D Globe</string>
+    <string name="tab_list">Event Feed</string>
+    <string name="tab_alerts">Recent Alerts</string>
+    <string name="tab_safety">Safety Guide</string>
+    <string name="tab_chart_30_days">30-Day Frequency Chart</string>
+
+    <!-- App Bar & Actions -->
+    <string name="badge_room_cache">ROOM CACHE</string>
+    <string name="badge_usgs_live">USGS LIVE</string>
+    <string name="badge_supporter">Supporter</string>
+    <string name="btn_tv_mode">TV Mode</string>
+    <string name="search_placeholder">Search location or region\u2026</string>
+    <string name="search_content_description">Search</string>
+    <string name="clear_search">Clear</string>
+    <string name="proximity_settings_cd">Proximity Settings</string>
+    <string name="toggle_audio_alerts_cd">Toggle Audio Alerts</string>
+    <string name="timeframe_cd">Timeframe</string>
+    <string name="refresh_feed_cd">Refresh Feed</string>
+    <string name="settings_cd">Settings &amp; Support Development</string>
+    <string name="support_dev_tip_cd">Support QuakeCast Development</string>
+
+    <!-- Filter Bar -->
+    <string name="filter_tsunami">Tsunami</string>
+    <string name="feed_count_format">REAL-TIME EVENTS (%1$d)</string>
+    <string name="feed_radius_format">Radius: %1$d km</string>
+
+    <!-- Empty State -->
+    <string name="empty_quakes_title">No Earthquakes Found</string>
+    <string name="empty_quakes_desc">No tremors match your current magnitude filter or search criteria.</string>
+    <string name="btn_reset_filters">Reset Filters</string>
+
+    <!-- Event Item & Details -->
+    <string name="tap_to_view_details">Tap to view shockwave &amp; energy release data</string>
+    <string name="quake_details_header">Earthquake Inspector</string>
+    <string name="magnitude_prefix">M %1$.1f</string>
+    <string name="depth_format">Depth: %1$.1f km</string>
+    <string name="distance_format">%1$.1f km away</string>
+    <string name="estimated_arrival">Estimated Arrival</string>
+    <string name="primary_p_wave">P-Wave (Primary)</string>
+    <string name="secondary_s_wave">S-Wave (Secondary)</string>
+    <string name="energy_equivalent">Estimated Energy</string>
+    <string name="btn_view_usgs">View USGS Event</string>
+    <string name="btn_share_quake">Share Event</string>
+
+    <!-- Proximity Warning Banner -->
+    <string name="proximity_banner_title">SEISMIC EMERGENCY PROXIMITY ALERT</string>
+    <string name="proximity_alert_distance_format">%1$.1f km from %2$s</string>
+    <string name="btn_speak">Speak</string>
+
+    <!-- Proximity Settings Dialog -->
+    <string name="proximity_dialog_title">Proximity Alert Location</string>
+    <string name="proximity_dialog_desc">Set your reference coordinate and alert radius to receive instant proximity tremor alerts and TTS announcements.</string>
+    <string name="label_location_name">Location Name</string>
+    <string name="label_latitude">Latitude (°)</string>
+    <string name="label_longitude">Longitude (°)</string>
+    <string name="label_alert_radius">Alert Radius (%1$d km)</string>
+    <string name="enable_audio_narration">Audio Voice Narration</string>
+    <string name="enable_audio_narration_desc">Automatically vocalize closest tremors upon feed refresh</string>
+    <string name="btn_save_location">Save Coordinates</string>
+    <string name="btn_cancel">Cancel</string>
+
+    <!-- Safety Guide Screen -->
+    <string name="safety_guide_title">Earthquake Safety Guide</string>
+    <string name="safety_subtitle">Critical survival actions endorsed by USGS &amp; FEMA</string>
+    <string name="safety_drop_title">1. Drop, Cover, and Hold On</string>
+    <string name="safety_drop_desc">DROP to your hands and knees. COVER your head and neck under a sturdy table. HOLD ON until shaking ceases.</string>
+    <string name="safety_indoor_title">2. Stay Indoors</string>
+    <string name="safety_indoor_desc">Do NOT run outside during active tremors. Most injuries occur from falling debris, glass, and exterior facades.</string>
+    <string name="safety_hazard_title">3. Inspect Utilities Post-Tremor</string>
+    <string name="safety_hazard_desc">Check for gas leaks and shut off the main valve if gas odor is present. Avoid open flames, matches, or electrical switches.</string>
+    <string name="safety_kit_title">4. Emergency Preparedness Go-Bag</string>
+    <string name="safety_kit_desc">Maintain 3 days of water (1 gallon/person/day), non-perishable food, flashlight, first aid kit, whistle, and power bank.</string>
+
+    <!-- Settings & Support Screen -->
+    <string name="settings_title">Settings &amp; Support</string>
+    <string name="action_back">Back</string>
+    <string name="supporter_active_title">Active Supporter Status</string>
+    <string name="supporter_active_desc">Thank you for supporting \'%1$s\'! All voluntary prompts are permanently suppressed.</string>
+    <string name="settings_shake_header">TREMOR SHAKE-TO-REFRESH SENSITIVITY</string>
+    <string name="settings_shake_desc">Adjust the required g-force threshold for physical device shaking to trigger an instant USGS feed refresh when a tremor is felt.</string>
+    <string name="shake_to_refresh_title">Shake to Refresh Feeds</string>
+    <string name="shake_active_status">Active via SensorManager</string>
+    <string name="disabled_status">Disabled</string>
+    <string name="shake_required_force">Required Force Threshold</string>
+    <string name="shake_sens_high_desc">High Sensitivity — Triggers with light wrist flick</string>
+    <string name="shake_sens_med_desc">Standard Sensitivity — Deliberate shake motion</string>
+    <string name="shake_sens_low_desc">Low Sensitivity — Vigorous shake (anti-pocket trigger)</string>
+    <string name="shake_preset_gentle">Gentle (1.8g)</string>
+    <string name="shake_preset_standard">Standard (2.5g)</string>
+    <string name="shake_preset_firm">Firm (3.5g)</string>
+    <string name="settings_theme_header">GLOBAL THEME &amp; APPEARANCE</string>
+    <string name="settings_theme_desc">Switch app theme color palette or match system dark/light preferences across all screens.</string>
+    <string name="settings_theme_mode_title">Theme Mode</string>
+    <string name="settings_current_theme">Current: %1$s</string>
+    <string name="theme_system_title">Follow System</string>
+    <string name="theme_system_desc">Automatically adjust to Android system dark or light mode</string>
+    <string name="theme_dark_title">Dark Theme</string>
+    <string name="theme_dark_desc">Deep cosmic navy palette optimized for OLED and night monitoring</string>
+    <string name="theme_light_title">Light Theme</string>
+    <string name="theme_light_desc">High-contrast clean light mode for daytime readability</string>
+
+    <!-- Support & Tip Jars -->
+    <string name="settings_support_header">SUPPORT INDEPENDENT DEVELOPMENT</string>
+    <string name="settings_support_desc">QuakeCast is 100% ad-free, open science, and telemetry-private. If this app keeps you informed and safe, consider a voluntary contribution.</string>
+    <string name="settings_tip_jars_header">DIRECT WEB TIP JARS</string>
+    <string name="settings_paypal_desc">Direct transfer via PayPal app or browser</string>
+    <string name="settings_paypal_button">Open PayPal ($5)</string>
+    <string name="settings_kofi_desc">0% platform fees for open science</string>
+    <string name="settings_kofi_button">Open Ko-fi</string>
+
+    <!-- Community & Engagement Telemetry -->
+    <string name="settings_engagement_header">COMMUNITY &amp; AUTO-PROMPT SYSTEM</string>
+    <string name="settings_engagement_desc">QuakeCast uses coordinated frequency-capped engagement heuristics (30-day minimum cooldown, emergency safety lockout) to responsibly prompt for updates, reviews, and safety sharing.</string>
+    <string name="settings_telemetry_title">User Engagement Telemetry</string>
+    <string name="telemetry_install_duration">Install Duration:</string>
+    <string name="telemetry_days_format">%1$d days</string>
+    <string name="telemetry_manual_refreshes">Manual Refreshes:</string>
+    <string name="telemetry_refreshes_needed_format">%1$d / 5 needed</string>
+    <string name="telemetry_operations">Successful Operations:</string>
+    <string name="telemetry_actions_format">%1$d actions</string>
+    <string name="telemetry_prompt_cooldown">Prompt Cooldown:</string>
+    <string name="telemetry_cooldown_val">30-Day Minimum Interval</string>
+    <string name="telemetry_play_rating">Google Play Rating:</string>
+    <string name="telemetry_rated">Rated ⭐️</string>
+    <string name="telemetry_not_rated">Not rated yet</string>
+    <string name="telemetry_shared">Community Shared:</string>
+    <string name="telemetry_already_shared">Shared 📢</string>
+    <string name="telemetry_not_shared">Not shared yet</string>
+    <string name="settings_preview_title">Instant Preview &amp; QA Testing</string>
+    <string name="btn_preview_update">Update 🚀</string>
+    <string name="btn_preview_rate">Rate ⭐️</string>
+    <string name="btn_preview_share">Share 📢</string>
+
+    <!-- Thank you Dialog -->
+    <string name="thank_you_title">Thank You For Supporting!</string>
+    <string name="thank_you_desc">You have unlocked \'%1$s\' Supporter status! All voluntary donation prompts are permanently hidden.</string>
+    <string name="btn_awesome">Awesome!</string>
+
+    <!-- Update App Dialog -->
+    <string name="update_dialog_title">Update Available</string>
+    <string name="update_dialog_version_ready">QuakeCast v1.1.0 Ready</string>
+    <string name="update_dialog_description">A fresh update is ready with telemetry and visual performance enhancements:</string>
+    <string name="update_feature_feed_title">Real-Time Feed Acceleration</string>
+    <string name="update_feature_feed_desc">Faster USGS GeoJSON polling and reduced data usage.</string>
+    <string name="update_feature_globe_title">Enhanced 3D Globe Visuals</string>
+    <string name="update_feature_globe_desc">Higher resolution fault-line boundaries and smoother rotation.</string>
+    <string name="update_feature_proximity_title">Proximity Sensitivity</string>
+    <string name="update_feature_proximity_desc">Sub-kilometer seismic hypocenter distance calculations.</string>
+    <string name="update_button_now">Update Now</string>
+    <string name="remind_me_later">Remind Me Later</string>
+
+    <!-- Rate App Dialog -->
+    <string name="rate_dialog_title">Finding QuakeCast Helpful?</string>
+    <string name="rate_dialog_subtitle">100% Ad-Free Independent Seismic Telemetry</string>
+    <string name="rate_dialog_description">If QuakeCast keeps you informed and safe during seismic events, a 5-star rating on Google Play helps others discover this life-safety tool.</string>
+    <string name="rate_dialog_confirm_button">Rate on Google Play ⭐️</string>
+    <string name="rate_dialog_feedback_button">Needs Work 💬</string>
+    <string name="maybe_later">Maybe Later</string>
+    <string name="feedback_dialog_title">Help Us Improve QuakeCast</string>
+    <string name="feedback_dialog_description">We value your input! Would you like to send a direct suggestion or bug report to our engineering team?</string>
+    <string name="feedback_dialog_send_button">Send Feedback</string>
+    <string name="no_thanks">No Thanks</string>
+
+    <!-- Share App Dialog -->
+    <string name="share_dialog_title">Protect Friends &amp; Family</string>
+    <string name="share_dialog_subtitle">Real-Time Earthquake Awareness</string>
+    <string name="share_dialog_description">Earthquake safety is a community effort. Share QuakeCast with your loved ones so they receive instant tremor notifications, 3D shockwave arrival estimates, and emergency checklists.</string>
+    <string name="share_dialog_bullet_points">• 100% Ad-Free\n• Zero Tracking\n• Direct USGS Real-Time Telemetry</string>
+    <string name="share_dialog_confirm_button">Share QuakeCast Link</string>
+    <string name="share_app_message">🚨 Stay safe and alerted during earthquakes with QuakeCast!\n\nLive USGS seismic telemetry, 3D shockwave simulators, and proximity tremor notifications. 100% Ad-Free &amp; Open Science:\nhttps://play.google.com/store/apps/details?id=%1$s</string>
+    <string name="share_quake_message">🚨 Earthquake Alert: M %1$.1f — %2$s\nTime: %3$s\nDepth: %4$.1f km\nUSGS Details: %5$s\n\nTracked via QuakeCast App</string>
+
+    <!-- Toast & Feedback Messages -->
+    <string name="toast_shake_detected">Device Tremor / Shake Detected! Refreshing USGS feeds\u2026</string>
+    <string name="toast_milestone_reached">🎉 Milestone Reached: %1$dth Seismic Feed Lookup! QuakeCast is 100% ad-free &amp; independent.</string>
+    <string name="btn_support_dev">Support Dev</string>
+
+    <!-- Donation Bottom Sheet -->
+    <string name="donation_sheet_title">Support QuakeCast Development</string>
+    <string name="donation_sheet_desc">Help keep our global earthquake telemetry servers fast, ad-free, and accessible to everyone worldwide.</string>
+    <string name="donation_btn_active">Active 💛</string>
+    <string name="donation_value_card_title">Keeping You Safe &amp; Alerted</string>
+    <string name="donation_value_card_desc">You have monitored seismic events with zero ads and zero tracking. If you appreciate open science safety, consider a small voluntary tip.</string>
+    <string name="donation_value_card_btn">Support Development</string>
+    <string name="donation_value_card_dismiss">Dismiss</string>
+</resources>

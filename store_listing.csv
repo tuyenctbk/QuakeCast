@@ -1,0 +1,300 @@
+Language,App Name,Short Description,Full Description
+en-US,QuakeCast: Earthquake Tracker,"Real-time USGS earthquake telemetry, 3D globe, and seismic proximity alerts.","QuakeCast delivers fast, reliable, and completely ad-free earthquake monitoring powered by real-time USGS (United States Geological Survey) seismic telemetry. Whether you live in a seismically active zone or want to stay informed about global tectonic movements, QuakeCast provides intuitive 3D visualizations, wave arrival estimations, and emergency safety checklists.
+
+KEY FEATURES:
+
+• Interactive 3D Canvas Globe
+Explore tectonic plate boundaries and recent seismic events across the planet with smooth, responsive 3D globe navigation. Visually inspect earthquake hypocenters, focal depths, and magnitudes in real time.
+
+• Real-Time USGS Seismic Telemetry
+Access live global earthquake feeds updated directly from official USGS GeoJSON servers. Filter tremors by magnitude (All, M2.5+, M4.5+, M6.0+, M7.0+) or search by city, region, and country name.
+
+• Offline Resilience with Room Cache
+Never lose access to critical seismic data during power outages or connectivity disruptions. QuakeCast automatically caches recent earthquake events in an on-device Room database, keeping the globe and feeds fully functional offline.
+
+• Intelligent Proximity Warnings
+Set your home coordinates and warning radius to receive instant proximity alerts whenever a tremor strikes nearby. Review calculated P-wave and S-wave arrival estimates, estimated Modified Mercalli Intensity (MMI), and equivalent TNT energy yield.
+
+• Spoken Vocal Warnings
+Enable Text-to-Speech (TTS) audio narration to hear immediate voice alerts when tremors are detected within your designated proximity zone.
+
+• Physical Tremor Shake-to-Refresh
+Built-in accelerometer integration allows you to physically shake your device to trigger an instant USGS feed refresh when a tremor is felt. Adjust the required g-force threshold directly in the settings menu.
+
+• Comprehensive Safety Guide
+Access critical earthquake safety procedures based on official FEMA and USGS recommendations: Drop, Cover, and Hold On, post-tremor utility hazard inspection, tsunami evacuation protocols, and an interactive Go-Bag checklist.
+
+• 100% Ad-Free & Telemetry-Private
+QuakeCast contains zero advertisements, zero analytics trackers, and zero background profiling. Your coordinates and settings remain strictly on your local device.
+
+Stay informed, prepared, and safe with QuakeCast."
+es-ES,QuakeCast: Monitor de Sismos,"Telemetría sísmica USGS en tiempo real, globo 3D y alertas de proximidad.","QuakeCast ofrece un monitoreo sísmico rápido, confiable y 100% libre de anuncios, impulsado por telemetría en tiempo real del Servicio Geológico de los Estados Unidos (USGS). Ya sea que vivas en una zona sísmica activa o desees seguir la actividad tectónica mundial, QuakeCast te proporciona visualizaciones en 3D, cálculos de ondas sísmicas y guías de emergencia.
+
+CARACTERÍSTICAS PRINCIPALES:
+
+• Globo 3D Interactivo
+Explora fallas tectónicas y eventos sísmicos recientes en todo el planeta con navegación fluida en 3D. Inspecciona hipocentros, profundidad focal y magnitud en tiempo real.
+
+• Datos Sísmicos USGS en Tiempo Real
+Accede a fuentes sísmicas mundiales actualizadas al instante desde servidores oficiales del USGS. Filtra por magnitud (Todos, M2.5+, M4.5+, M6.0+, M7.0+) o busca por ciudad, región o país.
+
+• Funcionamiento Sin Conexión (Caché Room)
+No pierdas información crucial durante cortes eléctricos o fallos de red. QuakeCast almacena los sismos recientes en una base de datos local SQLite Room, manteniendo el globo y las listas disponibles sin conexión.
+
+• Alertas Inteligentes de Proximidad
+Define tu ubicación de referencia y radio de alerta para recibir advertencias inmediatas si ocurre un sismo cercano. Consulta tiempos estimados de llegada de ondas P y S, intensidad MMI y energía liberada equivalente en TNT.
+
+• Alertas por Voz (TTS)
+Activa la narración de audio para escuchar avisos automáticos cuando se detecte un temblor dentro de tu perímetro de alerta configurado.
+
+• Agitar para Actualizar (Sensor Acelerómetro)
+La integración con el sensor de movimiento te permite agitar físicamente el dispositivo para actualizar al instante las fuentes sísmicas al sentir un temblor. Ajusta la sensibilidad de fuerza g en el menú de ajustes.
+
+• Guía Completa de Seguridad Sísmica
+Aprende las medidas de protección avaladas por FEMA y USGS: Agacharse, Cubrirse y Sujetarse, revisión de servicios tras el sismo, protocolos ante tsunamis y lista interactiva de mochila de emergencia.
+
+• Privacidad Absoluta y Cero Publicidad
+Sin anuncios, sin rastreadores y sin recopilación de datos personales. Tus coordenadas y preferencias permanecen únicamente en tu dispositivo."
+ja-JP,QuakeCast: 地震情報モニター,リアルタイムUSGS地震速報、3D地球儀、揺れの到達予想と近接アラート。,"QuakeCast（クエイクキャスト）は、米国地質調査所（USGS）の公式オープンデータに直結した、広告ゼロ・完全プライベートの地震監視アプリです。リアルタイムの3D地球儀レンダリング、主要動・初期微動の到達時間予測、防災安全ガイドを提供します。
+
+主な機能：
+
+• インタラクティブ3Dキャンバス地球儀
+地球規模のプレート境界や断層帯、世界各地の最新地震を滑らかな3D地球儀で直感的に把握できます。震源の深さや規模を視覚的に検査可能です。
+
+• リアルタイムUSGS地震速報データ
+USGS公式GeoJSONストリームから直接最新データを取得。規模別フィルター（全地震、M2.5以上、M4.5以上、M6.0以上、M7.0以上）や地名・国名検索に対応。
+
+• オフライン対応（Roomキャッシュ）
+通信障害や停電時でも安心。取得した地震データは端末内のRoomデータベースに安全に自動保存され、オフライン環境でも3D地球儀や地震一覧を表示できます。
+
+• 近接震度・到達時間アラート
+自宅や目的地の座標と監視半径を設定すると、設定エリア内で発生した地震を瞬時に通知。P波（初期微動）およびS波（主要動）の推定到達時間や推定メルカリ震度階級（MMI）を表示します。
+
+• 音声読み上げ（TTS）対応
+近くで揺れが発生した際、自動で音声ガイダンスが流れるテキスト読み上げ機能を搭載。
+
+• デバイスを振って更新（加速度センサー）
+揺れを感じた瞬間にスマートフォンを物理的に振るだけで、瞬時に最新データを再取得。検知するGフォース感度は設定画面から細かく調整可能です。
+
+• 防災安全ガイド & 非常用持ち出し袋チェック
+「まず低く、頭を守り、動かない（ドロップ・カバー・ホールドオン）」をはじめ、津波避難プロトコル、非常用持ち出し袋のチェックリストを収録。
+
+• 100% 広告なし・プライバシー保護
+広告配信SDKや行動追跡トラッカーは一切含まれていません。位置情報や設定内容は端末内のみに安全に保存されます。"
+vi-VN,QuakeCast: Theo dõi Động đất,"Theo dõi địa chấn USGS thời gian thực, quả địa cầu 3D và cảnh báo lân cận.","QuakeCast cung cấp công cụ giám sát địa chấn thời gian thực, nhanh chóng, tin cậy và hoàn toàn không có quảng cáo, sử dụng nguồn dữ liệu chính thức từ Cục Khảo sát Địa chất Hoa Kỳ (USGS). Ứng dụng tích hợp quả địa cầu 3D tương tác, tính toán thời gian lan truyền sóng địa chấn và hướng dẫn an toàn khẩn cấp.
+
+TÍNH NĂNG NỔI BẬT:
+
+• Quả Địa Cầu 3D Tương Tác
+Khám phá các ranh giới mảng kiến tạo và các trận động đất vừa xảy ra trên toàn thế giới với đồ họa 3D mượt mà. Xem trực quan tâm chấn, độ sâu tiêu cự và cường độ chấn động.
+
+• Dữ Liệu Địa Chấn USGS Thời Gian Thực
+Cập nhật liên tục từ các máy chủ GeoJSON chính thức của USGS. Lọc động đất theo cường độ Richter (Tất cả, M2.5+, M4.5+, M6.0+, M7.0+) hoặc tìm kiếm theo tên thành phố, khu vực và quốc gia.
+
+• Hoạt Động Ngoại Tuyến (Bộ nhớ đệm Room)
+Dữ liệu động đất được lưu trữ cục bộ vào cơ sở dữ liệu SQLite Room trên thiết bị, cho phép bạn tiếp tục xem bản đồ và danh sách sự kiện ngay cả khi mất kết nối mạng hoặc cúp điện.
+
+• Cảnh Báo Khoảng Cách Thông Minh
+Thiết lập tọa độ vị trí và bán kính cảnh báo của bạn. Khi có động đất xảy ra trong vùng lân cận, ứng dụng sẽ tính toán thời gian sóng P và sóng S đến nơi, ước tính cấp chấn động MMI và mức giải phóng năng lượng tương đương TNT.
+
+• Đọc Cảnh Báo Bằng Giọng Nói (TTS)
+Tự động phát âm thanh thông báo qua giọng nói khi phát hiện chấn động gần vị trí của bạn.
+
+• Lắc Thiết Bị Để Cập Nhật
+Cảm biến gia tốc kế tích hợp cho phép bạn lắc nhẹ điện thoại để kích hoạt làm mới dữ liệu USGS ngay khi cảm nhận thấy rung lắc. Dễ dàng điều chỉnh ngưỡng nhạy cảm trong phần cài đặt.
+
+• Cẩm Nang An Toàn & Túi Cứu Hộ
+Hướng dẫn sinh tồn chuẩn quốc tế (Nằm xuống, Che chắn và Giữ chặt), kiểm tra an toàn sau động đất, cảnh báo sóng thần và danh sách vật dụng khẩn cấp cần chuẩn bị.
+
+• Hoàn Toàn Không Quảng Cáo & Bảo Mật Tuyệt Đối
+QuakeCast không chứa quảng cáo, không có mã theo dõi người dùng và không chia sẻ dữ liệu vị trí ra ngoài."
+id-ID,QuakeCast: Info Gempa Bumi,"Telemetri gempa USGS real-time, bola bumi 3D, dan peringatan jarak getaran.","QuakeCast menghadirkan pemantauan gempa bumi real-time yang cepat, akurat, dan 100% bebas iklan, didukung oleh data resmi United States Geological Survey (USGS). Dilengkapi visualisasi bola bumi 3D, estimasi perambatan gelombang gempa, dan panduan keselamatan bencana.
+
+FITUR UTAMA:
+
+• Bola Bumi 3D Interaktif
+Jelajahi batas lempeng tektonik dan aktivitas seismik terkini di seluruh dunia melalui navigasi 3D yang halus. Periksa hiposentrum, kedalaman gempa, dan magnitudo secara visual.
+
+• Data Seismik USGS Real-Time
+Akses informasi gempa global yang diperbarui langsung dari server GeoJSON USGS. Saring gempa berdasarkan skala magnitudo (Semua, M2.5+, M4.5+, M6.0+, M7.0+) atau cari berdasarkan nama kota dan negara.
+
+• Ketahanan Offline dengan Cache Room
+Tetap dapat mengakses data gempa saat jaringan internet terputus atau listrik padam. QuakeCast menyimpan data secara otomatis di database lokal Room pada perangkat Anda.
+
+• Peringatan Jarak & Proksimitas
+Tentukan lokasi tempat tinggal dan radius pemantauan. Dapatkan estimasi kedatangan gelombang P dan gelombang S, perkiraan skala intensitas MMI, serta kesetaraan energi TNT saat gempa terjadi di dekat Anda.
+
+• Narasi Suara Peringatan (TTS)
+Dengarkan pemberitahuan suara otomatis melalui Text-to-Speech saat getaran terdeteksi di sekitar radius lokasi Anda.
+
+• Goyangkan HP untuk Segarkan Data
+Sensor akselerometer memungkinkan Anda menggoyangkan ponsel untuk memuat ulang data USGS secara instan saat merasakan getaran lindu. Sensitivitas dapat diatur pada menu pengaturan.
+
+• Panduan Keselamatan & Tas Siaga Bencana
+Pelajari tindakan penyelamatan diri resmi (Drop, Cover, Hold On), protokol evakuasi tsunami, pemeriksaan instalasi gas/listrik, dan daftar periksa tas darurat.
+
+• 100% Bebas Iklan & Privasi Terjaga
+Tidak ada iklan, tidak ada pelacak pihak ketiga, dan koordinat lokasi Anda tidak pernah dikirim ke server luar."
+tr-TR,QuakeCast: Deprem Takibi,"Gerçek zamanlı USGS deprem verileri, 3D küre ve sismik yakınlık uyarıları.","QuakeCast, ABD Jeolojik Araştırmalar Kurumu (USGS) resmi verileriyle çalışan, hızlı, güvenilir ve tamamen reklamsız bir deprem izleme uygulamasıdır. 3D interaktif yerküre, sismik dalga varış süresi hesaplamaları ve acil durum güvenlik rehberi sunar.
+
+ÖNE ÇIKAN ÖZELLİKLER:
+
+• İnteraktif 3D Yerküre
+Dünya genelindeki fay hatlarını ve son sismik olayları akıcı 3D küre üzerinde inceleyin. Depremlerin merkez üssünü, odak derinliğini ve büyüklüğünü anlık olarak görselleştirin.
+
+• Canlı USGS Sismik Verileri
+Doğrudan USGS GeoJSON sunucularından alınan gerçek zamanlı küresel deprem akışına erişin. Büyüklüğe göre filtreleme yapın (Tümü, M2.5+, M4.5+, M6.0+, M7.0+) veya konuma göre arayın.
+
+• Çevrimdışı Çalışma (Room Veritabanı)
+İnternet kesintilerinde veya acil durumlarda verisiz kalmayın. QuakeCast, son depremleri cihazınızdaki yerel Room SQLite veritabanına otomatik kaydeder.
+
+• Akıllı Yakınlık Uyarıları
+Konum koordinatlarınızı ve alarm yarıçapınızı belirleyin. Yakınınızda bir sarsıntı meydana geldiğinde tahmini P dalgası ve S dalgası varış sürelerini ve MMI şiddet seviyesini görün.
+
+• Sesli Uyarı Anonsu (TTS)
+Belirlediğiniz yarıçap içerisinde deprem algılandığında sesli bildirimler dinleyin.
+
+• Sarsıntı Algılama (Cihazı Sallayarak Yenileme)
+İvmeölçer entegrasyonu sayesinde sarsıntı hissettiğinizde telefonunuzu sallayarak verileri anında güncelleyin. Hassasiyet ayarları menüden kolayca yapılandırılabilir.
+
+• Kapsamlı Deprem Güvenlik Rehberi
+FEMA ve USGS onaylı hayati güvenlik kuralları: Çök, Kapan, Tutun adımları, sarsıntı sonrası gaz/elektrik kontrolü, tsunami tahliye protokolü ve acil durum afet çantası listesi.
+
+• Tamamen Reklamsız ve Gizlilik Odaklı
+QuakeCast hiçbir reklam içermez, kullanıcı takibi yapmaz ve konum bilgilerinizi kesinlikle dış sunuculara göndermez."
+it-IT,QuakeCast: Terremoti Live,"Dati sismici USGS in tempo reale, globo 3D e avvisi di prossimità tellurica.","QuakeCast è l'applicazione per il monitoraggio sismico in tempo reale, rapida, affidabile e totalmente priva di pubblicità, basata sui dati aperti ufficiali dello United States Geological Survey (USGS). Offre visualizzazioni 3D fluide, stime di propagazione delle onde sismiche e guide per la sicurezza.
+
+FUNZIONALITÀ PRINCIPALI:
+
+• Globo 3D Interattivo
+Esplora le faglie tettoniche e gli eventi sismici recenti in tutto il mondo con una grafica 3D fluida e intuitiva. Verifica ipocentro, profondità focale e magnitudo all'istante.
+
+• Dati Sismici USGS in Tempo Reale
+Accedi ai flussi sismici mondiali aggiornati costantemente dai server GeoJSON USGS. Filtra per magnitudo (Tutti, M2.5+, M4.5+, M6.0+, M7.0+) o cerca per città, regione e stato.
+
+• Resilienza Offline con Cache Room
+Non perdere mai l'accesso alle informazioni sismiche durante blackout o interruzioni di rete. I dati vengono salvati automaticamente nel database SQLite locale del dispositivo.
+
+• Avvisi Intelligenti di Prossimità
+Imposta le tue coordinate e il raggio di allarme. Ricevi stime sui tempi di arrivo delle onde P ed S, la scala di intensità MMI prevista e la resa energetica equivalente in TNT.
+
+• Sintesi Vocale degli Allarmi (TTS)
+Ascolta avvisi vocali immediati quando viene registrata una scossa tellurica entro il raggio di allerta impostato.
+
+• Aggiornamento Tramite Scuotimento (Sensore Accelerometro)
+Scuoti fisicamente lo smartphone per forzare un aggiornamento immediato dei bollettini sismici quando avverti un tremore. Sensibilità regolabile nelle impostazioni.
+
+• Guida Completa alla Sicurezza Sismica
+Procedure raccomandate per la protezione personale: Abbassati, Riparati, Tieniti Forte (Drop, Cover, Hold On), controlli post-sisma delle utenze, protocolli tsunami e lista dello zaino di emergenza.
+
+• Zero Pubblicità e Massima Riservatezza
+Nessun banner pubblicitario, nessun codice di tracciamento e nessuna profilazione. Le tue coordinate restano al sicuro sul tuo dispositivo."
+fr-FR,QuakeCast: Séismes en Direct,"Télémétrie sismique USGS en direct, globe 3D et alertes de proximité.","QuakeCast propose une surveillance sismique instantanée, fiable et garantie sans publicité, alimentée par la télémétrie en temps réel de l'Institut d'études géologiques des États-Unis (USGS). Profitez d'un globe 3D interactif, de simulations d'ondes sismiques et de guides de sécurité d'urgence.
+
+FONCTIONNALITÉS CLÉS :
+
+• Globe 3D Interactif
+Naviguez parmi les failles tectoniques et les séismes récents à travers le monde grâce à un moteur de rendu 3D optimisé. Consultez la localisation des foyers sismiques, leur profondeur et leur magnitude.
+
+• Flux Sismique USGS en Temps Réel
+Accédez aux relevés sismiques mondiaux mis à jour en continu depuis les flux GeoJSON de l'USGS. Filtrez par magnitude (Tous, M2.5+, M4.5+, M6.0+, M7.0+) ou recherchez par localité.
+
+• Fonctionnement Hors Ligne (Cache Room)
+Consultez vos données même lors de coupures de réseau ou de pannes d'électricité grâce au stockage local sécurisé dans la base de données Room SQLite de votre appareil.
+
+• Alertes de Proximité et Délais d'Ondes
+Configurez votre emplacement et votre rayon de surveillance pour obtenir des estimations d'arrivée des ondes P et ondes S, l'intensité MMI estimée et l'énergie équivalente en TNT.
+
+• Annonces Vocales d'Alerte (TTS)
+Bénéficiez d'une vocalisation automatique des alertes dès qu'un tremblement de terre survient dans votre zone de proximité.
+
+• Secouer pour Actualiser
+Un capteur accélérométrique vous permet de secouer l'appareil pour rafraîchir instantanément les flux sismiques lorsque vous ressentez une secousse. Seuil de force g réglable dans les paramètres.
+
+• Guide de Survie et Prévention
+Instructions approuvées en cas de tremblement de terre : Se baisser, S'abriter, S'agripper, vérification des réseaux de gaz et d'électricité, consignes d'évacuation tsunami et liste du kit d'urgence.
+
+• Zéro Publicité & Confidentialité Totale
+Sans aucune publicité, sans traqueurs tiers et sans collecte de données personnelles. Vos coordonnées restent strictement sur votre téléphone."
+de-DE,QuakeCast: Erdbeben-Tracker,"Echtzeit-USGS-Erdbebendaten, 3D-Globus und seismische Näherungswarnungen.","QuakeCast bietet schnelle, zuverlässige und vollständig werbefreie Erdbebenüberwachung auf Basis der offiziellen seismischen Echtzeitdaten des United States Geological Survey (USGS). Mit reaktionsschnellem 3D-Globus, Wellenlaufzeit-Berechnungen und Notfall-Sicherheitsleitfäden.
+
+HAUPTMERKMALE:
+
+• Interaktiver 3D-Globus
+Erkunden Sie tektonische Plattengrenzen und weltweite Erdbeben in einer flüssigen 3D-Darstellung. Analysieren Sie Epizentren, Herdtiefen und Magnituden in Echtzeit.
+
+• Live-USGS-Erdbebenströme
+Erhalten Sie kontinuierlich aktualisierte Erdbebendaten direkt von den offiziellen GeoJSON-Servern des USGS. Filtern Sie nach Stärke (Alle, M2.5+, M4.5+, M6.0+, M7.0+) oder suchen Sie gezielt nach Ländern und Städten.
+
+• Offline-Verfügbarkeit mit Room-Cache
+Behalten Sie auch bei Netzausfällen oder in Notsituationen vollen Zugriff auf wichtige Daten. Zuletzt empfangene Erdbeben werden automatisch in einer lokalen SQLite-Room-Datenbank gespeichert.
+
+• Intelligente Näherungs- und Wellenlaufzeitwarnung
+Legen Sie Ihren Standort und Überwachungsradius fest. Bei nahen Beben berechnet QuakeCast die geschätzte Ankunftszeit von P- und S-Wellen, die MMI-Intensität und die äquivalente TNT-Sprengkraft.
+
+• Sprachausgabe bei Alarm (TTS)
+Aktivieren Sie die Text-to-Speech-Sprachausgabe für automatische akustische Warnmeldungen bei Erschütterungen im Nahbereich.
+
+• Schüttel-Geste zur Schnellaktualisierung
+Mithilfe des integrierten Beschleunigungssensors können Sie das Gerät einfach schütteln, um die Erdbebendaten bei gespürten Erschütterungen sofort neu zu laden. Schwellenwert im Einstellungsmenü anpassbar.
+
+• Ausführlicher Erdbeben-Sicherheitsratgeber
+Wichtige Verhaltensregeln nach Empfehlungen von FEMA und USGS: Hinlegen, Schützen, Festhalten (Drop, Cover, Hold On), Gefahrenkontrolle nach Erschütterungen, Tsunami-Protokolle und Checkliste für die Notfalltasche.
+
+• 100% Werbefrei & Datenschutz
+Keine Werbeanzeigen, kein Tracking und keine Weitergabe von Standortdaten. Alle Einstellungen verbleiben ausschließlich lokal auf Ihrem Gerät."
+zh-CN,QuakeCast: 地震实时监测,实时USGS地震数据、3D互动地球仪及地震波到达时间估算。,"QuakeCast 是一款快速、可靠且完全无广告的地震监测工具，数据源直接连接美国地质调查局（USGS）官方地震测网。应用提供流畅的3D地球仪可视化呈现、P波与S波到达时间预估以及地震应急避险指南。
+
+核心功能：
+
+• 3D互动地球仪
+在全球3D数字地球仪上探索板块边界与最新发生的地震事件。直观查看地震震中位置、震源深度以及震级强度。
+
+• 实时官方地震遥测
+直接从USGS官方服务器接收全球地震遥测流。支持按震级多级筛选（全部、M2.5+、M4.5+、M6.0+、M7.0+），并支持按城市或国家名称快速搜索。
+
+• 离线韧性支持（本地Room数据库）
+即便在断网或基站停电等紧急情况下也能从容查看。QuakeCast自动将最新地震记录缓存至设备本地Room SQLite数据库，离线状态下地球仪与列表依然可用。
+
+• 智能震动距离警报与地震波估算
+设定您的居住坐标与预警半径。当周边发生地震时，系统自动估算P波（纵波）与S波（横波）到达延迟时间、麦加利烈度（MMI）和TNT当量释放能。
+
+• 语音播报（TTS）
+内置文本转语音功能，当预警范围内侦测到地震时自动通过语音朗读警报。
+
+• 物理摇一摇立即刷新数据
+利用设备内置加速度传感器，当身体感受到地面震动时，物理晃动手机即可瞬间重新拉取最新地震数据。传感器感应阈值可在设置菜单中自由调节。
+
+• 地震防灾避险全指南
+收录国际通用的科学避险措施：“伏地、遮挡、握紧（Drop, Cover, Hold On）”、震后燃气水电排查、海啸避险常识以及应急救援包清单。
+
+• 100%纯净无广告·严格保护隐私
+无任何广告插件，无第三方数据跟踪分析SDK。您的坐标与设置严格保存在本地设备中，绝不上传至任何外部服务器。"
+fil-PH,QuakeCast: Lindol Tracker,"Real-time na lindol telemetry mula USGS, 3D globo, at babala sa pagyanig.","Ang QuakeCast ay nagbibigay ng mabilis, maaasahan, at 100% walang ad na pagsubaybay sa lindol gamit ang real-time data mula sa United States Geological Survey (USGS). Naglalaman ng 3D globe visualization, pagtataya ng pagdating ng seismic waves, at kumpletong checklist para sa kaligtasan.
+
+MGA PANGUNAHING TAMPOK:
+
+• Interactive na 3D Canvas Globe
+Suriin ang mga tectonic plate boundaries at pinakabagong lindol sa buong mundo gamit ang maayos na 3D globe. Tingnan ang lalim, lokasyon ng sentro ng lindol (epicenter), at magnitude sa real time.
+
+• Real-Time USGS Seismic Telemetry
+Direktang konektado sa opisyal na USGS GeoJSON servers para sa agarang impormasyon sa lindol. I-filter ayon sa magnitude (Lahat, M2.5+, M4.5+, M6.0+, M7.0+) o maghanap ayon sa lungsod at bansa.
+
+• Paggamit Offline Gamit ang Room Cache
+Manatiling may impormasyon kahit walang koneksyon sa internet o brownout. Awtomatikong sine-save ng QuakeCast ang mga kamakailang lindol sa lokal na Room SQLite database ng iyong telepono.
+
+• Babala sa Kalapitan ng Pagyanig
+Itakda ang iyong lokasyon at radius ng babala. Kapag may lindol na naganap malapit sa iyo, kakalkulahin ng app ang tinatayang oras ng pagdating ng P-wave at S-wave, Modified Mercalli Intensity (MMI), at katumbas na enerhiya sa TNT.
+
+• Boses na Babala (Text-to-Speech)
+Makinig sa agarang boses na anunsyo kapag may naitalang lindol sa loob ng iyong itinakdang distansya.
+
+• Alugin ang Telepono Para Mag-Refresh
+Gamit ang accelerometer sensor, alugin lamang ang iyong telepono upang agad na i-refresh ang datos kapag nakaramdam ka ng pagyanig. Maaaring baguhin ang sensitivity sa settings.
+
+• Gabay sa Kaligtasan sa Lindol
+Alamin ang mga hakbang para sa kaligtasan ayon sa FEMA at USGS: Dumapa, Magkubli, at Kumapit (Drop, Cover, and Hold On), pagsusuri sa gas at kuryente, babala sa tsunami, at checklist para sa Go-Bag.
+
+• 100% Walang Ad at Pribado
+Walang advertisements, walang tracking tools, at ang iyong lokasyon ay nananatili lamang sa loob ng iyong telepono."

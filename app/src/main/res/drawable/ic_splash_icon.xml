@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="192dp"
+    android:height="192dp"
+    android:viewportWidth="192"
+    android:viewportHeight="192">
+    <!-- Concentric shockwave pulse rings -->
+    <path
+        android:strokeColor="#33FF1744"
+        android:strokeWidth="2.5"
+        android:fillColor="#00000000"
+        android:pathData="M 96 32 A 64 64 0 1 0 96 160 A 64 64 0 1 0 96 32 Z" />
+    <path
+        android:strokeColor="#66FF5252"
+        android:strokeWidth="3.0"
+        android:fillColor="#00000000"
+        android:pathData="M 96 48 A 48 48 0 1 0 96 144 A 48 48 0 1 0 96 48 Z" />
+    <path
+        android:strokeColor="#AAFF9100"
+        android:strokeWidth="3.5"
+        android:fillColor="#00000000"
+        android:pathData="M 96 64 A 32 32 0 1 0 96 128 A 32 32 0 1 0 96 64 Z" />
+    <!-- Center globe glow -->
+    <path
+        android:fillColor="#00E5FF"
+        android:pathData="M 96 76 A 20 20 0 1 0 96 116 A 20 20 0 1 0 96 76 Z" />
+    <path
+        android:fillColor="#FF1744"
+        android:pathData="M 96 88 A 8 8 0 1 0 96 104 A 8 8 0 1 0 96 88 Z" />
+    <!-- Seismograph pulse waveform line -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#00000000"
+        android:pathData="M 32 150 L 64 150 L 74 135 L 84 165 L 94 120 L 104 175 L 114 140 L 124 150 L 160 150" />
+</vector>

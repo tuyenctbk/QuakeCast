@@ -1,0 +1,193 @@
+<resources>
+    <!-- App Identity -->
+    <string name="app_name">QuakeCast</string>
+    <string name="app_tagline">Được hỗ trợ bởi luồng dữ liệu USGS GeoJSON thời gian thực &amp; bộ dựng hình 3D Android Jetpack Compose.</string>
+    <string name="app_version_name">QuakeCast v1.0.0</string>
+
+    <!-- Navigation Tabs -->
+    <string name="tab_globe">Quả địa cầu 3D</string>
+    <string name="tab_list">Dữ liệu động đất</string>
+    <string name="tab_alerts">Cảnh báo gần đây</string>
+    <string name="tab_safety">Cẩm nang an toàn</string>
+    <string name="tab_chart_30_days">Biểu đồ 30 ngày</string>
+
+    <!-- App Bar & Actions -->
+    <string name="badge_room_cache">BỘ NHỚ ROOM</string>
+    <string name="badge_usgs_live">USGS TRỰC TIẾP</string>
+    <string name="badge_supporter">Người ủng hộ</string>
+    <string name="btn_tv_mode">Chế độ TV</string>
+    <string name="search_placeholder">Tìm kiếm vị trí hoặc quốc gia\u2026</string>
+    <string name="search_content_description">Tìm kiếm</string>
+    <string name="clear_search">Xóa</string>
+    <string name="proximity_settings_cd">Cài đặt phạm vi cảnh báo</string>
+    <string name="toggle_audio_alerts_cd">Bật/tắt cảnh báo âm thanh</string>
+    <string name="timeframe_cd">Khung thời gian</string>
+    <string name="refresh_feed_cd">Làm mới dữ liệu</string>
+    <string name="settings_cd">Cài đặt &amp; Ủng hộ phát triển</string>
+    <string name="support_dev_tip_cd">Ủng hộ phát triển QuakeCast</string>
+
+    <!-- Filter Bar -->
+    <string name="filter_tsunami">Sóng thần</string>
+    <string name="feed_count_format">SỰ KIỆN TRỰC TIẾP (%1$d)</string>
+    <string name="feed_radius_format">Bán kính: %1$d km</string>
+
+    <!-- Empty State -->
+    <string name="empty_quakes_title">Không tìm thấy động đất</string>
+    <string name="empty_quakes_desc">Không có cơn địa chấn nào khớp với bộ lọc độ lớn hoặc tiêu chí tìm kiếm hiện tại.</string>
+    <string name="btn_reset_filters">Đặt lại bộ lọc</string>
+
+    <!-- Event Item & Details -->
+    <string name="tap_to_view_details">Chạm để xem sóng chấn động &amp; mức giải phóng năng lượng</string>
+    <string name="quake_details_header">Chi tiết địa chấn</string>
+    <string name="magnitude_prefix">M %1$.1f</string>
+    <string name="depth_format">Độ sâu: %1$.1f km</string>
+    <string name="distance_format">Cách %1$.1f km</string>
+    <string name="estimated_arrival">Thời gian lan truyền ước tính</string>
+    <string name="primary_p_wave">Sóng P (Sơ cấp)</string>
+    <string name="secondary_s_wave">Sóng S (Thứ cấp)</string>
+    <string name="energy_equivalent">Năng lượng ước tính</string>
+    <string name="btn_view_usgs">Xem trên USGS</string>
+    <string name="btn_share_quake">Chia sẻ sự kiện</string>
+
+    <!-- Proximity Warning Banner -->
+    <string name="proximity_banner_title">CẢNH BÁO ĐỊA CHẤN KHẨN CẤP GẦN BẠN</string>
+    <string name="proximity_alert_distance_format">%1$.1f km từ %2$s</string>
+    <string name="btn_speak">Đọc to</string>
+
+    <!-- Proximity Settings Dialog -->
+    <string name="proximity_dialog_title">Vị trí cảnh báo khoảng cách</string>
+    <string name="proximity_dialog_desc">Đặt tọa độ và bán kính cảnh báo của bạn để nhận thông báo địa chấn tức thì và đọc giọng nói TTS.</string>
+    <string name="label_location_name">Tên vị trí</string>
+    <string name="label_latitude">Vĩ độ (°)</string>
+    <string name="label_longitude">Kinh độ (°)</string>
+    <string name="label_alert_radius">Bán kính cảnh báo (%1$d km)</string>
+    <string name="enable_audio_narration">Đọc cảnh báo bằng giọng nói</string>
+    <string name="enable_audio_narration_desc">Tự động đọc thông tin cơn địa chấn gần nhất khi cập nhật dữ liệu</string>
+    <string name="btn_save_location">Lưu tọa độ</string>
+    <string name="btn_cancel">Hủy</string>
+
+    <!-- Safety Guide Screen -->
+    <string name="safety_guide_title">Cẩm nang an toàn khi động đất</string>
+    <string name="safety_subtitle">Quy tắc sinh tồn khuyến nghị bởi USGS &amp; FEMA</string>
+    <string name="safety_drop_title">1. Cúi xuống, che chắn và giữ chặt</string>
+    <string name="safety_drop_desc">HẠ THẤP người xuống sàn. CHE ĐẦU và cổ dưới gầm bàn vững chắc. GIỮ CHẶT cho đến khi hết rung lắc.</string>
+    <string name="safety_indoor_title">2. Ở yên trong nhà</string>
+    <string name="safety_indoor_desc">KHÔNG chạy ra ngoài khi đang rung lắc. Đa số chấn thương xảy ra do mảnh vỡ rơi, kính vỡ từ mặt ngoài tòa nhà.</string>
+    <string name="safety_hazard_title">3. Kiểm tra van an toàn sau động đất</string>
+    <string name="safety_hazard_desc">Kiểm tra rò rỉ khí gas và khóa van chính nếu có mùi lạ. Tránh bật que diêm, bật lửa hay công tắc điện.</string>
+    <string name="safety_kit_title">4. Chuẩn bị túi cứu trợ khẩn cấp</string>
+    <string name="safety_kit_desc">Chuẩn bị đủ nước uống 3 ngày (4 lít/người/ngày), lương khô, đèn pin, hộp y tế, còi và pin sạc dự phòng.</string>
+
+    <!-- Settings & Support Screen -->
+    <string name="settings_title">Cài đặt &amp; Ủng hộ</string>
+    <string name="action_back">Quay lại</string>
+    <string name="supporter_active_title">Trạng thái Người ủng hộ</string>
+    <string name="supporter_active_desc">Cảm ơn bạn đã ủng hộ \'%1$s\'! Mọi lời nhắc đóng góp tự nguyện đã được ẩn vĩnh viễn.</string>
+    <string name="settings_shake_header">ĐỘ NHẠY LẮC MÁY ĐỂ LÀM MỚI</string>
+    <string name="settings_shake_desc">Điều chỉnh ngưỡng gia tốc lắc máy để làm mới tức thì dữ liệu địa chấn USGS khi cảm thấy rung lắc.</string>
+    <string name="shake_to_refresh_title">Lắc máy để làm mới dữ liệu</string>
+    <string name="shake_active_status">Đang hoạt động qua SensorManager</string>
+    <string name="disabled_status">Đã tắt</string>
+    <string name="shake_required_force">Ngưỡng gia tốc kích hoạt</string>
+    <string name="shake_sens_high_desc">Độ nhạy cao — Kích hoạt khi vung nhẹ cổ tay</string>
+    <string name="shake_sens_med_desc">Độ nhạy tiêu chuẩn — Cần lắc dứt khoát</string>
+    <string name="shake_sens_low_desc">Độ nhạy thấp — Cần lắc mạnh (chống kích hoạt trong túi)</string>
+    <string name="shake_preset_gentle">Nhẹ nhàng (1.8g)</string>
+    <string name="shake_preset_standard">Tiêu chuẩn (2.5g)</string>
+    <string name="shake_preset_firm">Chắc chắn (3.5g)</string>
+    <string name="settings_theme_header">GIAO DIỆN &amp; MÀU SẮC</string>
+    <string name="settings_theme_desc">Thay đổi bảng màu ứng dụng hoặc đồng bộ theo cài đặt sáng/tối của hệ thống.</string>
+    <string name="settings_theme_mode_title">Chế độ giao diện</string>
+    <string name="settings_current_theme">Hiện tại: %1$s</string>
+    <string name="theme_system_title">Theo hệ thống</string>
+    <string name="theme_system_desc">Tự động chuyển đổi theo giao diện tối/sáng của Android</string>
+    <string name="theme_dark_title">Giao diện tối</string>
+    <string name="theme_dark_desc">Tông màu xanh vũ trụ đậm, tối ưu cho màn hình OLED ban đêm</string>
+    <string name="theme_light_title">Giao diện sáng</string>
+    <string name="theme_light_desc">Độ tương phản cao, dễ nhìn rõ khi xem ban ngày ngoài trời</string>
+
+    <!-- Support & Tip Jars -->
+    <string name="settings_support_header">ỦNG HỘ PHÁT TRIỂN ĐỘC LẬP</string>
+    <string name="settings_support_desc">QuakeCast hoàn toàn không có quảng cáo, bảo vệ quyền riêng tư và theo đuổi khoa học mở. Hãy cân nhắc ủng hộ dự án.</string>
+    <string name="settings_tip_jars_header">HỘP ĐÓNG GÓP TRỰC TIẾP</string>
+    <string name="settings_paypal_desc">Chuyển khoản trực tiếp qua ứng dụng PayPal hoặc web</string>
+    <string name="settings_paypal_button">Mở PayPal ($5)</string>
+    <string name="settings_kofi_desc">0% phí nền tảng dành cho khoa học mở</string>
+    <string name="settings_kofi_button">Mở Ko-fi</string>
+
+    <!-- Community & Engagement Telemetry -->
+    <string name="settings_engagement_header">CỘNG ĐỒNG &amp; THÔNG BÁO TỰ ĐỘNG</string>
+    <string name="settings_engagement_desc">QuakeCast áp dụng quy tắc giãn cách tối thiểu 30 ngày và khóa trong trường hợp khẩn cấp để không bao giờ làm phiền người dùng.</string>
+    <string name="settings_telemetry_title">Dữ liệu tương tác người dùng</string>
+    <string name="telemetry_install_duration">Thời gian cài đặt:</string>
+    <string name="telemetry_days_format">%1$d ngày</string>
+    <string name="telemetry_manual_refreshes">Số lần làm mới thủ công:</string>
+    <string name="telemetry_refreshes_needed_format">%1$d / 5 lần cần thiết</string>
+    <string name="telemetry_operations">Thao tác thành công:</string>
+    <string name="telemetry_actions_format">%1$d thao tác</string>
+    <string name="telemetry_prompt_cooldown">Thời gian giãn cách:</string>
+    <string name="telemetry_cooldown_val">Tối thiểu 30 ngày</string>
+    <string name="telemetry_play_rating">Đánh giá Google Play:</string>
+    <string name="telemetry_rated">Đã đánh giá ⭐️</string>
+    <string name="telemetry_not_rated">Chưa đánh giá</string>
+    <string name="telemetry_shared">Chia sẻ cộng đồng:</string>
+    <string name="telemetry_already_shared">Đã chia sẻ 📢</string>
+    <string name="telemetry_not_shared">Chưa chia sẻ</string>
+    <string name="settings_preview_title">Xem trước kiểm thử &amp; QA</string>
+    <string name="btn_preview_update">Cập nhật 🚀</string>
+    <string name="btn_preview_rate">Đánh giá ⭐️</string>
+    <string name="btn_preview_share">Chia sẻ 📢</string>
+
+    <!-- Thank you Dialog -->
+    <string name="thank_you_title">Chân thành cảm ơn sự ủng hộ của bạn!</string>
+    <string name="thank_you_desc">Bạn đã nhận được danh hiệu Người ủng hộ \'%1$s\'! Mọi hộp thoại nhắc nhở quyên góp đã được ẩn vĩnh viễn.</string>
+    <string name="btn_awesome">Tuyệt vời!</string>
+
+    <!-- Update App Dialog -->
+    <string name="update_dialog_title">Có bản cập nhật mới</string>
+    <string name="update_dialog_version_ready">QuakeCast v1.1.0 đã sẵn sàng</string>
+    <string name="update_dialog_description">Bản cập nhật mới mang lại hiệu năng cao hơn và độ nhạy cảnh báo tốt hơn:</string>
+    <string name="update_feature_feed_title">Tăng tốc độ nhận luồng dữ liệu</string>
+    <string name="update_feature_feed_desc">Nhận dữ liệu USGS GeoJSON nhanh hơn và tiết kiệm dung lượng mạng.</string>
+    <string name="update_feature_globe_title">Đồ họa quả địa cầu 3D mượt mà hơn</string>
+    <string name="update_feature_globe_desc">Đường ranh giới mảng kiến tạo có độ phân giải cao và xoay mượt mà.</string>
+    <string name="update_feature_proximity_title">Độ nhạy cảnh báo khoảng cách</string>
+    <string name="update_feature_proximity_desc">Tính toán độ sâu chấn tiêu và khoảng cách chính xác đến từng mét.</string>
+    <string name="update_button_now">Cập nhật ngay</string>
+    <string name="remind_me_later">Nhắc tôi sau</string>
+
+    <!-- Rate App Dialog -->
+    <string name="rate_dialog_title">QuakeCast có hữu ích với bạn không?</string>
+    <string name="rate_dialog_subtitle">Hệ thống đo đạc địa chấn độc lập 100% không quảng cáo</string>
+    <string name="rate_dialog_description">Nếu QuakeCast giúp bạn an toàn và nắm bắt kịp thời các cơn địa chấn, đánh giá 5 sao trên Google Play sẽ giúp nhiều người biết đến ứng dụng cứu sinh này hơn.</string>
+    <string name="rate_dialog_confirm_button">Đánh giá trên Google Play ⭐️</string>
+    <string name="rate_dialog_feedback_button">Cần cải thiện 💬</string>
+    <string name="maybe_later">Để sau</string>
+    <string name="feedback_dialog_title">Giúp chúng tôi hoàn thiện QuakeCast</string>
+    <string name="feedback_dialog_description">Ý kiến đóng góp của bạn rất quan trọng! Bạn có muốn gửi góp ý hoặc báo lỗi trực tiếp tới đội ngũ kỹ sư?</string>
+    <string name="feedback_dialog_send_button">Gửi phản hồi</string>
+    <string name="no_thanks">Không, cảm ơn</string>
+
+    <!-- Share App Dialog -->
+    <string name="share_dialog_title">Bảo vệ người thân &amp; bạn bè</string>
+    <string name="share_dialog_subtitle">Cảnh giác địa chấn theo thời gian thực</string>
+    <string name="share_dialog_description">An toàn động đất là nỗ lực của cả cộng đồng. Hãy chia sẻ QuakeCast với người thân để họ nhận cảnh báo địa chấn kịp thời và hướng dẫn sinh tồn khi có rung lắc.</string>
+    <string name="share_dialog_bullet_points">• 100% Không quảng cáo\n• Không thu thập thông tin cá nhân\n• Dữ liệu USGS thời gian thực</string>
+    <string name="share_dialog_confirm_button">Chia sẻ liên kết QuakeCast</string>
+    <string name="share_app_message">🚨 Giữ an toàn và chủ động khi xảy ra động đất với ứng dụng QuakeCast!\n\nDữ liệu địa chấn USGS trực tiếp, mô phỏng sóng 3D và cảnh báo khoảng cách. 100% Không quảng cáo &amp; vì cộng đồng:\nhttps://play.google.com/store/apps/details?id=%1$s</string>
+    <string name="share_quake_message">🚨 Cảnh báo động đất: M %1$.1f — %2$s\nThời gian: %3$s\nĐộ sâu: %4$.1f km\nChi tiết USGS: %5$s\n\nTheo dõi qua ứng dụng QuakeCast</string>
+
+    <!-- Toast & Feedback Messages -->
+    <string name="toast_shake_detected">Phát hiện rung lắc máy! Đang cập nhật dữ liệu USGS mới nhất\u2026</string>
+    <string name="toast_milestone_reached">🎉 Cột mốc: Lần tra cứu dữ liệu địa chấn thứ %1$d! QuakeCast 100% độc lập và không quảng cáo.</string>
+    <string name="btn_support_dev">Ủng hộ dev</string>
+
+    <!-- Donation Bottom Sheet -->
+    <string name="donation_sheet_title">Ủng hộ phát triển QuakeCast</string>
+    <string name="donation_sheet_desc">Giúp duy trì máy chủ dữ liệu địa chấn toàn cầu hoạt động nhanh chóng, không quảng cáo và miễn phí cho mọi người.</string>
+    <string name="donation_btn_active">Đang ủng hộ 💛</string>
+    <string name="donation_value_card_title">Đồng hành cùng sự an toàn của bạn</string>
+    <string name="donation_value_card_desc">Bạn đã theo dõi các cơn địa chấn mà không có quảng cáo hay theo dõi người dùng. Nếu bạn trân trọng nỗ lực khoa học mở này, hãy cân nhắc một khoản ủng hộ nhỏ.</string>
+    <string name="donation_value_card_btn">Ủng hộ phát triển</string>
+    <string name="donation_value_card_dismiss">Bỏ qua</string>
+</resources>

@@ -1,0 +1,193 @@
+<resources>
+    <!-- App Identity -->
+    <string name="app_name">QuakeCast</string>
+    <string name="app_tagline">Unterstützt von USGS GeoJSON-Echtzeitdaten und der Android Jetpack Compose 3D-Engine.</string>
+    <string name="app_version_name">QuakeCast v1.0.0</string>
+
+    <!-- Navigation Tabs -->
+    <string name="tab_globe">3D-Globus</string>
+    <string name="tab_list">Erdbeben</string>
+    <string name="tab_alerts">Warnungen</string>
+    <string name="tab_safety">Sicherheit</string>
+    <string name="tab_chart_30_days">30-Tage-Grafik</string>
+
+    <!-- App Bar & Actions -->
+    <string name="badge_room_cache">ROOM-CACHE</string>
+    <string name="badge_usgs_live">USGS LIVE</string>
+    <string name="badge_supporter">Förderer</string>
+    <string name="btn_tv_mode">TV-Modus</string>
+    <string name="search_placeholder">Ort oder Land suchen\u2026</string>
+    <string name="search_content_description">Suchen</string>
+    <string name="clear_search">Löschen</string>
+    <string name="proximity_settings_cd">Näherungseinstellungen</string>
+    <string name="toggle_audio_alerts_cd">Audio-Warnungen umschalten</string>
+    <string name="timeframe_cd">Zeitraum</string>
+    <string name="refresh_feed_cd">Feed aktualisieren</string>
+    <string name="settings_cd">Einstellungen &amp; Unterstützung</string>
+    <string name="support_dev_tip_cd">QuakeCast-Entwicklung unterstützen</string>
+
+    <!-- Filter Bar -->
+    <string name="filter_tsunami">Tsunami</string>
+    <string name="feed_count_format">LIVE-EREIGNISSE (%1$d)</string>
+    <string name="feed_radius_format">Radius: %1$d km</string>
+
+    <!-- Empty State -->
+    <string name="empty_quakes_title">Keine Erdbeben gefunden</string>
+    <string name="empty_quakes_desc">Keine Erschütterungen entsprechen Ihren aktuellen Filter- oder Suchkriterien.</string>
+    <string name="btn_reset_filters">Filter zurücksetzen</string>
+
+    <!-- Event Item & Details -->
+    <string name="tap_to_view_details">Tippen, um Schockwellen &amp; Energieabgabe anzuzeigen</string>
+    <string name="quake_details_header">Erdbeben-Inspektor</string>
+    <string name="magnitude_prefix">M %1$.1f</string>
+    <string name="depth_format">Tiefe: %1$.1f km</string>
+    <string name="distance_format">%1$.1f km entfernt</string>
+    <string name="estimated_arrival">Geschätzte Ankunft</string>
+    <string name="primary_p_wave">P-Welle (Primär)</string>
+    <string name="secondary_s_wave">S-Welle (Sekundär)</string>
+    <string name="energy_equivalent">Geschätzte Energie</string>
+    <string name="btn_view_usgs">USGS-Details öffnen</string>
+    <string name="btn_share_quake">Ereignis teilen</string>
+
+    <!-- Proximity Warning Banner -->
+    <string name="proximity_banner_title">SEISMISCHE NÄHERUNGSWARNUNG</string>
+    <string name="proximity_alert_distance_format">%1$.1f km von %2$s</string>
+    <string name="btn_speak">Vorlesen</string>
+
+    <!-- Proximity Settings Dialog -->
+    <string name="proximity_dialog_title">Standort für Näherungswarnungen</string>
+    <string name="proximity_dialog_desc">Legen Sie Ihre Koordinaten und den Alarmradius fest, um sofortige Erschütterungswarnungen und Sprachansagen zu erhalten.</string>
+    <string name="label_location_name">Standortname</string>
+    <string name="label_latitude">Breitengrad (°)</string>
+    <string name="label_longitude">Längengrad (°)</string>
+    <string name="label_alert_radius">Alarmradius (%1$d km)</string>
+    <string name="enable_audio_narration">Automatische Sprachansage</string>
+    <string name="enable_audio_narration_desc">Nächste Erschütterungen beim Aktualisieren automatisch vorlesen</string>
+    <string name="btn_save_location">Koordinaten speichern</string>
+    <string name="btn_cancel">Abbrechen</string>
+
+    <!-- Safety Guide Screen -->
+    <string name="safety_guide_title">Erdbeben-Sicherheitsleitfaden</string>
+    <string name="safety_subtitle">Wichtige Überlebensmaßnahmen, empfohlen von USGS und Katastrophenschutz</string>
+    <string name="safety_drop_title">1. Hinlegen, Schützen, Festhalten</string>
+    <string name="safety_drop_desc">Auf Hände und Knie DUCKEN. Kopf und Nacken unter einem stabilen Tisch SCHÜTZEN. Bis zum Ende der Erschütterung FESTHALTEN.</string>
+    <string name="safety_indoor_title">2. Im Gebäude bleiben</string>
+    <string name="safety_indoor_desc">Während des Bebens NICHT nach draußen rennen. Die meisten Verletzungen entstehen durch herabfallende Trümmer und Glas.</string>
+    <string name="safety_hazard_title">3. Leitungen nach dem Beben prüfen</string>
+    <string name="safety_hazard_desc">Prüfen Sie auf Gaslecks und schließen Sie bei Geruch die Hauptleitung. Keine offenen Flammen oder Lichtschalter betätigen.</string>
+    <string name="safety_kit_title">4. Notfallgepäck griffbereit halten</string>
+    <string name="safety_kit_desc">Wasser für 3 Tage (4 l pro Person/Tag), haltbare Lebensmittel, Taschenlampe, Erste-Hilfe-Kasten, Pfeife und Powerbank bereithalten.</string>
+
+    <!-- Settings & Support Screen -->
+    <string name="settings_title">Einstellungen &amp; Förderung</string>
+    <string name="action_back">Zurück</string>
+    <string name="supporter_active_title">Aktiver Förderer-Status</string>
+    <string name="supporter_active_desc">Vielen Dank für Ihre Unterstützung von \'%1$s\'! Alle freiwilligen Dialoge sind dauerhaft ausgeblendet.</string>
+    <string name="settings_shake_header">SCHÜTTEL-EMPFINDLICHKEIT ZUM AKTUALISIEREN</string>
+    <string name="settings_shake_desc">Passen Sie den Beschleunigungsschwellenwert beim Schütteln des Geräts an, um USGS-Daten bei Erschütterung sofort abzurufen.</string>
+    <string name="shake_to_refresh_title">Schütteln zum Aktualisieren</string>
+    <string name="shake_active_status">Aktiv über SensorManager</string>
+    <string name="disabled_status">Deaktiviert</string>
+    <string name="shake_required_force">Erforderlicher G-Kraft-Schwellenwert</string>
+    <string name="shake_sens_high_desc">Hohe Empfindlichkeit — Reagiert bereits auf leichte Handgelenkbewegung</string>
+    <string name="shake_sens_med_desc">Standardempfindlichkeit — Bewusstes, kräftiges Schütteln</string>
+    <string name="shake_sens_low_desc">Geringe Empfindlichkeit — Starkes Schütteln (verhindert Auslösen in der Tasche)</string>
+    <string name="shake_preset_gentle">Sanft (1.8g)</string>
+    <string name="shake_preset_standard">Standard (2.5g)</string>
+    <string name="shake_preset_firm">Fest (3.5g)</string>
+    <string name="settings_theme_header">APP-DESIGN &amp; ERSCHEINUNGSBILD</string>
+    <string name="settings_theme_desc">Farbschema der App anpassen oder an die Hell-/Dunkel-Einstellung des Systems anpassen.</string>
+    <string name="settings_theme_mode_title">Design-Modus</string>
+    <string name="settings_current_theme">Aktuell: %1$s</string>
+    <string name="theme_system_title">Systemeinstellung folgen</string>
+    <string name="theme_system_desc">Automatisch an Android-Dunkel- oder Hellmodus anpassen</string>
+    <string name="theme_dark_title">Dunkles Design</string>
+    <string name="theme_dark_desc">Tiefes kosmisches Dunkelblau, ideal für OLED-Displays und Nachtüberwachung</string>
+    <string name="theme_light_title">Helles Design</string>
+    <string name="theme_light_desc">Kontrastreicher heller Modus für optimale Lesbarkeit bei Tageslicht</string>
+
+    <!-- Support & Tip Jars -->
+    <string name="settings_support_header">UNABHÄNGIGE ENTWICKLUNG UNTERSTÜTZEN</string>
+    <string name="settings_support_desc">QuakeCast ist 100 % werbefrei, transparent und schützt Ihre Privatsphäre. Wenn Ihnen die App hilft, freuen wir uns über einen freiwilligen Beitrag.</string>
+    <string name="settings_tip_jars_header">DIREKTE TRINKGELD-KANÄLE</string>
+    <string name="settings_paypal_desc">Direkte Überweisung über die PayPal-App oder im Browser</string>
+    <string name="settings_paypal_button">PayPal öffnen (5 $)</string>
+    <string name="settings_kofi_desc">0 % Plattformgebühren für gemeinnützige Wissenschaft</string>
+    <string name="settings_kofi_button">Ko-fi öffnen</string>
+
+    <!-- Community & Engagement Telemetry -->
+    <string name="settings_engagement_header">COMMUNITY &amp; BENACHRICHTIGUNGEN</string>
+    <string name="settings_engagement_desc">QuakeCast verwendet eine 30-Tage-Sperrfrist und blockiert Dialoge im Notfall, um Sie nie unnötig zu unterbrechen.</string>
+    <string name="settings_telemetry_title">Nutzungs-Telemetrie</string>
+    <string name="telemetry_install_duration">Installationsdauer:</string>
+    <string name="telemetry_days_format">%1$d Tage</string>
+    <string name="telemetry_manual_refreshes">Manuelle Aktualisierungen:</string>
+    <string name="telemetry_refreshes_needed_format">%1$d / 5 erforderlich</string>
+    <string name="telemetry_operations">Erfolgreiche Aktionen:</string>
+    <string name="telemetry_actions_format">%1$d Aktionen</string>
+    <string name="telemetry_prompt_cooldown">Erinnerungs-Intervall:</string>
+    <string name="telemetry_cooldown_val">Mindestens 30 Tage Pause</string>
+    <string name="telemetry_play_rating">Google Play-Bewertung:</string>
+    <string name="telemetry_rated">Bewertet ⭐️</string>
+    <string name="telemetry_not_rated">Noch nicht bewertet</string>
+    <string name="telemetry_shared">Geteilt mit Community:</string>
+    <string name="telemetry_already_shared">Bereits geteilt 📢</string>
+    <string name="telemetry_not_shared">Noch nicht geteilt</string>
+    <string name="settings_preview_title">Sofortvorschau &amp; QS-Test</string>
+    <string name="btn_preview_update">Update 🚀</string>
+    <string name="btn_preview_rate">Bewerten ⭐️</string>
+    <string name="btn_preview_share">Teilen 📢</string>
+
+    <!-- Thank you Dialog -->
+    <string name="thank_you_title">Vielen Dank für Ihre Unterstützung!</string>
+    <string name="thank_you_desc">Sie haben den Förderer-Status \'%1$s\' freigeschaltet! Alle freiwilligen Spendenaufrufe sind dauerhaft deaktiviert.</string>
+    <string name="btn_awesome">Großartig!</string>
+
+    <!-- Update App Dialog -->
+    <string name="update_dialog_title">Update verfügbar</string>
+    <string name="update_dialog_version_ready">QuakeCast v1.1.0 ist bereit</string>
+    <string name="update_dialog_description">Ein neues Update mit verbesserter Berechnungsgenauigkeit und flüssigerer 3D-Darstellung steht bereit:</string>
+    <string name="update_feature_feed_title">Schnellere Datenübertragung</string>
+    <string name="update_feature_feed_desc">Schnellere USGS GeoJSON-Abfragen bei geringerem Datenverbrauch.</string>
+    <string name="update_feature_globe_title">Verbesserte 3D-Globus-Grafik</string>
+    <string name="update_feature_globe_desc">Hochauflösende tektonische Plattengrenzen und flüssige Rotation.</string>
+    <string name="update_feature_proximity_title">Präzisere Näherungserkennung</string>
+    <string name="update_feature_proximity_desc">Hypozentrumstiefe und Entfernungsberechnung bis auf den Kilometer genau.</string>
+    <string name="update_button_now">Jetzt aktualisieren</string>
+    <string name="remind_me_later">Später erinnern</string>
+
+    <!-- Rate App Dialog -->
+    <string name="rate_dialog_title">Ist QuakeCast hilfreich für Sie?</string>
+    <string name="rate_dialog_subtitle">100 % werbefreie, unabhängige Erdbebenwarnung</string>
+    <string name="rate_dialog_description">Wenn QuakeCast Ihnen hilft, bei Erdbeben sicher und informiert zu bleiben, hilft eine 5-Sterne-Bewertung bei Google Play anderen, diese Sicherheits-App zu finden.</string>
+    <string name="rate_dialog_confirm_button">Bei Google Play bewerten ⭐️</string>
+    <string name="rate_dialog_feedback_button">Verbesserungsvorschlag 💬</string>
+    <string name="maybe_later">Vielleicht später</string>
+    <string name="feedback_dialog_title">Helfen Sie uns, QuakeCast zu verbessern</string>
+    <string name="feedback_dialog_description">Ihre Meinung ist uns wichtig! Möchten Sie dem Entwicklungsteam direkt Feedback oder einen Fehlerbericht senden?</string>
+    <string name="feedback_dialog_send_button">Feedback senden</string>
+    <string name="no_thanks">Nein, danke</string>
+
+    <!-- Share App Dialog -->
+    <string name="share_dialog_title">Familie &amp; Freunde schützen</string>
+    <string name="share_dialog_subtitle">Echtzeit-Sicherheitsnetzwerk bei Erdbeben</string>
+    <string name="share_dialog_description">Erdbebensicherheit ist Gemeinschaftssache. Teilen Sie QuakeCast, damit auch Ihre Angehörigen rechtzeitig Erschütterungswarnungen und Notfalltipps erhalten.</string>
+    <string name="share_dialog_bullet_points">• 100 % Werbefrei\n• Keine Datenverfolgung\n• Offizielle USGS-Echtzeitdaten</string>
+    <string name="share_dialog_confirm_button">QuakeCast-Link teilen</string>
+    <string name="share_app_message">🚨 Sicher und rechtzeitig gewarnt bei Erdbeben mit QuakeCast!\n\nLive-USGS-Daten, 3D-Schockwellensimulation und Näherungsalarme. 100 % werbefrei &amp; offene Wissenschaft:\nhttps://play.google.com/store/apps/details?id=%1$s</string>
+    <string name="share_quake_message">🚨 Erdbeben-Warnung: M %1$.1f — %2$s\nZeit: %3$s\nTiefe: %4$.1f km\nUSGS-Details: %5$s\n\nErfasst mit der QuakeCast-App</string>
+
+    <!-- Toast & Feedback Messages -->
+    <string name="toast_shake_detected">Erschütterung erkannt! USGS-Erdbebendaten werden aktualisiert\u2026</string>
+    <string name="toast_milestone_reached">🎉 Meilenstein: %1$d. Erdbebenabfrage! QuakeCast ist zu 100 % unabhängig und werbefrei.</string>
+    <string name="btn_support_dev">Entwickler fördern</string>
+
+    <!-- Donation Bottom Sheet -->
+    <string name="donation_sheet_title">Entwicklung von QuakeCast fördern</string>
+    <string name="donation_sheet_desc">Helfen Sie mit, die weltweiten Erdbebenserver schnell, werbefrei und für alle Menschen frei zugänglich zu halten.</string>
+    <string name="donation_btn_active">Förderer 💛</string>
+    <string name="donation_value_card_title">Für Ihre Sicherheit im Einsatz</string>
+    <string name="donation_value_card_desc">Sie haben Erdbebendaten ohne störende Werbung und ohne Tracking verfolgt. Wenn Sie diesen wissenschaftlichen Dienst schätzen, freuen wir uns über Ihren Beitrag.</string>
+    <string name="donation_value_card_btn">Entwicklung unterstützen</string>
+    <string name="donation_value_card_dismiss">Schließen</string>
+</resources>

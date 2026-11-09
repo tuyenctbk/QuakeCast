@@ -1,0 +1,193 @@
+<resources>
+    <!-- App Identity -->
+    <string name="app_name">QuakeCast</string>
+    <string name="app_tagline">Gerçek zamanlı USGS GeoJSON akışları ve Android Jetpack Compose 3D motoruyla desteklenmektedir.</string>
+    <string name="app_version_name">QuakeCast v1.0.0</string>
+
+    <!-- Navigation Tabs -->
+    <string name="tab_globe">3D Küre</string>
+    <string name="tab_list">Deprem Listesi</string>
+    <string name="tab_alerts">Son Uyarılar</string>
+    <string name="tab_safety">Güvenlik Rehberi</string>
+    <string name="tab_chart_30_days">30 Günlük Grafik</string>
+
+    <!-- App Bar & Actions -->
+    <string name="badge_room_cache">ROOM ÖNBELLEĞİ</string>
+    <string name="badge_usgs_live">CANLI USGS</string>
+    <string name="badge_supporter">Destekçi</string>
+    <string name="btn_tv_mode">TV Modu</string>
+    <string name="search_placeholder">Konum veya ülke ara\u2026</string>
+    <string name="search_content_description">Ara</string>
+    <string name="clear_search">Temizle</string>
+    <string name="proximity_settings_cd">Yakınlık Ayarları</string>
+    <string name="toggle_audio_alerts_cd">Sesli Uyarıları Aç/Kapat</string>
+    <string name="timeframe_cd">Zaman Aralığı</string>
+    <string name="refresh_feed_cd">Akışı Yenile</string>
+    <string name="settings_cd">Ayarlar ve Geliştirici Desteği</string>
+    <string name="support_dev_tip_cd">QuakeCast Geliştirmesini Destekle</string>
+
+    <!-- Filter Bar -->
+    <string name="filter_tsunami">Tsunami</string>
+    <string name="feed_count_format">CANLI DEPREMLER (%1$d)</string>
+    <string name="feed_radius_format">Yarıçap: %1$d km</string>
+
+    <!-- Empty State -->
+    <string name="empty_quakes_title">Deprem Bulunamadı</string>
+    <string name="empty_quakes_desc">Mevcut büyüklük filtresine veya arama kriterlerinize uyan sarsıntı yok.</string>
+    <string name="btn_reset_filters">Filtreleri Sıfırla</string>
+
+    <!-- Event Item & Details -->
+    <string name="tap_to_view_details">Şok dalgaları ve enerji salınımını görmek için dokunun</string>
+    <string name="quake_details_header">Deprem İnceleme</string>
+    <string name="magnitude_prefix">M %1$.1f</string>
+    <string name="depth_format">Derinlik: %1$.1f km</string>
+    <string name="distance_format">%1$.1f km uzakta</string>
+    <string name="estimated_arrival">Tahmini Varış Süresi</string>
+    <string name="primary_p_wave">P Dalgası (Birincil)</string>
+    <string name="secondary_s_wave">S Dalgası (İkincil)</string>
+    <string name="energy_equivalent">Tahmini Enerji Çıkışı</string>
+    <string name="btn_view_usgs">USGS Sayfasını Aç</string>
+    <string name="btn_share_quake">Depremi Paylaş</string>
+
+    <!-- Proximity Warning Banner -->
+    <string name="proximity_banner_title">ACİL SİSMİK YAKINLIK UYARISI</string>
+    <string name="proximity_alert_distance_format">%2$s konumuna %1$.1f km</string>
+    <string name="btn_speak">Seslendir</string>
+
+    <!-- Proximity Settings Dialog -->
+    <string name="proximity_dialog_title">Yakınlık Uyarısı Konumu</string>
+    <string name="proximity_dialog_desc">Anında sarsıntı uyarıları ve sesli TTS duyuruları almak için referans koordinatlarınızı ve alarm yarıçapınızı ayarlayın.</string>
+    <string name="label_location_name">Konum Adı</string>
+    <string name="label_latitude">Enlem (°)</string>
+    <string name="label_longitude">Boylam (°)</string>
+    <string name="label_alert_radius">Uyarı Yarıçapı (%1$d km)</string>
+    <string name="enable_audio_narration">Sesli Uyarı Bildirimi</string>
+    <string name="enable_audio_narration_desc">Akış yenilendiğinde en yakın sarsıntıyı otomatik olarak seslendirir</string>
+    <string name="btn_save_location">Koordinatları Kaydet</string>
+    <string name="btn_cancel">İptal</string>
+
+    <!-- Safety Guide Screen -->
+    <string name="safety_guide_title">Deprem Güvenlik Rehberi</string>
+    <string name="safety_subtitle">USGS &amp; AFAD tarafından önerilen hayatta kalma adımları</string>
+    <string name="safety_drop_title">1. Çök, Kapan ve Tutun</string>
+    <string name="safety_drop_desc">Yere ÇÖKÜN. Sağlam bir masa altında başınızı ve boynunuzu KAPATIN. Sarsıntı bitene kadar masaya TUTUNUN.</string>
+    <string name="safety_indoor_title">2. İçeride Güvende Kalın</string>
+    <string name="safety_indoor_desc">Sarsıntı sırasında dışarıya KOŞMAYIN. Yaralanmaların çoğu düşen camlar ve bina cephesi molozlarından kaynaklanır.</string>
+    <string name="safety_hazard_title">3. Sarsıntı Sonrası Tesisatı Denetleyin</string>
+    <string name="safety_hazard_desc">Gaz kokusu alırsanız ana vanayı derhal kapatın. Kibrit, çakmak yakmayın veya elektrik düğmelerine dokunmayın.</string>
+    <string name="safety_kit_title">4. Acil Durum Deprem Çantası</string>
+    <string name="safety_kit_desc">Kişi başı günlük 4 litre su olmak üzere 3 günlük su, dayanıklı gıda, el feneri, ilk yardım seti, düdük ve powerbank bulundurun.</string>
+
+    <!-- Settings & Support Screen -->
+    <string name="settings_title">Ayarlar ve Destek</string>
+    <string name="action_back">Geri</string>
+    <string name="supporter_active_title">Aktif Destekçi Statüsü</string>
+    <string name="supporter_active_desc">\'%1$s\' desteğiniz için teşekkür ederiz! Tüm bağış pencereleri kalıcı olarak gizlenmiştir.</string>
+    <string name="settings_shake_header">SALLAYARAK YENİLEME HASSASİYETİ</string>
+    <string name="settings_shake_desc">Sarsıntı hissettiğinizde cihazınızı sallayarak anında USGS verilerini yenilemek için gereken g-kuvveti eşiğini ayarlayın.</string>
+    <string name="shake_to_refresh_title">Sallayarak Akışı Yenile</string>
+    <string name="shake_active_status">SensorManager ile Aktif</string>
+    <string name="disabled_status">Devre Dışı</string>
+    <string name="shake_required_force">Gereken G-Kuvveti Eşiği</string>
+    <string name="shake_sens_high_desc">Yüksek Hassasiyet — Hafif bir bilek hareketiyle tetiklenir</string>
+    <string name="shake_sens_med_desc">Standart Hassasiyet — Belirgin ve bilinçli sallama</string>
+    <string name="shake_sens_low_desc">Düşük Hassasiyet — Güçlü sallama (cepte tetiklenmeyi önler)</string>
+    <string name="shake_preset_gentle">Hafif (1.8g)</string>
+    <string name="shake_preset_standard">Standart (2.5g)</string>
+    <string name="shake_preset_firm">Güçlü (3.5g)</string>
+    <string name="settings_theme_header">GENEL TEMA VE GÖRÜNÜM</string>
+    <string name="settings_theme_desc">Uygulama renk temasını değiştirin veya sistem karanlık/aydınlık tercihine eşitleyin.</string>
+    <string name="settings_theme_mode_title">Tema Modu</string>
+    <string name="settings_current_theme">Mevcut: %1$s</string>
+    <string name="theme_system_title">Sistemi Takip Et</string>
+    <string name="theme_system_desc">Android sisteminin karanlık veya aydınlık moduna otomatik uyum sağlar</string>
+    <string name="theme_dark_title">Karanlık Tema</string>
+    <string name="theme_dark_desc">OLED ekranlar ve gece takibi için optimize edilmiş derin kozmik lacivert</string>
+    <string name="theme_light_title">Aydınlık Tema</string>
+    <string name="theme_light_desc">Gündüz güneş ışığı altında yüksek kontrastlı temiz açık renk</string>
+
+    <!-- Support & Tip Jars -->
+    <string name="settings_support_header">BAĞIMSIZ GELİŞTİRMEYİ DESTEKLEYİN</string>
+    <string name="settings_support_desc">QuakeCast %100 reklamsız, açık bilim ve gizlilik odaklı bir projedir. Hayatınızı korumaya yardımcı oluyorsa katkıda bulunabilirsiniz.</string>
+    <string name="settings_tip_jars_header">DOĞRUDAN WEB DESTEK BAĞLANTILARI</string>
+    <string name="settings_paypal_desc">PayPal uygulaması veya tarayıcı ile doğrudan transfer</string>
+    <string name="settings_paypal_button">PayPal Aç ($5)</string>
+    <string name="settings_kofi_desc">Açık bilim için %0 platform komisyonu</string>
+    <string name="settings_kofi_button">Ko-fi Aç</string>
+
+    <!-- Community & Engagement Telemetry -->
+    <string name="settings_engagement_header">TOPLULUK VE BİLDİRİM SİSTEMİ</string>
+    <string name="settings_engagement_desc">QuakeCast, deprem anında rahatsızlık vermemek için minimum 30 günlük bekleme süresi ve acil durum kilitleme kuralı uygular.</string>
+    <string name="settings_telemetry_title">Kullanıcı Etkileşim Telemetrisi</string>
+    <string name="telemetry_install_duration">Yükleme Süresi:</string>
+    <string name="telemetry_days_format">%1$d gün</string>
+    <string name="telemetry_manual_refreshes">Manuel Yenileme:</string>
+    <string name="telemetry_refreshes_needed_format">%1$d / 5 gerekli</string>
+    <string name="telemetry_operations">Başarılı İşlem:</string>
+    <string name="telemetry_actions_format">%1$d işlem</string>
+    <string name="telemetry_prompt_cooldown">Hatırlatma Aralığı:</string>
+    <string name="telemetry_cooldown_val">En Az 30 Günlük Aralık</string>
+    <string name="telemetry_play_rating">Google Play Puanı:</string>
+    <string name="telemetry_rated">Puanlandı ⭐️</string>
+    <string name="telemetry_not_rated">Henüz puanlanmadı</string>
+    <string name="telemetry_shared">Topluluk Paylaşımı:</string>
+    <string name="telemetry_already_shared">Paylaşıldı 📢</string>
+    <string name="telemetry_not_shared">Henüz paylaşılmadı</string>
+    <string name="settings_preview_title">Anında Önizleme ve Test (QA)</string>
+    <string name="btn_preview_update">Güncelleme 🚀</string>
+    <string name="btn_preview_rate">Puanlama ⭐️</string>
+    <string name="btn_preview_share">Paylaşım 📢</string>
+
+    <!-- Thank you Dialog -->
+    <string name="thank_you_title">Desteğiniz İçin Teşekkür Ederiz!</string>
+    <string name="thank_you_desc">\'%1$s\' Destekçi unvanını açtınız! Gönüllü destek pencereleri artık size gösterilmeyecektir.</string>
+    <string name="btn_awesome">Harika!</string>
+
+    <!-- Update App Dialog -->
+    <string name="update_dialog_title">Güncelleme Mevcut</string>
+    <string name="update_dialog_version_ready">QuakeCast v1.1.0 Hazır</string>
+    <string name="update_dialog_description">Yeni güncelleme daha yüksek ölçüm doğruluğu ve görsel performans içerir:</string>
+    <string name="update_feature_feed_title">Hızlı Veri Akışı</string>
+    <string name="update_feature_feed_desc">Daha hızlı USGS GeoJSON sorgulama ve düşük veri kullanımı.</string>
+    <string name="update_feature_globe_title">Gelişmiş 3D Küre Görselleri</string>
+    <string name="update_feature_globe_desc">Yüksek çözünürlüklü fay hatları ve pürüzsüz dönüş performansı.</string>
+    <string name="update_feature_proximity_title">Yakınlık Hassasiyeti</string>
+    <string name="update_feature_proximity_desc">Deprem odak derinliği ve mesafe hesaplamasında kilometre altı hassasiyet.</string>
+    <string name="update_button_now">Şimdi Güncelle</string>
+    <string name="remind_me_later">Daha Sonra Hatırlat</string>
+
+    <!-- Rate App Dialog -->
+    <string name="rate_dialog_title">QuakeCast Faydalı Oluyor Mu?</string>
+    <string name="rate_dialog_subtitle">%100 Reklamsız Bağımsız Deprem Sistemi</string>
+    <string name="rate_dialog_description">QuakeCast sarsıntı anında sizi güvende ve bilgili tutuyorsa, Google Play\'de vereceğiniz 5 yıldız bu hayat kurtarıcı aracın daha çok insana ulaşmasını sağlar.</string>
+    <string name="rate_dialog_confirm_button">Google Play\'de Puan Ver ⭐️</string>
+    <string name="rate_dialog_feedback_button">Geliştirilmeli 💬</string>
+    <string name="maybe_later">Daha Sonra</string>
+    <string name="feedback_dialog_title">QuakeCast\'i Birlikte Geliştirelim</string>
+    <string name="feedback_dialog_description">Görüşleriniz çok kıymetli! Mühendislik ekibimize doğrudan bir öneri veya hata bildirimi iletmek ister misiniz?</string>
+    <string name="feedback_dialog_send_button">Geri Bildirim Gönder</string>
+    <string name="no_thanks">Hayır, Teşekkürler</string>
+
+    <!-- Share App Dialog -->
+    <string name="share_dialog_title">Ailenizi ve Dostlarınızı Koruyun</string>
+    <string name="share_dialog_subtitle">Gerçek Zamanlı Deprem Farkındalığı</string>
+    <string name="share_dialog_description">Deprem güvenliği bir dayanışmadır. QuakeCast\'i sevdiklerinizle paylaşarak anlık sarsıntı uyarıları, 3D dalga varış tahminleri ve acil durum rehberine erişmelerini sağlayın.</string>
+    <string name="share_dialog_bullet_points">• %100 Reklamsız\n• Sıfır Kişisel Takip\n• Doğrudan USGS Verisi</string>
+    <string name="share_dialog_confirm_button">QuakeCast Bağlantısını Paylaş</string>
+    <string name="share_app_message">🚨 QuakeCast ile deprem anında güvende ve hazırlıklı olun!\n\nCanlı USGS sismik telemetrisi, 3D şok dalgası simülatörü ve yakınlık alarmları. %100 Reklamsız ve Açık Bilim:\nhttps://play.google.com/store/apps/details?id=%1$s</string>
+    <string name="share_quake_message">🚨 Deprem Uyarısı: M %1$.1f — %2$s\nZaman: %3$s\nDerinlik: %4$.1f km\nUSGS Detayları: %5$s\n\nQuakeCast Uygulaması ile Takip Edildi</string>
+
+    <!-- Toast & Feedback Messages -->
+    <string name="toast_shake_detected">Sarsıntı Algılandı! Güncel USGS deprem verileri alınıyor\u2026</string>
+    <string name="toast_milestone_reached">🎉 Tebrikler: %1$d. Deprem Verisi Sorgulaması! QuakeCast %100 bağımsız ve reklamsızdır.</string>
+    <string name="btn_support_dev">Geliştiriciyi Destekle</string>
+
+    <!-- Donation Bottom Sheet -->
+    <string name="donation_sheet_title">QuakeCast Geliştirmesini Destekle</string>
+    <string name="donation_sheet_desc">Küresel deprem sunucularımızın hızlı, reklamsız ve dünyadaki herkes için ücretsiz kalmasına yardımcı olun.</string>
+    <string name="donation_btn_active">Destekçi 💛</string>
+    <string name="donation_value_card_title">Güvenliğiniz İçin Canla Başla</string>
+    <string name="donation_value_card_desc">Sıfır reklam ve sıfır kullanıcı takibiyle depremleri izlediniz. Açık bilime dayalı bu güvenlik çabasını takdir ediyorsanız gönüllü bir katkı düşünebilirsiniz.</string>
+    <string name="donation_value_card_btn">Geliştirmeyi Destekle</string>
+    <string name="donation_value_card_dismiss">Kapat</string>
+</resources>
