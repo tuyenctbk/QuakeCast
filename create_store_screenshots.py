@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import os
 import shutil
-from PIL import Image, ImageDraw, ImageFont, ImageFilter
+from PIL import Image, ImageDraw, ImageFont
 
 WIDTH, HEIGHT = 1080, 2400
 
@@ -9,7 +9,7 @@ PHONE_CARDS = [
     {
         "badge": "3D SEISMIC VISUALIZATION",
         "title": "Interactive 3D Earth Globe",
-        "subtitle": "Real-time USGS seismic event monitoring & tectonic plate arcs",
+        "subtitle": "Real-time USGS earthquake monitoring & tectonic plate arcs",
         "src": "screenshots/mobile/01_globe_main.png",
         "dst": "screenshots/store_listing/phone/01_3d_seismic_globe.png"
     },
@@ -76,16 +76,18 @@ TV_CARDS = [
 ]
 
 def make_gradient_bg(w, h):
-    base = Image.new("RGBA", (w, h), (8, 14, 26, 255))
-    top_glow = Image.new("RGBA", (w, h), (0, 0, 0, 0))
-    draw = ImageDraw.Draw(top_glow)
+    im = Image.new("RGB", (w, h), (7, 12, 22))
+    draw = ImageDraw.Draw(im)
     
-    # Subtle radial cyan glow behind header
-    for r in range(450, 0, -15):
-        alpha = int(45 * (1 - r / 450))
-        draw.ellipse([w//2 - r*2, 280 - r, w//2 + r*2, 280 + r], fill=(0, 229, 255, alpha))
+    # Smooth background gradient from top to bottom
+    for y in range(h):
+        factor = y / h
+        r = int(7 * (1 - factor) + 12 * factor)
+        g = int(12 * (1 - factor) + 20 * factor)
+        b = int(22 * (1 - factor) + 36 * factor)
+        draw.line([(0, y), (w, y)], fill=(r, g, b))
         
-    return Image.alpha_composite(base, top_glow)
+    return im
 
 def round_corners(im, radius):
     mask = Image.new('L', im.size, 0)
@@ -103,62 +105,80 @@ def render_phone_screenshot(card, font_title, font_sub, font_badge):
     # 1. Badge Pill
     badge_text = card["badge"]
     bbox_b = draw.textbbox((0, 0), badge_text, font=font_badge)
-    bw = bbox_b[2] - bbox_b[0] + 36
-    bh = bbox_b[3] - bbox_b[1] + 20
+    bw = (bbox_b[2] - bbox_b[0]) + 44
+    bh = 46
     bx = (WIDTH - bw) // 2
-    by = 130
-    draw.rounded_rectangle([bx, by, bx + bw, by + bh], radius=bh//2, fill=(0, 229, 255, 30), outline=(0, 229, 255, 120), width=2)
-    draw.text((bx + 18, by + 8), badge_text, font=font_badge, fill=(0, 229, 255, 255))
+    by = 120
+    draw.rounded_rectangle(
+        [bx, by, bx + bw, by + bh],
+        radius=bh // 2,
+        fill=(10, 36, 56),
+        outline=(0, 229, 255),
+        width=2
+    )
+    # Center text vertically in pill
+    tw_b = bbox_b[2] - bbox_b[0]
+    th_b = bbox_b[3] - bbox_b[1]
+    draw.text(
+        (bx + (bw - tw_b) // 2, by + (bh - th_b) // 2 - bbox_b[1]),
+        badge_text,
+        font=font_badge,
+        fill=(0, 229, 255)
+    )
     
     # 2. Main Title
     title_text = card["title"]
     bbox_t = draw.textbbox((0, 0), title_text, font=font_title)
     tw = bbox_t[2] - bbox_t[0]
-    draw.text(((WIDTH - tw) // 2, by + bh + 30), title_text, font=font_title, fill=(255, 255, 255, 255))
+    draw.text(((WIDTH - tw) // 2, by + bh + 24), title_text, font=font_title, fill=(255, 255, 255))
     
     # 3. Subtitle
     sub_text = card["subtitle"]
     bbox_s = draw.textbbox((0, 0), sub_text, font=font_sub)
     sw = bbox_s[2] - bbox_s[0]
-    draw.text(((WIDTH - sw) // 2, by + bh + 105), sub_text, font=font_sub, fill=(148, 163, 184, 255))
+    draw.text(((WIDTH - sw) // 2, by + bh + 96), sub_text, font=font_sub, fill=(148, 163, 184))
     
-    # 4. Device Frame with Screenshot
-    src_img = Image.open(card["src"]).convert("RGBA")
+    # 4. Device Mockup Frame
+    src_img = Image.open(card["src"])
     
-    # Target frame dimension: 880px wide
+    # Crop status bar (top 105px) and gesture bar (bottom 55px)
+    crop_top = 105
+    crop_bottom = src_img.height - 55
+    cropped_src = src_img.crop((0, crop_top, src_img.width, crop_bottom))
+    
     target_w = 880
-    aspect = src_img.height / src_img.width
+    aspect = cropped_src.height / cropped_src.width
     target_h = int(target_w * aspect)
     
-    scaled_shot = src_img.resize((target_w, target_h), Image.Resampling.LANCZOS)
-    rounded_shot = round_corners(scaled_shot, radius=44)
+    scaled_shot = cropped_src.resize((target_w, target_h), Image.Resampling.LANCZOS).convert("RGBA")
+    rounded_shot = round_corners(scaled_shot, radius=36)
     
-    # Position phone mockup
     phone_x = (WIDTH - target_w) // 2
-    phone_y = by + bh + 175
+    phone_y = by + bh + 165
     
-    # Outer device bezel border
-    bezel_pad = 12
+    # Device Outer Frame / Bezel
+    bezel = 14
     draw.rounded_rectangle(
-        [phone_x - bezel_pad, phone_y - bezel_pad, phone_x + target_w + bezel_pad, phone_y + target_h + bezel_pad],
-        radius=54,
-        fill=(15, 23, 42, 255),
-        outline=(51, 65, 85, 255),
+        [phone_x - bezel, phone_y - bezel, phone_x + target_w + bezel, phone_y + target_h + bezel],
+        radius=48,
+        fill=(15, 23, 42),
+        outline=(51, 65, 85),
         width=3
     )
     
-    # Subtle Cyan edge highlight
+    # Cyan accent border
     draw.rounded_rectangle(
-        [phone_x - 3, phone_y - 3, phone_x + target_w + 3, phone_y + target_h + 3],
-        radius=46,
-        outline=(0, 229, 255, 80),
+        [phone_x - 2, phone_y - 2, phone_x + target_w + 2, phone_y + target_h + 2],
+        radius=38,
+        outline=(0, 229, 255),
         width=2
     )
     
+    # Paste screenshot
     canvas.paste(rounded_shot, (phone_x, phone_y), rounded_shot)
     
     # Save optimized RGB PNG
-    canvas.convert("RGB").save(card["dst"], "PNG", optimize=True)
+    canvas.save(card["dst"], "PNG", optimize=True)
     print(f"Generated: {card['dst']}")
 
 def main():
