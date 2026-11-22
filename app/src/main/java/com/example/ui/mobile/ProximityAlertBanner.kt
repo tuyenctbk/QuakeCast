@@ -7,11 +7,11 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.VolumeUp
 import androidx.compose.material.icons.filled.CrisisAlert
 import androidx.compose.material.icons.filled.ExpandLess
 import androidx.compose.material.icons.filled.ExpandMore
 import androidx.compose.material.icons.filled.Tune
-import androidx.compose.material.icons.filled.VolumeUp
 import androidx.compose.material.icons.filled.Warning
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -106,7 +106,7 @@ fun ProximityAlertBanner(
                             modifier = Modifier.testTag("tts_vocalize_button")
                         ) {
                             Icon(
-                                imageVector = Icons.Default.VolumeUp,
+                                imageVector = Icons.AutoMirrored.Filled.VolumeUp,
                                 contentDescription = stringResource(R.string.btn_speak),
                                 tint = PulseCyan
                             )
@@ -133,7 +133,7 @@ fun ProximityAlertBanner(
                     Spacer(modifier = Modifier.height(10.dp))
 
                     Text(
-                        text = "M ${closestQuake.magnitude} — ${closestQuake.place}",
+                        text = "M ${String.format(java.util.Locale.US, "%.1f", closestQuake.magnitude)} — ${closestQuake.place}",
                         style = MaterialTheme.typography.titleMedium.copy(
                             fontWeight = FontWeight.Bold,
                             color = Color.White
@@ -180,7 +180,7 @@ fun ProximityAlertBanner(
                                 colors = ButtonDefaults.outlinedButtonColors(contentColor = PulseCyan),
                                 border = androidx.compose.foundation.BorderStroke(1.dp, PulseCyan)
                             ) {
-                                Icon(Icons.Default.VolumeUp, contentDescription = null, modifier = Modifier.size(18.dp))
+                                Icon(Icons.AutoMirrored.Filled.VolumeUp, contentDescription = null, modifier = Modifier.size(18.dp))
                                 Spacer(modifier = Modifier.width(4.dp))
                                 Text(stringResource(R.string.btn_speak))
                             }

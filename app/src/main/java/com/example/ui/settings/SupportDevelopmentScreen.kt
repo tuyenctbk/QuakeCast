@@ -13,6 +13,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -73,7 +74,7 @@ fun SupportDevelopmentScreen(
                 },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
-                        Icon(Icons.Default.ArrowBack, contentDescription = stringResource(R.string.action_back), tint = Color.White)
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = stringResource(R.string.action_back), tint = Color.White)
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(containerColor = DarkBackground)
@@ -683,53 +684,7 @@ fun SupportDevelopmentScreen(
                         )
                     }
 
-                    Spacer(modifier = Modifier.height(16.dp))
-                    HorizontalDivider(color = Color.White.copy(alpha = 0.08f))
-                    Spacer(modifier = Modifier.height(14.dp))
 
-                    Text(
-                        text = stringResource(R.string.settings_preview_title),
-                        style = MaterialTheme.typography.labelSmall.copy(color = PulseCyan, fontWeight = FontWeight.Bold)
-                    )
-                    Spacer(modifier = Modifier.height(8.dp))
-
-                    Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.spacedBy(8.dp)
-                    ) {
-                        OutlinedButton(
-                            onClick = { engagementManager.triggerPrompt(ActivePromptType.UPDATE) },
-                            modifier = Modifier
-                                .weight(1f)
-                                .testTag("test_update_dialog_button"),
-                            shape = RoundedCornerShape(8.dp),
-                            border = androidx.compose.foundation.BorderStroke(1.dp, PulseCyan.copy(alpha = 0.4f))
-                        ) {
-                            Text(stringResource(R.string.btn_preview_update), color = PulseCyan, fontSize = 11.sp, maxLines = 1)
-                        }
-
-                        OutlinedButton(
-                            onClick = { engagementManager.triggerPrompt(ActivePromptType.RATE) },
-                            modifier = Modifier
-                                .weight(1f)
-                                .testTag("test_rate_dialog_button"),
-                            shape = RoundedCornerShape(8.dp),
-                            border = androidx.compose.foundation.BorderStroke(1.dp, Color(0xFFFFD700).copy(alpha = 0.4f))
-                        ) {
-                            Text(stringResource(R.string.btn_preview_rate), color = Color(0xFFFFD700), fontSize = 11.sp, maxLines = 1)
-                        }
-
-                        OutlinedButton(
-                            onClick = { engagementManager.triggerPrompt(ActivePromptType.SHARE) },
-                            modifier = Modifier
-                                .weight(1f)
-                                .testTag("test_share_dialog_button"),
-                            shape = RoundedCornerShape(8.dp),
-                            border = androidx.compose.foundation.BorderStroke(1.dp, SafeGreen.copy(alpha = 0.4f))
-                        ) {
-                            Text(stringResource(R.string.btn_preview_share), color = SafeGreen, fontSize = 11.sp, maxLines = 1)
-                        }
-                    }
                 }
             }
 
@@ -742,7 +697,10 @@ fun SupportDevelopmentScreen(
                 shape = RoundedCornerShape(12.dp)
             ) {
                 Column(modifier = Modifier.padding(16.dp)) {
-                    Text(stringResource(R.string.app_version_name), style = MaterialTheme.typography.titleSmall.copy(fontWeight = FontWeight.Bold, color = Color.White))
+                    Text(
+                        text = "QuakeCast v${com.example.BuildConfig.VERSION_NAME} (${com.example.BuildConfig.VERSION_CODE})",
+                        style = MaterialTheme.typography.titleSmall.copy(fontWeight = FontWeight.Bold, color = Color.White)
+                    )
                     Spacer(modifier = Modifier.height(4.dp))
                     Text(stringResource(R.string.app_tagline), style = MaterialTheme.typography.bodySmall.copy(color = Color.Gray))
                 }

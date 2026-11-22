@@ -14,6 +14,9 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.List
+import androidx.compose.material.icons.automirrored.filled.VolumeOff
+import androidx.compose.material.icons.automirrored.filled.VolumeUp
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -130,17 +133,13 @@ fun MobileMainScreen(
             donationManager.recordSuccessfulOperation()
             engagementManager.recordManualRefresh()
 
-            try {
-                val vibrator = context.getSystemService(Context.VIBRATOR_SERVICE) as? Vibrator
-                if (vibrator != null && vibrator.hasVibrator()) {
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                        vibrator.vibrate(VibrationEffect.createOneShot(250, VibrationEffect.DEFAULT_AMPLITUDE))
-                    } else {
-                        @Suppress("DEPRECATION")
-                        vibrator.vibrate(250)
-                    }
-                }
-            } catch (_: Exception) {}
+            performVibration(
+                context,
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    VibrationEffect.createOneShot(250, VibrationEffect.DEFAULT_AMPLITUDE)
+                } else null,
+                250
+            )
 
             android.widget.Toast.makeText(
                 context,
@@ -176,18 +175,13 @@ fun MobileMainScreen(
                 userLocationName = uiState.userLocation.name
             )
 
-            // Trigger haptic vibration for safety tremor alert
-            try {
-                val vibrator = context.getSystemService(Context.VIBRATOR_SERVICE) as? Vibrator
-                if (vibrator != null && vibrator.hasVibrator()) {
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                        vibrator.vibrate(VibrationEffect.createWaveform(longArrayOf(0, 300, 200, 400), -1))
-                    } else {
-                        @Suppress("DEPRECATION")
-                        vibrator.vibrate(500)
-                    }
-                }
-            } catch (_: Exception) {}
+            performVibration(
+                context,
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    VibrationEffect.createWaveform(longArrayOf(0, 300, 200, 400), -1)
+                } else null,
+                500
+            )
         }
     }
 
@@ -351,7 +345,7 @@ fun MobileMainScreen(
                         modifier = Modifier.testTag("toggle_sound_alerts")
                     ) {
                         Icon(
-                            imageVector = if (uiState.soundAlertsEnabled) Icons.Default.VolumeUp else Icons.Default.VolumeOff,
+                            imageVector = if (uiState.soundAlertsEnabled) Icons.AutoMirrored.Filled.VolumeUp else Icons.AutoMirrored.Filled.VolumeOff,
                             contentDescription = stringResource(R.string.toggle_audio_alerts_cd),
                             tint = if (uiState.soundAlertsEnabled) PulseCyan else Color.Gray
                         )
@@ -429,7 +423,7 @@ fun MobileMainScreen(
                     NavigationBarItem(
                         selected = selectedTab == MobileTab.LIST,
                         onClick = { selectedTab = MobileTab.LIST },
-                        icon = { Icon(Icons.Default.List, contentDescription = null) },
+                        icon = { Icon(Icons.AutoMirrored.Filled.List, contentDescription = null) },
                         label = { Text(stringResource(R.string.tab_list)) }
                     )
                     NavigationBarItem(
@@ -804,7 +798,7 @@ fun MobileMainScreen(
                                         border = androidx.compose.foundation.BorderStroke(1.dp, PulseCyan)
                                     ) {
                                         Icon(
-                                            imageVector = if (isAnalyticsView) Icons.Default.List else Icons.Default.BarChart,
+                                            imageVector = if (isAnalyticsView) Icons.AutoMirrored.Filled.List else Icons.Default.BarChart,
                                             contentDescription = "Toggle Analytics",
                                             tint = PulseCyan,
                                             modifier = Modifier.padding(6.dp)
@@ -1002,4 +996,24 @@ private fun FilterChipsRow(
             )
         )
     }
+}
+
+private fun performVibration(context: Context, effect: VibrationEffect?, legacyDurationMs: Long = 250) {
+    try {
+        val vibrator = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            val vm = context.getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as? android.os.VibratorManager
+            vm?.defaultVibrator
+        } else {
+            @Suppress("DEPRECATION")
+            context.getSystemService(Context.VIBRATOR_SERVICE) as? Vibrator
+        }
+        if (vibrator != null && vibrator.hasVibrator()) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && effect != null) {
+                vibrator.vibrate(effect)
+            } else {
+                @Suppress("DEPRECATION")
+                vibrator.vibrate(legacyDurationMs)
+            }
+        }
+    } catch (_: Exception) {}
 }

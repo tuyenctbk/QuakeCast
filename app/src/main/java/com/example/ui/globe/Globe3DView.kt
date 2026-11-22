@@ -37,6 +37,7 @@ import com.example.ui.theme.MidDepthColor
 import com.example.ui.theme.PulseCyan
 import com.example.ui.theme.SeismicRed
 import com.example.ui.theme.ShallowDepthColor
+import kotlinx.coroutines.launch
 import kotlin.math.*
 
 @Composable
@@ -49,8 +50,9 @@ fun Globe3DView(
     isTvMode: Boolean = false,
     onToggleAutoRotate: (() -> Unit)? = null
 ) {
-    var rotationYDeg by remember { mutableFloatStateOf(0f) }
-    var rotationXDeg by remember { mutableFloatStateOf(15f) }
+    val animRotationY = remember { Animatable(0f) }
+    val animRotationX = remember { Animatable(15f) }
+    val coroutineScope = rememberCoroutineScope()
     var scaleFactor by remember { mutableFloatStateOf(1.0f) }
 
     // Auto-rotation infinite animation
@@ -76,15 +78,33 @@ fun Globe3DView(
         label = "pulse"
     )
 
-    // Center rotation on selected quake if changed
+    // Smoothly glide rotation to selected quake when selection changes
     LaunchedEffect(selectedQuake) {
         selectedQuake?.let { quake ->
-            rotationYDeg = (-quake.longitude).toFloat()
-            rotationXDeg = (quake.latitude).toFloat().coerceIn(-65f, 65f)
+            val targetY = (-quake.longitude).toFloat()
+            val targetX = (quake.latitude).toFloat().coerceIn(-65f, 65f)
+
+            var diffY = (targetY - animRotationY.value) % 360f
+            if (diffY > 180f) diffY -= 360f
+            if (diffY < -180f) diffY += 360f
+
+            launch {
+                animRotationY.animateTo(
+                    animRotationY.value + diffY,
+                    animationSpec = tween(700, easing = FastOutSlowInEasing)
+                )
+            }
+            launch {
+                animRotationX.animateTo(
+                    targetX,
+                    animationSpec = tween(700, easing = FastOutSlowInEasing)
+                )
+            }
         }
     }
 
-    val currentRotY = if (isAutoRotate) (rotationYDeg + autoRotY) % 360f else rotationYDeg
+    val currentRotY = if (isAutoRotate) (animRotationY.value + autoRotY) % 360f else animRotationY.value
+    val currentRotX = animRotationX.value
 
     Box(
         modifier = modifier
@@ -100,7 +120,7 @@ fun Globe3DView(
                     var minDistance = Float.MAX_VALUE
 
                     for (quake in earthquakes) {
-                        val p3d = project3D(quake.latitude, quake.longitude, baseRadius, currentRotY, rotationXDeg)
+                        val p3d = project3D(quake.latitude, quake.longitude, baseRadius, currentRotY, currentRotX)
                         if (p3d.z > 0) {
                             val screenPos = Offset(center.x + p3d.x, center.y - p3d.y)
                             val dist = (tapOffset - screenPos).getDistance()
@@ -117,8 +137,10 @@ fun Globe3DView(
             .pointerInput(Unit) {
                 detectDragGestures { change, dragAmount ->
                     change.consume()
-                    rotationYDeg = (rotationYDeg + dragAmount.x * 0.45f) % 360f
-                    rotationXDeg = (rotationXDeg - dragAmount.y * 0.45f).coerceIn(-75f, 75f)
+                    coroutineScope.launch {
+                        animRotationY.snapTo((animRotationY.value + dragAmount.x * 0.45f) % 360f)
+                        animRotationX.snapTo((animRotationX.value - dragAmount.y * 0.45f).coerceIn(-75f, 75f))
+                    }
                 }
             }
     ) {
@@ -149,20 +171,20 @@ fun Globe3DView(
             )
 
             // 4. Latitude / Longitude 3D Grid Lines
-            draw3DGrid(center, baseRadius, currentRotY, rotationXDeg)
+            draw3DGrid(center, baseRadius, currentRotY, currentRotX)
 
             // 5. Tectonic Plates / Ring of Fire Fault Lines
-            draw3DTectonicPlates(center, baseRadius, currentRotY, rotationXDeg)
+            draw3DTectonicPlates(center, baseRadius, currentRotY, currentRotX)
 
             // 6. Simplified 3D Coastlines
-            draw3DCoastlines(center, baseRadius, currentRotY, rotationXDeg)
+            draw3DCoastlines(center, baseRadius, currentRotY, currentRotX)
 
             // 7. Earthquakes as 3D Depth-Colored Pulse Rings
             draw3DEarthquakes(
                 center = center,
                 radius = baseRadius,
                 rotY = currentRotY,
-                rotX = rotationXDeg,
+                rotX = currentRotX,
                 earthquakes = earthquakes,
                 selectedQuake = selectedQuake,
                 pulseProgress = pulseProgress
@@ -248,8 +270,10 @@ fun Globe3DView(
                 }
                 SmallFloatingActionButton(
                     onClick = {
-                        rotationYDeg = 0f
-                        rotationXDeg = 15f
+                        coroutineScope.launch {
+                            animRotationY.animateTo(0f, animationSpec = tween(500, easing = FastOutSlowInEasing))
+                            animRotationX.animateTo(15f, animationSpec = tween(500, easing = FastOutSlowInEasing))
+                        }
                         scaleFactor = 1.0f
                     },
                     containerColor = MaterialTheme.colorScheme.surfaceVariant,

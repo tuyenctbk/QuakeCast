@@ -11,7 +11,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Launch
+import androidx.compose.material.icons.automirrored.filled.Launch
 import androidx.compose.material.icons.filled.Share
 import androidx.compose.material.icons.filled.Warning
 import androidx.compose.material3.*
@@ -292,8 +292,12 @@ fun EarthquakeDetailSheet(
 
             OutlinedButton(
                 onClick = {
-                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(quake.url))
-                    context.startActivity(intent)
+                    try {
+                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(quake.url))
+                        context.startActivity(intent)
+                    } catch (_: Exception) {
+                        android.widget.Toast.makeText(context, "No browser available to open USGS report.", android.widget.Toast.LENGTH_SHORT).show()
+                    }
                 },
                 modifier = Modifier
                     .weight(1f)
@@ -301,7 +305,7 @@ fun EarthquakeDetailSheet(
                 border = androidx.compose.foundation.BorderStroke(1.dp, PulseCyan),
                 shape = RoundedCornerShape(10.dp)
             ) {
-                Icon(Icons.Default.Launch, contentDescription = null, tint = PulseCyan, modifier = Modifier.size(18.dp))
+                Icon(Icons.AutoMirrored.Filled.Launch, contentDescription = null, tint = PulseCyan, modifier = Modifier.size(18.dp))
                 Spacer(modifier = Modifier.width(6.dp))
                 Text(androidx.compose.ui.res.stringResource(com.example.R.string.btn_view_usgs), color = PulseCyan, fontWeight = FontWeight.Bold)
             }

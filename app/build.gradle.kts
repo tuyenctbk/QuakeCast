@@ -17,8 +17,8 @@ android {
     applicationId = "com.soloprono.quakecast"
     minSdk = 24
     targetSdk = 36
-    versionCode = 1
-    versionName = "1.0"
+    versionCode = 3
+    versionName = "1.0.2"
 
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
   }
@@ -80,14 +80,26 @@ android {
     unitTests {
       isIncludeAndroidResources = true
       all {
-        it.systemProperty("robolectric.offline", "true")
-        it.systemProperty("robolectric.dependency.dir", "/home/appuser/.m2/repository/org/robolectric/android-all-instrumented/16-robolectric-13921718-i7")
+        val userHome = System.getProperty("user.home")
+        val roboDir14 = file("$userHome/.m2/repository/org/robolectric/android-all-instrumented/14-robolectric-10818077-i7")
+        val roboDir16 = file("$userHome/.m2/repository/org/robolectric/android-all-instrumented/16-robolectric-13921718-i7")
+        val activeRoboDir = if (roboDir14.exists()) roboDir14 else roboDir16
+        if (activeRoboDir.exists()) {
+          it.systemProperty("robolectric.offline", "true")
+          it.systemProperty("robolectric.dependency.dir", activeRoboDir.absolutePath)
+        }
       }
     }
   }
   dependenciesInfo {
     includeInApk = false
     includeInBundle = true
+  }
+}
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+  compilerOptions {
+    freeCompilerArgs.add("-Xannotation-default-target=param-property")
   }
 }
 

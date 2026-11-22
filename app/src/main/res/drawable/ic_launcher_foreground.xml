@@ -1,46 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
     android:width="108dp"
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
-    <!-- Outer shockwave pulse ring -->
+
+    <!-- All critical elements strictly within 66dp-72dp safe zone (18..90) so Google TV circle never clips -->
+
+    <!-- Outer crimson shockwave pulse ring (R=29, center 54,51 -> y=22..80) -->
     <path
-        android:strokeColor="#FF1744"
-        android:strokeWidth="1.8"
-        android:fillColor="#00000000"
-        android:pathData="M 54 26 A 28 28 0 1 0 54 82 A 28 28 0 1 0 54 26 Z" />
-    <!-- Mid pulse ring -->
-    <path
-        android:strokeColor="#FF9100"
+        android:strokeColor="#D9FF2A55"
         android:strokeWidth="2.2"
         android:fillColor="#00000000"
-        android:pathData="M 54 33 A 21 21 0 1 0 54 75 A 21 21 0 1 0 54 33 Z" />
-    <!-- 3D Earth Globe base sphere -->
+        android:pathData="M 54 22 A 29 29 0 1 0 54 80 A 29 29 0 1 0 54 22 Z" />
+
+    <!-- Mid amber shockwave pulse ring (R=23, center 54,51 -> y=28..74) -->
     <path
-        android:fillColor="#00E5FF"
-        android:pathData="M 54 40 A 14 14 0 1 0 54 68 A 14 14 0 1 0 54 40 Z" />
-    <!-- Earth Meridian arc -->
-    <path
-        android:strokeColor="#0B132B"
-        android:strokeWidth="1.5"
+        android:strokeColor="#F2FFAB00"
+        android:strokeWidth="2.4"
         android:fillColor="#00000000"
-        android:pathData="M 54 40 C 47 48 47 60 54 68 C 61 60 61 48 54 40 Z" />
+        android:pathData="M 54 28 A 23 23 0 1 0 54 74 A 23 23 0 1 0 54 28 Z" />
+
+    <!-- 3D Earth Globe Sphere (R=17, center 54,51 -> y=34..68) -->
     <path
-        android:strokeColor="#0B132B"
-        android:strokeWidth="1.2"
+        android:strokeColor="#00E5FF"
+        android:strokeWidth="2.0"
+        android:pathData="M 54 34 A 17 17 0 1 0 54 68 A 17 17 0 1 0 54 34 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="radial"
+                android:centerX="49"
+                android:centerY="46"
+                android:gradientRadius="22">
+                <item android:color="#00D8F5" android:offset="0.0" />
+                <item android:color="#0288D1" android:offset="0.65" />
+                <item android:color="#0A396B" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Earth Meridians & Equator -->
+    <path
+        android:strokeColor="#80FFFFFF"
+        android:strokeWidth="1.1"
         android:fillColor="#00000000"
-        android:pathData="M 40 54 H 68" />
-    <!-- Epicenter bright red dot -->
+        android:pathData="M 54 34 C 45 42 45 60 54 68 C 63 60 63 42 54 34 Z" />
+    <path
+        android:strokeColor="#66FFFFFF"
+        android:strokeWidth="1.0"
+        android:fillColor="#00000000"
+        android:pathData="M 37 51 H 71" />
+    <path
+        android:strokeColor="#55FFFFFF"
+        android:strokeWidth="1.0"
+        android:fillColor="#00000000"
+        android:pathData="M 54 34 V 68" />
+
+    <!-- Epicenter Pulsating Core (Glow + Crimson + Bright White Center) -->
+    <path
+        android:fillColor="#55FF1744"
+        android:pathData="M 54 43 A 8 8 0 1 0 54 59 A 8 8 0 1 0 54 43 Z" />
     <path
         android:fillColor="#FF1744"
-        android:pathData="M 54 50 A 4 4 0 1 0 54 58 A 4 4 0 1 0 54 50 Z" />
-    <!-- Seismograph pulse waveform spike below -->
+        android:pathData="M 54 46 A 5 5 0 1 0 54 56 A 5 5 0 1 0 54 46 Z" />
     <path
-        android:strokeColor="#FFFFFF"
-        android:strokeWidth="2.4"
+        android:fillColor="#FFFFFF"
+        android:pathData="M 54 48.8 A 2.2 2.2 0 1 0 54 53.2 A 2.2 2.2 0 1 0 54 48.8 Z" />
+
+    <!-- Crisp Seismograph Waveform strictly inside 66dp inner safe zone (R <= 32.5dp from 54,54) -->
+    <path
+        android:strokeColor="#6600E5FF"
+        android:strokeWidth="4.4"
         android:strokeLineCap="round"
         android:strokeLineJoin="round"
         android:fillColor="#00000000"
-        android:pathData="M 28 84 L 40 84 L 44 76 L 49 92 L 54 70 L 59 96 L 64 80 L 68 84 L 80 84" />
+        android:pathData="M 30 76 L 39 76 L 42 71 L 46 80 L 50 66 L 55 82 L 59 71 L 63 76 L 78 76" />
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2.3"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#00000000"
+        android:pathData="M 30 76 L 39 76 L 42 71 L 46 80 L 50 66 L 55 82 L 59 71 L 63 76 L 78 76" />
 </vector>

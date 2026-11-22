@@ -10,6 +10,8 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.BackHandler
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.animation.Crossfade
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -46,6 +48,10 @@ class MainActivity : ComponentActivity() {
             viewModelRef = viewModel
             val uiState by viewModel.uiState.collectAsStateWithLifecycle()
 
+            LaunchedEffect(Unit) {
+                viewModel.initDatabase(this@MainActivity)
+            }
+
             // Auto-switch to TV mode if running on an Android TV / Leanback device
             LaunchedEffect(isTelevision) {
                 if (isTelevision && !uiState.isTvMode) {
@@ -67,33 +73,43 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    if (uiState.isTvMode) {
-                        TvScreenSaverScreen(
-                            significantQuakes = uiState.significantQuakes,
-                            currentIndex = uiState.tvIndex,
-                            selectedQuake = uiState.selectedQuake,
-                            onNext = { viewModel.navigateTvNext() },
-                            onPrevious = { viewModel.navigateTvPrevious() },
-                            onSelectQuake = { viewModel.selectQuake(it) },
-                            onExitTvMode = {
-                                if (isTelevision) {
-                                    finish()
-                                } else {
-                                    viewModel.setTvMode(false)
+                    Crossfade(
+                        targetState = uiState.isTvMode,
+                        animationSpec = tween(350),
+                        label = "mode_transition"
+                    ) { tvMode ->
+                        if (tvMode) {
+                            TvScreenSaverScreen(
+                                significantQuakes = uiState.significantQuakes,
+                                currentIndex = uiState.tvIndex,
+                                selectedQuake = uiState.selectedQuake,
+                                isPaused = !uiState.isAutoRotate,
+                                isLoading = uiState.isLoading,
+                                onTogglePause = { viewModel.toggleAutoRotate() },
+                                onRefresh = { viewModel.loadEarthquakes() },
+                                onNext = { viewModel.navigateTvNext() },
+                                onPrevious = { viewModel.navigateTvPrevious() },
+                                onSelectQuake = { viewModel.selectQuake(it) },
+                                onExitTvMode = {
+                                    if (isTelevision) {
+                                        finish()
+                                    } else {
+                                        viewModel.setTvMode(false)
+                                    }
                                 }
-                            }
-                        )
-                    } else {
-                        MobileMainScreen(
-                            viewModel = viewModel,
-                            uiState = uiState,
-                            appThemeMode = appThemeMode,
-                            onUpdateThemeMode = { newMode ->
-                                appThemeMode = newMode
-                                ThemeManager.saveThemeMode(this@MainActivity, newMode)
-                            },
-                            onToggleTvMode = { viewModel.setTvMode(true) }
-                        )
+                            )
+                        } else {
+                            MobileMainScreen(
+                                viewModel = viewModel,
+                                uiState = uiState,
+                                appThemeMode = appThemeMode,
+                                onUpdateThemeMode = { newMode ->
+                                    appThemeMode = newMode
+                                    ThemeManager.saveThemeMode(this@MainActivity, newMode)
+                                },
+                                onToggleTvMode = { viewModel.setTvMode(true) }
+                            )
+                        }
                     }
                 }
             }

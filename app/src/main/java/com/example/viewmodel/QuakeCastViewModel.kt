@@ -47,13 +47,46 @@ class QuakeCastViewModel(
 
     private var autoCycleJob: Job? = null
 
+    private var appContext: Context? = null
+    private var isDbInitialized = false
+
     init {
         loadEarthquakes()
         startAutoRefresh()
     }
 
     fun initDatabase(context: Context) {
-        repository.initDatabase(context)
+        if (isDbInitialized) return
+        isDbInitialized = true
+        val appCtx = context.applicationContext
+        appContext = appCtx
+        repository.initDatabase(appCtx)
+
+        val prefs = appCtx.getSharedPreferences("quakecast_user_prefs", Context.MODE_PRIVATE)
+        val soundEnabled = prefs.getBoolean("sound_alerts_enabled", true)
+
+        if (prefs.contains("user_lat")) {
+            val name = prefs.getString("user_name", "San Francisco, CA") ?: "San Francisco, CA"
+            val lat = prefs.getFloat("user_lat", 37.7749f).toDouble()
+            val lon = prefs.getFloat("user_lon", -122.4194f).toDouble()
+            val radius = prefs.getFloat("user_radius", 500f).toDouble()
+            val savedLoc = UserLocation(name, lat, lon, radius)
+            _uiState.update { state ->
+                val alerts = calculateProximityAlerts(state.quakes, savedLoc)
+                state.copy(
+                    userLocation = savedLoc,
+                    proximityAlerts = alerts,
+                    soundAlertsEnabled = soundEnabled
+                )
+            }
+        } else {
+            _uiState.update { it.copy(soundAlertsEnabled = soundEnabled) }
+        }
+
+        // If initial offline fetch completed before DB was ready, reload from Room cache now
+        if (_uiState.value.quakes.isEmpty() && !_uiState.value.isLoading) {
+            loadEarthquakes()
+        }
     }
 
     fun loadEarthquakes(timeframe: FeedTimeframe = _uiState.value.timeframe) {
@@ -145,6 +178,13 @@ class QuakeCastViewModel(
 
     fun updateUserLocation(name: String, lat: Double, lon: Double, radiusKm: Double) {
         val newLoc = UserLocation(name, lat, lon, radiusKm)
+        appContext?.getSharedPreferences("quakecast_user_prefs", Context.MODE_PRIVATE)?.edit()?.apply {
+            putString("user_name", name)
+            putFloat("user_lat", lat.toFloat())
+            putFloat("user_lon", lon.toFloat())
+            putFloat("user_radius", radiusKm.toFloat())
+            apply()
+        }
         _uiState.update { state ->
             val alerts = calculateProximityAlerts(state.quakes, newLoc)
             state.copy(userLocation = newLoc, proximityAlerts = alerts)
@@ -156,7 +196,12 @@ class QuakeCastViewModel(
     }
 
     fun toggleSoundAlerts() {
-        _uiState.update { it.copy(soundAlertsEnabled = !it.soundAlertsEnabled) }
+        val newSound = !_uiState.value.soundAlertsEnabled
+        appContext?.getSharedPreferences("quakecast_user_prefs", Context.MODE_PRIVATE)?.edit()?.apply {
+            putBoolean("sound_alerts_enabled", newSound)
+            apply()
+        }
+        _uiState.update { it.copy(soundAlertsEnabled = newSound) }
     }
 
     private fun startTvAutoCycle() {

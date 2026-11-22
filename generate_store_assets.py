@@ -1,209 +1,279 @@
-import math
-from PIL import Image, ImageDraw, ImageFont, ImageFilter
+#!/usr/bin/env python3
+import os
+from PIL import Image, ImageDraw, ImageFont
 
-def create_app_icon(output_path="ic_launcher_512.png"):
-    size = 512
-    img = Image.new("RGBA", (size, size), (0, 0, 0, 0))
+
+def create_full_bleed_icon(size=1024):
+    """
+    Create a 100% opaque, full-bleed square icon with NO baked-in rounded corners or borders,
+    matching the adaptive icon vector design with proper alpha compositing.
+    Every element stays cleanly inside the circular safe zone while the rich sapphire-blue
+    radial gradient background fills 100% of the icon space edge-to-edge.
+    """
+    img = Image.new("RGBA", (size, size), (12, 47, 90, 255))
     draw = ImageDraw.Draw(img)
+    cx = size / 2.0
+    cy = size * 0.475
+    s = size / 72.0  # Maps the 72dp visible safe-area cleanly onto the full 512/1024px icon canvas
 
-    # Background: Deep tech dark navy gradient with subtle radial glow
-    cx, cy = size / 2.0, size / 2.0
-    for r in range(int(size * 0.8), 0, -2):
-        factor = r / (size * 0.8)
-        # Deep space navy #090E17 to #0F1C30
-        red = int(9 + (18 - 9) * (1 - factor))
-        green = int(14 + (32 - 14) * (1 - factor))
-        blue = int(23 + (55 - 23) * (1 - factor))
+    # 1. Full-bleed rich sapphire-ocean radial gradient (high contrast vs dark Google TV launcher)
+    max_r = int(size * 0.80)
+    for r in range(max_r, 0, -4):
+        f = min(1.0, r / (size * 0.62))
+        if f < 0.55:
+            t = f / 0.55
+            red = int(25 * (1 - t) + 17 * t)
+            green = int(103 * (1 - t) + 70 * t)
+            blue = int(178 * (1 - t) + 128 * t)
+        else:
+            t = (f - 0.55) / 0.45
+            red = int(17 * (1 - t) + 12 * t)
+            green = int(70 * (1 - t) + 47 * t)
+            blue = int(128 * (1 - t) + 90 * t)
         draw.ellipse([cx - r, cy - r, cx + r, cy + r], fill=(red, green, blue, 255))
 
-    # Base background rect to fill corners
-    bg = Image.new("RGBA", (size, size), (9, 14, 23, 255))
-    bg.paste(img, (0, 0), img)
-    img = bg
-    draw = ImageDraw.Draw(img)
+    # 2. Subtle alpha-blended outer ambient radar rings
+    ambient = Image.new("RGBA", (size, size), (0, 0, 0, 0))
+    adraw = ImageDraw.Draw(ambient)
+    for ring_dp, alpha in [(34.0, 38), (42.0, 22)]:
+        rr = ring_dp * s
+        adraw.ellipse([cx - rr, cy - rr, cx + rr, cy + rr], outline=(0, 229, 255, alpha), width=max(2, int(1.0 * s)))
+    img = Image.alpha_composite(img, ambient)
 
-    # Concentric seismic shockwaves (rings)
-    # Ring 1 (outer red glow)
-    r1 = 195
-    for w in range(6, 0, -1):
-        alpha = int(40 + (6 - w) * 20)
-        draw.ellipse([cx - r1 - w, cy - r1 - w, cx + r1 + w, cy + r1 + w], outline=(255, 23, 68, alpha), width=2)
-    draw.ellipse([cx - r1, cy - r1, cx + r1, cy + r1], outline=(255, 45, 85, 220), width=4)
+    # 3. Concentric shockwave rings (centered on globe at (cx, cy))
+    rings = Image.new("RGBA", (size, size), (0, 0, 0, 0))
+    rdraw = ImageDraw.Draw(rings)
+    r1 = 27.5 * s
+    rdraw.ellipse([cx - r1, cy - r1, cx + r1, cy + r1], outline=(255, 42, 85, 220), width=max(2, int(2.0 * s)))
+    r2 = 21.8 * s
+    rdraw.ellipse([cx - r2, cy - r2, cx + r2, cy + r2], outline=(255, 171, 0, 238), width=max(2, int(2.2 * s)))
+    img = Image.alpha_composite(img, rings)
 
-    # Ring 2 (mid amber warning)
-    r2 = 145
-    for w in range(5, 0, -1):
-        alpha = int(35 + (5 - w) * 22)
-        draw.ellipse([cx - r2 - w, cy - r2 - w, cx + r2 + w, cy + r2 + w], outline=(255, 145, 0, alpha), width=2)
-    draw.ellipse([cx - r2, cy - r2, cx + r2, cy + r2], outline=(255, 160, 20, 240), width=4)
-
-    # Central Globe Base Sphere
-    r_globe = 95
-    # Globe gradient (cyan / oceanic deep glow)
-    for r in range(r_globe, 0, -1):
+    # 4. 3D Earth Globe Sphere
+    globe = Image.new("RGBA", (size, size), (0, 0, 0, 0))
+    gdraw = ImageDraw.Draw(globe)
+    r_globe = 16.0 * s
+    for r in range(int(r_globe), 0, -2):
         f = r / r_globe
-        cr = int(0 + (10 - 0) * f)
-        cg = int(180 * (1 - f*0.4))
-        cb = int(240 * (1 - f*0.2))
-        draw.ellipse([cx - r, cy - r, cx + r, cy + r], fill=(cr, cg, cb, 255))
+        cr = int(0 + 10 * f)
+        cg = int(216 * (1 - f * 0.60))
+        cb = int(245 * (1 - f * 0.42))
+        gdraw.ellipse([cx - r, cy - r, cx + r, cy + r], fill=(cr, cg, cb, 255))
+    gdraw.ellipse(
+        [cx - r_globe, cy - r_globe, cx + r_globe, cy + r_globe],
+        outline=(0, 229, 255, 255),
+        width=max(2, int(1.8 * s)),
+    )
+    img = Image.alpha_composite(img, globe)
 
-    # Globe Grids (parallels and meridians)
-    grid_color = (15, 30, 60, 180)
-    # Equator & parallels
-    draw.line([cx - r_globe + 5, cy, cx + r_globe - 5, cy], fill=grid_color, width=3)
-    draw.ellipse([cx - r_globe * 0.88, cy - r_globe * 0.45, cx + r_globe * 0.88, cy + r_globe * 0.45], outline=grid_color, width=2)
-    draw.ellipse([cx - r_globe * 0.88, cy - r_globe * 0.8, cx + r_globe * 0.88, cy + r_globe * 0.1], outline=grid_color, width=2)
-    draw.ellipse([cx - r_globe * 0.88, cy - r_globe * 0.1, cx + r_globe * 0.88, cy + r_globe * 0.8], outline=grid_color, width=2)
-    # Central Meridian
-    draw.ellipse([cx - r_globe * 0.45, cy - r_globe, cx + r_globe * 0.45, cy + r_globe], outline=grid_color, width=2)
-    draw.line([cx, cy - r_globe + 3, cx, cy + r_globe - 3], fill=grid_color, width=3)
+    # 5. Subtle Earth meridians & equator (alpha-blended)
+    mer = Image.new("RGBA", (size, size), (0, 0, 0, 0))
+    mdraw = ImageDraw.Draw(mer)
+    mer_rx = 7.6 * s
+    mdraw.ellipse(
+        [cx - mer_rx, cy - r_globe, cx + mer_rx, cy + r_globe],
+        outline=(255, 255, 255, 125),
+        width=max(1, int(1.0 * s)),
+    )
+    mdraw.line([cx - r_globe, cy, cx + r_globe, cy], fill=(255, 255, 255, 110), width=max(1, int(0.9 * s)))
+    mdraw.line([cx, cy - r_globe, cx, cy + r_globe], fill=(255, 255, 255, 95), width=max(1, int(0.9 * s)))
+    img = Image.alpha_composite(img, mer)
 
-    # Epicenter Beacon (pulsing core dot)
-    r_epicenter = 18
-    # Outer glow of epicenter
-    for eg in range(36, 0, -2):
-        alpha = int(180 * (1 - eg / 36.0))
-        draw.ellipse([cx - eg, cy - eg, cx + eg, cy + eg], fill=(255, 23, 68, alpha))
-    draw.ellipse([cx - r_epicenter, cy - r_epicenter, cx + r_epicenter, cy + r_epicenter], fill=(255, 30, 75, 255))
-    # Bright center highlight
-    draw.ellipse([cx - 7, cy - 7, cx + 7, cy + 7], fill=(255, 255, 255, 255))
+    # 6. Epicenter Pulsating Core (blended glow + solid crimson + crisp white center)
+    epi_glow = Image.new("RGBA", (size, size), (0, 0, 0, 0))
+    eg_draw = ImageDraw.Draw(epi_glow)
+    r_glow = 7.8 * s
+    eg_draw.ellipse([cx - r_glow, cy - r_glow, cx + r_glow, cy + r_glow], fill=(255, 23, 68, 95))
+    img = Image.alpha_composite(img, epi_glow)
 
-    # Seismic waveform / shockwave pulse crossing below
-    seismo_y = 390
+    epi = Image.new("RGBA", (size, size), (0, 0, 0, 0))
+    e_draw = ImageDraw.Draw(epi)
+    r_epi = 4.8 * s
+    r_core = 2.1 * s
+    e_draw.ellipse([cx - r_epi, cy - r_epi, cx + r_epi, cy + r_epi], fill=(255, 23, 68, 255))
+    e_draw.ellipse([cx - r_core, cy - r_core, cx + r_core, cy + r_core], fill=(255, 255, 255, 255))
+    img = Image.alpha_composite(img, epi)
+
+    # 7. Crisp Seismograph Waveform cleanly inside the circular safe zone
+    def pt(dx, dy):
+        return (cx + dx * s, cy + dy * s)
+
     wave_pts = [
-        (40, seismo_y),
-        (130, seismo_y),
-        (160, seismo_y - 12),
-        (185, seismo_y + 18),
-        (210, seismo_y - 35),
-        (235, seismo_y + 45),
-        (256, seismo_y - 85),
-        (275, seismo_y + 70),
-        (300, seismo_y - 45),
-        (325, seismo_y + 25),
-        (350, seismo_y - 10),
-        (380, seismo_y),
-        (472, seismo_y)
+        pt(-22, 23),
+        pt(-14, 23),
+        pt(-11, 18.5),
+        pt(-7.5, 27),
+        pt(-3.5, 13.5),
+        pt(1.0, 29),
+        pt(5.0, 18.5),
+        pt(8.5, 23),
+        pt(22, 23),
     ]
+    w_glow = Image.new("RGBA", (size, size), (0, 0, 0, 0))
+    ImageDraw.Draw(w_glow).line(wave_pts, fill=(0, 229, 255, 135), width=max(2, int(4.0 * s)), joint="curve")
+    img = Image.alpha_composite(img, w_glow)
 
-    # Wave glow
-    for gw in (10, 6, 4):
-        draw.line(wave_pts, fill=(0, 229, 255, 60), width=gw, joint="curve")
-    draw.line(wave_pts, fill=(255, 255, 255, 255), width=4, joint="curve")
+    w_core = Image.new("RGBA", (size, size), (0, 0, 0, 0))
+    ImageDraw.Draw(w_core).line(wave_pts, fill=(255, 255, 255, 255), width=max(2, int(2.1 * s)), joint="curve")
+    img = Image.alpha_composite(img, w_core)
 
-    # Corner subtle vignette / border
-    draw.rounded_rectangle([2, 2, size - 3, size - 3], radius=110, outline=(0, 229, 255, 70), width=3)
+    return img.convert("RGB")
 
-    img.save(output_path, "PNG")
-    print(f"Created app icon at {output_path}")
+
+def create_app_icon(output_path="ic_launcher_512.png"):
+    hi_res = create_full_bleed_icon(1024)
+    icon_512 = hi_res.resize((512, 512), Image.Resampling.LANCZOS)
+    icon_512.save(output_path, "PNG", optimize=True)
+    print(f"Created full-bleed opaque 512x512 store icon at {output_path}")
+
+    mipmaps = {
+        "mipmap-mdpi": 48,
+        "mipmap-hdpi": 72,
+        "mipmap-xhdpi": 96,
+        "mipmap-xxhdpi": 144,
+        "mipmap-xxxhdpi": 192,
+    }
+    for folder, px in mipmaps.items():
+        out_dir = os.path.join("app/src/main/res", folder)
+        os.makedirs(out_dir, exist_ok=True)
+
+        sq = hi_res.resize((px, px), Image.Resampling.LANCZOS)
+        sq.save(os.path.join(out_dir, "ic_launcher.png"), "PNG", optimize=True)
+
+        round_img = sq.convert("RGBA")
+        mask = Image.new("L", (px * 4, px * 4), 0)
+        ImageDraw.Draw(mask).ellipse([0, 0, px * 4 - 1, px * 4 - 1], fill=255)
+        mask = mask.resize((px, px), Image.Resampling.LANCZOS)
+        round_img.putalpha(mask)
+        round_img.save(os.path.join(out_dir, "ic_launcher_round.png"), "PNG", optimize=True)
+
+    print("Regenerated all mipmap ic_launcher.png and ic_launcher_round.png densities")
 
 
 def create_feature_graphic(output_path="feature_graphic_1024x500.png"):
     width, height = 1024, 500
-    img = Image.new("RGBA", (width, height), (8, 14, 25, 255))
+    img = Image.new("RGBA", (width, height), (12, 42, 82, 255))
     draw = ImageDraw.Draw(img)
 
-    # Tech grid background
-    grid_spacing = 40
-    for x in range(0, width, grid_spacing):
-        draw.line([(x, 0), (x, height)], fill=(16, 28, 48, 140), width=1)
-    for y in range(0, height, grid_spacing):
-        draw.line([(0, y), (width, y)], fill=(16, 28, 48, 140), width=1)
+    # Rich sapphire-ocean background gradient
+    for y in range(height):
+        f = y / height
+        r = int(18 * (1 - f) + 9 * f)
+        g = int(66 * (1 - f) + 32 * f)
+        b = int(122 * (1 - f) + 64 * f)
+        draw.line([(0, y), (width, y)], fill=(r, g, b, 255))
+
+    # Subtle alpha-blended tech grid
+    grid = Image.new("RGBA", (width, height), (0, 0, 0, 0))
+    g_draw = ImageDraw.Draw(grid)
+    for x in range(0, width, 40):
+        g_draw.line([(x, 0), (x, height)], fill=(0, 229, 255, 22), width=1)
+    for y in range(0, height, 40):
+        g_draw.line([(0, y), (width, y)], fill=(0, 229, 255, 22), width=1)
+    img = Image.alpha_composite(img, grid)
 
     # Right side 3D Globe visualization
-    gcx, gcy = 760, 250
-    gradius = 165
+    gcx, gcy = 765, 240
+    gradius = 158
 
-    # Globe shockwave rings
-    for r, col, w in [(240, (255, 23, 68, 60), 2), (210, (255, 145, 0, 80), 3), (185, (0, 229, 255, 100), 2)]:
-        draw.ellipse([gcx - r, gcy - r, gcx + r, gcy + r], outline=col, width=w)
+    rings = Image.new("RGBA", (width, height), (0, 0, 0, 0))
+    rdraw = ImageDraw.Draw(rings)
+    for r, col, w in [(224, (255, 42, 85, 170), 3), (196, (255, 171, 0, 200), 3), (174, (0, 229, 255, 210), 2)]:
+        rdraw.ellipse([gcx - r, gcy - r, gcx + r, gcy + r], outline=col, width=w)
+    img = Image.alpha_composite(img, rings)
 
-    # Globe sphere
-    for r in range(gradius, 0, -1):
+    globe = Image.new("RGBA", (width, height), (0, 0, 0, 0))
+    gl_draw = ImageDraw.Draw(globe)
+    for r in range(gradius, 0, -2):
         f = r / gradius
         cr = int(4 + 10 * (1 - f))
-        cg = int(25 + 130 * (1 - f))
-        cb = int(55 + 180 * (1 - f))
-        draw.ellipse([gcx - r, gcy - r, gcx + r, gcy + r], fill=(cr, cg, cb, 255))
+        cg = int(45 + 150 * (1 - f))
+        cb = int(95 + 150 * (1 - f))
+        gl_draw.ellipse([gcx - r, gcy - r, gcx + r, gcy + r], fill=(cr, cg, cb, 255))
+    img = Image.alpha_composite(img, globe)
 
-    # Globe grid lines
-    ggrid = (10, 35, 70, 200)
-    draw.line([gcx - gradius + 5, gcy, gcx + gradius - 5, gcy], fill=ggrid, width=3)
-    draw.ellipse([gcx - gradius * 0.9, gcy - gradius * 0.45, gcx + gradius * 0.9, gcy + gradius * 0.45], outline=ggrid, width=2)
-    draw.ellipse([gcx - gradius * 0.9, gcy - gradius * 0.8, gcx + gradius * 0.9, gcy + gradius * 0.1], outline=ggrid, width=2)
-    draw.ellipse([gcx - gradius * 0.9, gcy - gradius * 0.1, gcx + gradius * 0.9, gcy + gradius * 0.8], outline=ggrid, width=2)
-    draw.ellipse([gcx - gradius * 0.45, gcy - gradius, gcx + gradius * 0.45, gcy + gradius], outline=ggrid, width=2)
-    draw.line([gcx, gcy - gradius + 4, gcx, gcy + gradius - 4], fill=ggrid, width=3)
+    mer = Image.new("RGBA", (width, height), (0, 0, 0, 0))
+    mdraw = ImageDraw.Draw(mer)
+    ggrid = (255, 255, 255, 95)
+    mdraw.line([gcx - gradius + 5, gcy, gcx + gradius - 5, gcy], fill=ggrid, width=2)
+    mdraw.ellipse([gcx - gradius * 0.9, gcy - gradius * 0.45, gcx + gradius * 0.9, gcy + gradius * 0.45], outline=ggrid, width=2)
+    mdraw.ellipse([gcx - gradius * 0.45, gcy - gradius, gcx + gradius * 0.45, gcy + gradius], outline=ggrid, width=2)
+    mdraw.line([gcx, gcy - gradius + 4, gcx, gcy + gradius - 4], fill=ggrid, width=2)
+    img = Image.alpha_composite(img, mer)
 
     # Epicenter tremors on globe
-    quakes = [
-        (gcx - 30, gcy - 20, 16, (255, 23, 68), "M 7.2"),
-        (gcx + 45, gcy + 35, 12, (255, 145, 0), "M 5.8"),
-        (gcx - 65, gcy + 50, 9, (0, 229, 255), "M 4.6"),
-    ]
-    for qx, qy, qr, qcol, label in quakes:
-        draw.ellipse([qx - qr * 2, qy - qr * 2, qx + qr * 2, qy + qr * 2], outline=qcol + (90,), width=2)
-        draw.ellipse([qx - qr, qy - qr, qx + qr, qy + qr], fill=qcol + (240,))
-        draw.ellipse([qx - 4, qy - 4, qx + 4, qy + 4], fill=(255, 255, 255, 255))
+    epi_layer = Image.new("RGBA", (width, height), (0, 0, 0, 0))
+    edraw = ImageDraw.Draw(epi_layer)
+    for qx, qy, qr, qcol in [
+        (gcx - 28, gcy - 22, 16, (255, 23, 68)),
+        (gcx + 44, gcy + 32, 12, (255, 171, 0)),
+        (gcx - 62, gcy + 46, 9, (0, 229, 255)),
+    ]:
+        edraw.ellipse([qx - qr * 2, qy - qr * 2, qx + qr * 2, qy + qr * 2], outline=qcol + (125,), width=2)
+        edraw.ellipse([qx - qr, qy - qr, qx + qr, qy + qr], fill=qcol + (245,))
+        edraw.ellipse([qx - 4, qy - 4, qx + 4, qy + 4], fill=(255, 255, 255, 255))
+    img = Image.alpha_composite(img, epi_layer)
 
-    # Real-time Seismograph waveform along bottom
+    # Real-time Seismograph waveform along bottom (clean separation below badges)
     w_pts = [
-        (40, 430), (180, 430), (220, 415), (250, 450), (280, 370), (310, 480),
-        (340, 340), (370, 460), (400, 390), (430, 440), (470, 425), (510, 430),
-        (650, 430), (700, 410), (740, 445), (780, 430), (980, 430)
+        (40, 442), (180, 442), (215, 430), (242, 458), (270, 402), (298, 480),
+        (326, 396), (354, 464), (384, 418), (414, 450), (446, 438), (485, 442),
+        (640, 442), (690, 426), (730, 454), (770, 442), (984, 442)
     ]
-    draw.line(w_pts, fill=(0, 229, 255, 80), width=8, joint="curve")
-    draw.line(w_pts, fill=(255, 255, 255, 230), width=3, joint="curve")
+    wg = Image.new("RGBA", (width, height), (0, 0, 0, 0))
+    ImageDraw.Draw(wg).line(w_pts, fill=(0, 229, 255, 120), width=8, joint="curve")
+    img = Image.alpha_composite(img, wg)
+    wc = Image.new("RGBA", (width, height), (0, 0, 0, 0))
+    ImageDraw.Draw(wc).line(w_pts, fill=(255, 255, 255, 240), width=3, joint="curve")
+    img = Image.alpha_composite(img, wc)
 
-    # Typography & Branding (Left Side)
-    # App Title & Subtitles using standard drawing or fallback fonts
-    try:
-        font_title = ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial Bold.ttf", 62)
-        font_sub = ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial Bold.ttf", 24)
-        font_badge = ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial.ttf", 16)
-        font_body = ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial.ttf", 18)
-    except:
-        font_title = ImageFont.load_default()
-        font_sub = font_title
-        font_badge = font_title
-        font_body = font_title
+    draw = ImageDraw.Draw(img)
+    font_title = ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial Bold.ttf", 62)
+    font_sub = ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial Bold.ttf", 23)
+    font_badge = ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial Bold.ttf", 14)
+    font_body = ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial.ttf", 18)
 
     # Live pulse dot before title
-    draw.ellipse([54, 76, 74, 96], fill=(255, 23, 68, 255))
-    draw.ellipse([50, 72, 78, 100], outline=(255, 23, 68, 120), width=3)
-    draw.text((88, 56), "QuakeCast", fill=(255, 255, 255, 255), font=font_title)
+    dot_layer = Image.new("RGBA", (width, height), (0, 0, 0, 0))
+    ddraw = ImageDraw.Draw(dot_layer)
+    ddraw.ellipse([48, 70, 80, 102], fill=(255, 23, 68, 90))
+    ddraw.ellipse([54, 76, 74, 96], fill=(255, 23, 68, 255))
+    ddraw.ellipse([60, 82, 68, 90], fill=(255, 255, 255, 255))
+    img = Image.alpha_composite(img, dot_layer)
 
-    # Subtitle
-    draw.text((55, 142), "LIVE SEISMIC MONITOR & 3D GLOBE", fill=(0, 229, 255, 255), font=font_sub)
+    draw = ImageDraw.Draw(img)
+    draw.text((90, 56), "QuakeCast", fill=(255, 255, 255, 255), font=font_title)
+    draw.text((54, 142), "LIVE SEISMIC MONITOR & 3D GLOBE", fill=(0, 229, 255, 255), font=font_sub)
 
-    # Description points
     bullets = [
-        "✓  Real-Time Official USGS Seismic Telemetry",
-        "✓  Interactive 3D Canvas Globe & Hypocenter Inspection",
-        "✓  Intelligent Proximity Warnings with Wave Arrival Physics",
-        "✓  Optimized for Mobile, Tablets & Android TV Screen Saver"
+        "Real-Time Official USGS Seismic Telemetry",
+        "Interactive 3D Canvas Globe & Hypocenter Inspection",
+        "Intelligent Proximity Warnings with Wave Arrival Physics",
+        "Optimized for Mobile, Tablets & Android TV Screen Saver"
     ]
     for idx, b in enumerate(bullets):
-        draw.text((55, 195 + idx * 32), b, fill=(200, 215, 235, 255), font=font_body)
+        by = 196 + idx * 32
+        draw.ellipse([56, by + 7, 64, by + 15], fill=(0, 229, 255, 255))
+        draw.text((76, by), b, fill=(225, 240, 255, 255), font=font_body)
 
-    # Feature Badges
     badges = [
         ("USGS DIRECT FEED", (0, 229, 255)),
-        ("3D SHOCKWAVES", (255, 145, 0)),
-        ("ANDROID TV READY", (100, 220, 100)),
-        ("100% AD-FREE", (255, 23, 68))
+        ("3D SHOCKWAVES", (255, 171, 0)),
+        ("ANDROID TV READY", (105, 240, 174)),
+        ("100% AD-FREE", (255, 82, 82))
     ]
-    bx = 55
+    bx = 54
     for text, col in badges:
-        bw = len(text) * 9 + 20
-        draw.rounded_rectangle([bx, 340, bx + bw, 372], radius=6, fill=(col[0], col[1], col[2], 35), outline=col + (180,), width=1)
-        draw.text((bx + 10, 348), text, fill=col + (255,), font=font_badge)
-        bx += bw + 14
+        bbox = draw.textbbox((0, 0), text, font=font_badge)
+        bw = (bbox[2] - bbox[0]) + 20
+        draw.rounded_rectangle([bx, 336, bx + bw, 368], radius=6, fill=(10, 32, 62, 235), outline=col + (220,), width=2)
+        draw.text((bx + 10, 344), text, fill=(255, 255, 255, 255), font=font_badge)
+        bx += bw + 10
 
-    img.save(output_path, "PNG")
+    img.convert("RGB").save(output_path, "PNG", optimize=True)
     print(f"Created feature graphic at {output_path}")
+
 
 if __name__ == "__main__":
     create_app_icon()
     create_feature_graphic()
-
